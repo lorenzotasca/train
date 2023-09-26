@@ -8,4 +8,4 @@ E---------------------------------------------3
 -registrare le percentuali/statistiche degli esercizi
 -aggiungere tabella e percentuali allo storico del sito
 -(creare una classifica ricercando le statistiche per ogni singolo esercizio tra tutti i giocatori)
--si possono ricercare i propri dati accendendo con le credenziali
+-si possono ricercare i propri dati accedendo con le credenziali
