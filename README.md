@@ -9,7 +9,6 @@ stabilire la preparazione di un giocatore:
 
 -in base ai dati inseriti dall'utente, creare un piano di lavoro
 
-
 -registrare le percentuali/statistiche degli esercizi
 
 -aggiungere tabella e percentuali allo storico del sito
