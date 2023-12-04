@@ -7,7 +7,7 @@ $password = $_POST['password'];
 
 $password = md5($password);
 
-$connessione = new mysqli('localhost', 'root', '', 'prueba');
+$connessione = new mysqli('localhost', 'root', '', 'progetto');
 
 if ($connessione->connect_errno) {
     echo('Connessione fallita: ' . $connessione->connect_error);
