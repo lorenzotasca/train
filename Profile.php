@@ -17,3 +17,5 @@
         <h1>Benvenuto <?php echo $name; ?></h1>
         <a href="Logout.php">Logout</a>
     </body>
+
+</html>
