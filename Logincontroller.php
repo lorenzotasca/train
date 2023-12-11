@@ -31,4 +31,5 @@
             header("Location: Login.php?err=$err");   
         }
     }
+    $connessione->close();
 ?>
