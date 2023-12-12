@@ -21,6 +21,9 @@ stabilire la preparazione di un giocatore:
 
 ![er](https://github.com/lorenzotasca/train/assets/101709418/5e606d7b-271b-43cc-9666-ce167a177c14)
 
+![image](https://github.com/lorenzotasca/train/assets/101709418/546067a3-1fb7-4c0a-832f-4427537b64db)
+
+
 #Relazionale
 
 ![relazionale](https://github.com/lorenzotasca/train/assets/101709418/6ecb10ba-f80a-4e45-b543-a0675ba242fe)
