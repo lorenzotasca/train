@@ -14,9 +14,11 @@ if ($connessione->connect_errno) {
     exit();
 }else{
     try{
+
         $registra = "insert into users (name, username, password) values ('$name', '$username', '$password')";
         $connessione->query($registra);
-        header("Location: Login.php?err=$err");   
+        header("Location: Login.php?err=$err");  
+         
     }   
     catch(Exception $e){
         $err = $e->getMessage();
