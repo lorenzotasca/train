@@ -49,7 +49,8 @@ riceve(ID_giocatore, ID_scheda)
 
 #Part 1
 
-![part1](https://github.com/lorenzotasca/train/assets/101709418/0469e47e-d7e4-47ac-8384-a01009f5e2e8)
+![image](https://github.com/lorenzotasca/train/assets/101709418/b92dcd5e-84c7-4e57-bfa5-b5340c17b57d)
+
 
 #Part 2
 
