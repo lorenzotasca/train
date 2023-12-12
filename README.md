@@ -19,8 +19,6 @@ stabilire la preparazione di un giocatore:
 
 #ER
 
-![er](https://github.com/lorenzotasca/train/assets/101709418/5e606d7b-271b-43cc-9666-ce167a177c14)
-
 ![image](https://github.com/lorenzotasca/train/assets/101709418/546067a3-1fb7-4c0a-832f-4427537b64db)
 
 
