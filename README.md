@@ -1,6 +1,7 @@
 # train
 
---Funzionalita--
+
+#Funzionalita#
 
 -login utente
 
@@ -21,12 +22,14 @@ stabilire la preparazione di un giocatore:
 -si possono ricercare i propri dati accedendo con le credenziali
 
 
---ER--
+
+#ER#
 
 ![image](https://github.com/lorenzotasca/train/assets/101709418/546067a3-1fb7-4c0a-832f-4427537b64db)
 
 
---Relazionale--
+
+#Relazionale#
 
 Giocatore(ID_giocatore, cognome, nome, data_nascita, ruolo, standing_reach, altezza_senza_scarpe, apertura_alare)
 
@@ -41,7 +44,8 @@ comprende(ID_allenamento, ID_scheda)
 riceve(ID_giocatore, ID_scheda)
 
 
---Mokup--
+
+#Mokup#
 
 #Part 1
 
