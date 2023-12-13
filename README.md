@@ -19,7 +19,7 @@ stabilire la preparazione di un giocatore:
 
 #ER
 
-![er](https://github.com/lorenzotasca/train/assets/101709418/5e606d7b-271b-43cc-9666-ce167a177c14)
+![Alt text](image.png)
 
 #Relazionale
 
