@@ -1,4 +1,8 @@
 # train
+
+
+#Funzionalita#
+
 -login utente
 
 -regitrazione giocatore
@@ -17,26 +21,44 @@ stabilire la preparazione di un giocatore:
 
 -si possono ricercare i propri dati accedendo con le credenziali
 
-#ER
 
 
-#Relazionale
+#ER#
 
-![relazionale](https://github.com/lorenzotasca/train/assets/101709418/6ecb10ba-f80a-4e45-b543-a0675ba242fe)
+![image](https://github.com/lorenzotasca/train/assets/101709418/546067a3-1fb7-4c0a-832f-4427537b64db)
+
+
+
+#Relazionale#
+
+Giocatore(ID_giocatore, cognome, nome, data_nascita, ruolo, standing_reach, altezza_senza_scarpe, apertura_alare)
+
+Scheda(ID_scheda, giorni_della_settimana, orario)
+
+Allenamento(ID_allenamento, orario, descrizione)
+
+Statistica(ID_statistica)
+
+comprende(ID_allenamento, ID_scheda)
+
+riceve(ID_giocatore, ID_scheda)
+
+
+
+#Mokup#
 
 #Part 1
 
-![part1](https://github.com/lorenzotasca/train/assets/101709418/0469e47e-d7e4-47ac-8384-a01009f5e2e8)
+![image](https://github.com/lorenzotasca/train/assets/101709418/b92dcd5e-84c7-4e57-bfa5-b5340c17b57d)
+
 
 #Part 2
 
 ![part2](https://github.com/lorenzotasca/train/assets/101709418/6dfe4ab4-3cc1-4554-bde4-23de4121ed49)
 
-
 #Part 3
 
 ![part3](https://github.com/lorenzotasca/train/assets/101709418/9576d654-50fd-4c6c-817a-c6f6c56fab65)
-
 
 #Part 4
 
