@@ -19,7 +19,6 @@ stabilire la preparazione di un giocatore:
 
 #ER
 
-![Alt text](image.png)
 
 #Relazionale
 
