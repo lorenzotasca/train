@@ -6,5 +6,5 @@
     session_destroy();
     
     header("Location: Login.php");
-    mysqli_close($connection);
+    
 ?>
