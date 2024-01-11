@@ -11,7 +11,7 @@
         exit();
     }else{
         try{
-            $verifica = "select * from user where username = '$username' and password = '$password'";
+            $verifica = "select * from Giocatore where username = '$username' and passwordCode = '$password'";
             $result = $connessione->query($verifica);
             if ($result->num_rows>0){
                 while($user = $result->fetch_array(MYSQLI_ASSOC)){
