@@ -29,8 +29,8 @@
             $row = mysqli_fetch_assoc($result);
             if(password_verify($password, $row['password'])){
                 // Password matches, so create the session
-                $_SESSION['id'] = $row['id'];
-                $_SESSION['name'] = $row['username'];
+                $_SESSION['id'] = $row['ID_giocatore'];
+                $_SESSION['username'] = $row['username'];
                 // Redirect to profile page
                 header("Location: Profile.php");
             }else{
