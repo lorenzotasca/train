@@ -32,8 +32,8 @@
 
         }
         
-        
+        $stmt->close();
+        $connessione->close();
     }
-    $stmt->close();
-    $connessione->close();
+    
 ?>
