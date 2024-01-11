@@ -17,7 +17,7 @@
     }
 
     // Check if form is submitted
-    if(isset($_POST['submit'])){
+    if(isset($_POST['submit'])){ // questo submit è il name del bottone ed è nel Login.php
         // Sanitize user input to prevent SQL injection
         $username = $connessione->real_escape_string($_POST['username']);
         $password = $connessione->real_escape_string($_POST['password']);
