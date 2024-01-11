@@ -26,6 +26,7 @@
         $result = mysqli_query($conn, "SELECT * FROM Giocatori WHERE username = '$username'");
 
         if(mysqli_num_rows($result) > 0){
+            echo "entratooooo";
             $row = mysqli_fetch_assoc($result);
             if(password_verify($password, $row['password'])){
                 // Password matches, so create the session
