@@ -29,7 +29,7 @@
     $stmt = $connessione->prepare("INSERT INTO Giocatore (cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?)");
 
     // Bind the parameters
-    $stmt->bind_param("sss", $surname, $name, $birthdate, $username, $password);
+    $stmt->bind_param("sssss", $surname, $name, $birthdate, $username, $password);
 
     // Try to execute the statement and handle any errors
     try {
