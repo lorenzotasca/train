@@ -32,17 +32,17 @@ stabilire la preparazione di un giocatore:
 
 #Relazionale#
 
-Giocatore(ID_giocatore, cognome, nome, data_nascita, ruolo, standing_reach, altezza_senza_scarpe, apertura_alare)
+Giocatore([ID_giocatore], cognome, nome, data_nascita, ruolo, standing_reach, altezza_senza_scarpe, apertura_alare, username, password)
 
-Scheda(ID_scheda, giorni_della_settimana, orario)
+Scheda([ID_scheda], giorni_della_settimana, orario)
 
-Allenamento(ID_allenamento, orario, descrizione)
+Allenamento([ID_allenamento], orario, descrizione)
 
-Statistica(ID_statistica)
+Statistica([ID_statistica])
 
-comprende(ID_allenamento, ID_scheda)
+comprende([ID_allenamento], [ID_scheda])
 
-riceve(ID_giocatore, ID_scheda)
+riceve([ID_giocatore], [ID_scheda])
 
 
 
