@@ -13,6 +13,6 @@
                 echo $_GET['err'];
             }
         ?>
-        <a href="Registra.php">Registra</a>
+        <a href="Registra.php">Don't have an account yet?</a>
     </body>
 </html>
