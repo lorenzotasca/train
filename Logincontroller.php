@@ -6,7 +6,7 @@
     $db_host = 'localhost';
     $db_user = 'root';
     $db_pass = '';
-    $db_name = 'your_database_name';
+    $db_name = 'progetto';
 
     // Create a new MySQLi connection
     $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
@@ -41,38 +41,4 @@
         }
     }
 
-    /*
-    session_start();
-
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $password = md5($password);
-    $connessione = new mysqli('localhost', 'root', '', 'progetto');
-    if ($connessione->connect_error) {
-        echo('Connessione fallita: ' . $connessione->connect_error);
-        exit();
-    }else{
-        try{
-            $verifica = "select * from Giocatore where username = '$username' and passwordCode = '$password'";
-            $result = $connessione->query($verifica);
-            if ($result->num_rows>0){
-                while($user = $result->fetch_array(MYSQLI_ASSOC)){
-                    $name = $user['name'];
-                    $id = $user['id'];
-                    $_SESSION['name'] = $name;
-                    $_SESSION['id'] = $id;
-                }
-            }
-            $result->close();
-            //var_dump($result);
-            header("Location: Profile.php");
-        }
-        catch(Exception $e){
-            $err = $e->getMessage();
-            //redirect su Registra.php
-            header("Location: Login.php?err=$err");   
-        }
-    }
-    $connessione->close();
-    */
 ?>
