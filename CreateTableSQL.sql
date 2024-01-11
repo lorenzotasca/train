@@ -1,5 +1,5 @@
 CREATE TABLE Giocatore(
-    ID_giocatore char(10),
+    ID_giocatore char(10) NOT NULL, 
     cognome char(20) NOT NULL,
     nome char(20) NOT NULL,
     data_nascita char (10) NOT NULL,
