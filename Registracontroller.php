@@ -6,6 +6,7 @@
     $username = $_POST['username'];
     $password = md5($_POST['password']); // Hash the password
     
+    $id_giocatore = $surname . $name . $birthdate;
     
     /*
     // Database connection parameters
@@ -26,10 +27,10 @@
     }
 
     // Prepare the SQL statement
-    $stmt = $connessione->prepare("INSERT INTO Giocatore (cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?)");
 
     // Bind the parameters
-    $stmt->bind_param("sssss", $surname, $name, $birthdate, $username, $password);
+    $stmt->bind_param("ssssss", $id_giocatore, $surname, $name, $birthdate, $username, $password);
 
     // Try to execute the statement and handle any errors
     try {
