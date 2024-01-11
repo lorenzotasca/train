@@ -4,10 +4,10 @@
 
     <body>
         <form action="Registra.php" method="post">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="text" name="password" placeholder="Password" required>
-            <input type="submit" name="login" placeholder="Login" required>
+            <input type="text" name="name" placeholder="Name" required><br>
+            <input type="text" name="username" placeholder="Username" required><br>
+            <input type="text" name="password" placeholder="Password" required><br>
+            <input type="submit" name="login" placeholder="Login" required><br>
         </form>
         <?php
             if(isset($_GET['err'])){
