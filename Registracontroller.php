@@ -4,6 +4,7 @@
     $username = $_POST['username'];
     $password = md5($_POST['password']); // Hash the password
 
+    /*
     // Database connection parameters
     $servername = 'localhost';
     $dbusername = 'root';
@@ -12,6 +13,9 @@
 
     // Create a new mysqli object
     $connessione = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+    */
+    
+    $connessione = new mysqli('localhost', 'root', '', 'progetto');
 
     // Check the connection
     if ($connessione->connect_error) {
@@ -49,7 +53,7 @@
 
     $connessione = new mysqli('localhost', 'root', '', 'progetto');
 
-    if ($connessione->connect_errno) {
+    if ($connessione->connect_error) {
         echo('Connessione fallita: ' . $connessione->connect_error);
         exit();
     }else{
