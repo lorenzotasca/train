@@ -34,10 +34,10 @@
                 // Redirect to profile page
                 header("Location: Profile.php");
             }else{
-                echo "Incorrect username or password.";
+                $err = getMessage("mistake");
             }
         }else{
-            echo "Incorrect username or password.";
+            $err = getMessage("error");
         }
     }
 
