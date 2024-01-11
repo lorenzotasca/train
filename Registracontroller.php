@@ -15,7 +15,7 @@
     }else{
         try{
 
-            $registra = "insert into user (name, username, password) values ('$name', '$username', '$password')";
+            $registra = "insert into Giocatore (name, username, password) values ('$name', '$username', '$password')";
             $connessione->query($registra);
             header("Location: Login.php?err=$err");  
         }   
