@@ -27,7 +27,7 @@
     }
 
     // Prepare the SQL statement
-    $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?)");
 
     // Bind the parameters
     $stmt->bind_param("ssssss", $id_giocatore, $surname, $name, $birthdate, $username, $password);
