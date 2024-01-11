@@ -7,6 +7,8 @@ CREATE TABLE Giocatore(
     standing_reach integer NOT NULL,
     altezza_senza_scarpe integer NOT NULL,
     apertura_alare integer NOT NULL,
+    username char(20) NOT NULL,
+    passwordCode char(10) NOT NULL,
     PRIMARY KEY (ID_giocatore)
 );
 
