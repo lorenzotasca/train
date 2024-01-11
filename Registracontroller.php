@@ -17,7 +17,7 @@
 
             $registra = "insert into Giocatore (nome, username, passwordCode) values ('$name', '$username', '$password')";
             $connessione->query($registra);
-            header("Location: Login.php?err=$err");  
+            header("Location: Login.php");  
         }   
         catch(Exception $e){
             $err = $e->getMessage();
