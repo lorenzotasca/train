@@ -23,7 +23,7 @@
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
         // Query the database for username and password
-        $result = mysqli_query($conn, "SELECT * FROM Giocatori.username WHERE username = '$username'");
+        $result = mysqli_query($conn, "SELECT * FROM Giocatore WHERE username = '$username'");
         if(mysqli_num_rows($result) > 0){
             $row = mysqli_fetch_assoc($result);
             if(password_verify($password, $row['password'])){
