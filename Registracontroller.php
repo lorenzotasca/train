@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     var_dump($_POST);
     $name = $_POST['name'];
     $username = $_POST['username'];
@@ -15,9 +17,12 @@
     }else{
         try{
 
-            $registra = "insert into Giocatore (nome, username, passwordCode) values ('$name', '$username', '$password')";
-            $connessione->query($registra);
-            header("Location: Login.php");  
+            $stmt = $connessione->prepare("INSERT INTO Giocatore (nome, username, passwordCode) VALUES (?, ?, ?)");
+            $stmt->bind_param("sss", $name, $username, $password);
+
+            $stmt->execute();
+
+            header("Location: Login.php");
         }   
         catch(Exception $e){
             $err = $e->getMessage();
@@ -29,5 +34,6 @@
         
         
     }
+    $stmt->close();
     $connessione->close();
 ?>
