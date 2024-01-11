@@ -23,10 +23,8 @@
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
         // Query the database for username and password
-        $result = mysqli_query($conn, "SELECT * FROM Giocatori WHERE username = '$username'");
-        echo "entratooooo";
+        $result = mysqli_query($conn, "SELECT * FROM Giocatori.username WHERE username = '$username'");
         if(mysqli_num_rows($result) > 0){
-            
             $row = mysqli_fetch_assoc($result);
             if(password_verify($password, $row['password'])){
                 // Password matches, so create the session
