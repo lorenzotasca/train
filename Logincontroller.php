@@ -39,9 +39,9 @@
                 $_SESSION['username'] = $row['username'];
                 // Redirect to profile page
                 header("Location: Profile.php");
-                exit(); // Importante per interrompere l'esecuzione dopo il redirect
+                exit(); // Interrompere l'esecuzione dopo il redirect
             }else {
-                echo "<p>Incorrect username or password.</p>";
+                echo "Incorrect username or password.";
             }
         }else {
             echo "Incorrect username or password.";
