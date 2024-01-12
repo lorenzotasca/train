@@ -31,7 +31,8 @@
 
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
-            if(password_verify($password, $row['passwordCode'])){
+            //if(password_verify($password, $row['passwordCode'])){
+            if(md5($password) == $row['passwordCode']){
                 // Password matches, so create the session
                 $_SESSION['id'] = $row['ID_giocatore'];
                 $_SESSION['username'] = $row['username'];
