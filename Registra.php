@@ -9,7 +9,7 @@
             <input type="text" name="birthdate" placeholder="Birthdate" required><br><br>
             <input type="text" name="username" placeholder="Username" required><br><br>
             <input type="text" name="password" placeholder="Password" required><br><br><br>
-            <input type="submit" name="login" placeholder="Login" required><br><br><br>
+            <input type="submit" name="login" value="Submit"><br><br><br>
         </form>
         <?php
             if(isset($_GET['err'])){
