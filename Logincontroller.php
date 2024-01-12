@@ -41,7 +41,7 @@
                 header("Location: Profile.php");
                 exit(); // Importante per interrompere l'esecuzione dopo il redirect
             }else {
-                echo "username or password.";
+                echo "<p>Incorrect username or password.</p>";
             }
         }else {
             echo "Incorrect username or password.";
