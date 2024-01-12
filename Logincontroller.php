@@ -35,7 +35,7 @@
             if(md5($password) == $row['passwordCode']){
                 // Password matches, so create the session
                 $_SESSION['id'] = $row['ID_giocatore'];
-                $_SESSION['name'] = $row['nome'];
+                $_SESSION['name'] = $row['nome']; // to get the name for Profile.php
                 $_SESSION['username'] = $row['username'];
                 // Redirect to profile page
                 header("Location: Profile.php");
