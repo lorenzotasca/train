@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $_SESSION['id'] = null;
-    $_SESSION['name'] = null;
+    $_SESSION['ID_giocatore'] = null;
+    $_SESSION['nome'] = null;
 
     session_destroy();
     
