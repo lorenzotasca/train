@@ -5,8 +5,9 @@
         header("Location: Login.php");
     }
     $id = $_SESSION['id'];
-    $name = $_SESSION['nome'];
-
+    $name = $_SESSION['name'];
+    
+    
 ?>
 <!DOCTYPE html>
 <html lang="es">
