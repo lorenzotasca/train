@@ -1,11 +1,11 @@
 <?php
 //avvia sessione
     session_start();
-    if(!isset($_SESSION['ID_giocatore'])){
+    if(!isset($_SESSION['id'])){
         header("Location: Login.php");
     }
-    $id = $_SESSION['ID_giocatore'];
-    $name = $_SESSION['nome'];
+    $id = $_SESSION['id'];
+    $name = $_SESSION['name'];
 
 ?>
 <!DOCTYPE html>
