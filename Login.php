@@ -11,9 +11,11 @@
             <input type="text" name="password" placeholder="Password" required><br><br><br>
             <input type="submit" name="login" value="Submit">
             <?php
-                if(isset($_SESSION['error'])) {
-                    echo "<p>".$_SESSION['error']."</p>";
-                    unset($_SESSION['error']); // Clear the error message
+                if(isset($_POST['login'])){
+                    if(isset($_SESSION['error'])) {
+                        echo "<p>".$_SESSION['error']."</p>";
+                        //unset($_SESSION['error']); // Clear the error message
+                    }
                 }
             ?>
         </form>
