@@ -41,7 +41,9 @@
                 header("Location: Profile.php");
                 exit(); // Interrompere l'esecuzione dopo il redirect
             }else {
-                echo "Incorrect username or password.";
+                $_SESSION['error'] = "Incorrect username or password.";
+                header("Location: login.php"); // Redirect back to login page
+                exit();
             }
         }else {
             echo "Incorrect username or password.";
