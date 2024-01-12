@@ -17,10 +17,10 @@
     }
 
     // Check if form is submitted
-    if(isset($_POST['submit'])){ // questo submit è il name del bottone ed è nel Login.php
+    if(isset($_POST['login'])){ // questo submit è il name del bottone ed è nel Login.php
         // Sanitize user input to prevent SQL injection
         $username = $connessione->real_escape_string($_POST['username']);
-        $password = $connessione->real_escape_string($_POST['password']);
+        $password = $connessione->real_escape_string($_POST['password']); // md5($_POST['password']); // Hash the password
 
         // Use prepared statements to prevent SQL injection
         $stmt = $connessione->prepare("SELECT * FROM Giocatore WHERE username = ?");
@@ -30,7 +30,7 @@
 
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
-            if(password_verify($password, $row['passwordCode'])){
+            if(password_verify($password, $row['passwordCode'])){ // hash_equals($row['passwordCode'], crypt($password, $row['passwordCode']))
                 // Password matches, so create the session
                 $_SESSION['id'] = $row['ID_giocatore'];
                 $_SESSION['username'] = $row['username'];
