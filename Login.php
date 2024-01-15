@@ -12,7 +12,14 @@
             <input type="submit" id="login" name="login" value="Submit" onClick="submitClick(e);">
             
         </form>
-        
+        <?php
+                if(isset($_POST['login'])){
+                    if(isset($_SESSION['error'])) {
+                        echo "<p>".$_SESSION['error']."</p>";
+                        //unset($_SESSION['error']); // Clear the error message
+                    }
+                }
+        ?>
         <script>
             document.addEventListener("DOMContentLoaded", function(event) {
                 console.log("DOM fully loaded and parsed");
@@ -22,7 +29,7 @@
 
             function submitClick(e) {
                 e.preventDefault();
-                //var t = document.getElementById("login");
+                var t = document.getElementById("login");
                 //t.innerHTML = "Hello World"; 
                 var message = document.createElement("span"); // Create a new paragraph element
                 message.textContent = " Hello World";// mettere riga da 13 a 20 
