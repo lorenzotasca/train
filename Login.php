@@ -9,7 +9,7 @@
         <form action="Logincontroller.php" method="post">
             <input type="text" name="username" placeholder="Username" required><br><br>
             <input type="text" name="password" placeholder="Password" required><br><br><br>
-            <input type="submit" id="login" name="login" value="Submit" onClick="submitClick(e);">
+            <input type="submit" id="login" name="login" value="Submit" onClick="submitClick(event);">
             
         </form>
         <script>
@@ -28,7 +28,7 @@
                 function submitClick(e) {
                     e.preventDefault();
                     var t = document.getElementById("login");
-                    t.innerHTML = "Hello World"; 
+                    t.innerHTML = <?php $_SESSION['error']; ?>
                     t.createElement("span");// write the message in the same line of the button
                     //message.textContent = "ciao"; 
                     t.parentNode.insertBefore(message, t.nextSibling);
