@@ -12,12 +12,15 @@
             <input type="submit" id="login" name="login" value="Submit" onClick="submitClick(e);">
             
         </form>
-        
+        <?php
+                if(isset($_POST['login'])){
+                    if(isset($_SESSION['error'])) {
+                        echo "<p>".$_SESSION['error']."</p>";
+                        //unset($_SESSION['error']); // Clear the error message
+                    }
+                }
+        ?>
         <script>
-            /*document.getElementById("login").addEventListener("click", function(event) {
-                event.preventDefault();
-                document.getElementById("message").textContent = "Button clicked!";
-            });*/
             document.addEventListener("DOMContentLoaded", function(event) {
                 console.log("DOM fully loaded and parsed");
                 var botton = document.getElementById("login");
@@ -27,10 +30,10 @@
             function submitClick(e) {
                 e.preventDefault();
                 var t = document.getElementById("login");
-                //t.innerHTML = "Hello World"; // mettere riga da 13 a 20 
-                var message = document.createElement("p"); // Create a new paragraph element
-                message.textContent = "Hello World"; // Set the text content
-                //t.parentNode.insertBefore(message, t.nextSibling); // Insert the message after the button
+                //t.innerHTML = "Hello World"; 
+                var message = document.createElement("span"); // Create a new paragraph element
+                message.textContent = "Hello World";// mettere riga da 13 a 20 
+                t.parentNode.insertBefore(message, t.nextSibling); // Insert the message after the button
             }
         </script>
         
