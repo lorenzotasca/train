@@ -24,7 +24,7 @@
                 e.preventDefault();
                 var t = document.getElementById("login");
                 //t.innerHTML = "Hello World"; 
-                var message = document.createElement("span"); // Create a new paragraph element
+                //var message = document.createElement("span"); // Create a new paragraph element
                 message.textContent = " Hello World";// mettere riga da 13 a 20 
                 t.parentNode.insertBefore(message, t.nextSibling); // Insert the message after the button
             }
