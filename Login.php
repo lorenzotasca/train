@@ -12,14 +12,7 @@
             <input type="submit" name="login" value="Submit" onClick="submitClick(e);">
             
         </form>
-        <?php
-                if(isset($_POST['login'])){
-                    if(isset($_SESSION['error'])) {
-                        echo "<p>".$_SESSION['error']."</p>";
-                        //unset($_SESSION['error']); // Clear the error message
-                    }
-                }
-        ?>
+        
         <script>
 
             document.addEventListener("DOMContentLoaded", function(event) {
