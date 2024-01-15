@@ -12,6 +12,14 @@
             <input type="submit" id="login" name="login" value="Submit" onClick="submitClick(e);">
             
         </form>
+        <?php
+                if(isset($_POST['login'])){
+                    if(isset($_SESSION['error'])) {
+                        echo "<span>".$_SESSION['error']."</span>";
+                        //unset($_SESSION['error']); // Clear the error message
+                    }
+                }
+        ?>
         
         
         <a href="Registra.php">Don't have an account yet?</a>
