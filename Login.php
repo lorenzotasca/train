@@ -12,14 +12,7 @@
             <input type="submit" id="login" name="login" value="Submit" onClick="submitClick(e);">
             
         </form>
-        <?php
-                if(isset($_POST['login'])){
-                    if(isset($_SESSION['error'])) {
-                        echo "<p>".$_SESSION['error']."</p>";
-                        //unset($_SESSION['error']); // Clear the error message
-                    }
-                }
-        ?>
+        
         <script>
             /*document.getElementById("login").addEventListener("click", function(event) {
                 event.preventDefault();
