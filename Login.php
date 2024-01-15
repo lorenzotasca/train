@@ -16,7 +16,7 @@
                 if(isset($_POST['login'])){
                     if(isset($_SESSION['error'])) {
                         echo "<span>".$_SESSION['error']."</span>";
-                        //unset($_SESSION['error']); // Clear the error message
+                        unset($_SESSION['error']); // Clear the error message
                     }
                 }
         ?>
