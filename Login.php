@@ -9,12 +9,22 @@
         <form action="Logincontroller.php" method="post">
             <input type="text" name="username" placeholder="Username" required><br><br>
             <input type="text" name="password" placeholder="Password" required><br><br><br>
-            <input type="submit" name="login" value="Submit" onClick="submitClick(e);">
+            <input type="submit" id="login" name="login" value="Submit" onClick="submitClick(e);">
             
         </form>
-        
+        <?php
+                if(isset($_POST['login'])){
+                    if(isset($_SESSION['error'])) {
+                        echo "<p>".$_SESSION['error']."</p>";
+                        //unset($_SESSION['error']); // Clear the error message
+                    }
+                }
+        ?>
         <script>
-
+            /*document.getElementById("login").addEventListener("click", function(event) {
+                event.preventDefault();
+                document.getElementById("message").textContent = "Button clicked!";
+            });*/
             document.addEventListener("DOMContentLoaded", function(event) {
                 console.log("DOM fully loaded and parsed");
                 var botton = document.getElementById("login");
