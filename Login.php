@@ -28,9 +28,9 @@
                 function submitClick(e) {
                     e.preventDefault();
                     var t = document.getElementById("login");
-                    //t.innerHTML = "Hello World"; 
-                    var message = document.createElement("span");// write the message in the same line of the button
-                    message.textContent = "ciao"; 
+                    t.innerHTML = "Hello World"; 
+                    t.createElement("span");// write the message in the same line of the button
+                    //message.textContent = "ciao"; 
                     t.parentNode.insertBefore(message, t.nextSibling);
                 }
             <?php
