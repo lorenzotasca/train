@@ -22,7 +22,7 @@
                 document.addEventListener("DOMContentLoaded", function(event) {
                     console.log("DOM fully loaded and parsed");
                     var botton = document.getElementById("login");
-                    document.getElementById("login").addEventListener("click", submitClick);
+                    document.addEventListener("click", submitClick);
                 });
 
                 function submitClick(e) {
@@ -30,7 +30,7 @@
                     var t = document.getElementById("login");
                     //t.innerHTML = "Hello World"; 
                     var message = document.createElement("span");// write the message in the same line of the button
-                    message.textContent = $_SESSION['error']; 
+                    message.textContent = "ciao"; 
                     t.parentNode.insertBefore(message, t.nextSibling);
                 }
             <?php
