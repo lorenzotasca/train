@@ -30,7 +30,7 @@
                 //t.innerHTML = "Hello World"; // mettere riga da 13 a 20 
                 var message = document.createElement("p"); // Create a new paragraph element
                 message.textContent = "Hello World"; // Set the text content
-                t.parentNode.insertBefore(message, t.nextSibling); // Insert the message after the button
+                //t.parentNode.insertBefore(message, t.nextSibling); // Insert the message after the button
             }
         </script>
         
