@@ -16,7 +16,7 @@
         <script>
             function submitClick(e) {
                 e.preventDefault();
-                var t = document.getElementById("username");
+                var t = document.getElementById("login");
                 t.innerHTML = "Hello World"; // mettere riga da 13 a 20 
             }
         </script>
