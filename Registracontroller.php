@@ -8,7 +8,7 @@
     
     $id_giocatore = $surname . $name . $birthdate;
     
-    /*
+    
     // Database connection parameters
     $servername = 'localhost';
     $dbusername = 'root';
@@ -17,9 +17,6 @@
 
     // Create a new mysqli object
     $connessione = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-    */
-
-    $connessione = new mysqli('localhost', 'root', '', 'progetto');
 
     // Check the connection
     if ($connessione->connect_error) {
