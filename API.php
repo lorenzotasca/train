@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 
 $res = $result->fetch_all();
 foreach ($res as $r) {
-    echo $r[0] . "<br>";
+    echo $r[2] . "<br>";
 }
 
 ?>
