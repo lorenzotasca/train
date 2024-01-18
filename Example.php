@@ -21,7 +21,9 @@
         document.addEventListener("DOMContentLoaded", function(event) {
             console.log("DOM fully loaded and parsed");
             var bottone = document.getElementById("bottone");
+            var delete = document.getElementById("delete");
             bottone.addEventListener("click", sulClick);
+            delete.addEventListener("click", PermanentlyDelete);
 
         });
 
@@ -50,11 +52,13 @@
             };
 
 
-
-
-
             return false;
         }
+
+        function PermanentlyDelete(e){
+            
+        }
+
 
     </script>
 

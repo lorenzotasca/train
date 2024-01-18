@@ -20,7 +20,7 @@ $result = $conn->query($sql);
 
 $res = $result->fetch_all();
 foreach ($res as $r) {
-    echo '<input type="submit" value="Delete" id="delete"/>' . " "; //onclick="eliminadefinitivamente();"
+    echo '<input type="submit" value="Delete" id="delete" onclick="PermanentlyDelete()/>' . " ";
     echo $r[2] . " " . $r[1] . "<br>"; // position 2 in the db is the name
 }
 
