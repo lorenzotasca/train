@@ -53,7 +53,7 @@
             return false;
         }
 
-
+        /*
         //rivedi da qui a riga 77
         document.addEventListener("DOMContentLoaded", function(event) {
             console.log("DOM fully loaded and parsed");
@@ -75,6 +75,7 @@
 
 
         }
+        */
 
 
     </script>
