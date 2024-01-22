@@ -54,10 +54,23 @@
         }
 
 
+         //on document ready
+         document.addEventListener("DOMContentLoaded", function(event) {
+            console.log("DOM fully loaded and parsed");
+            var bottone = document.getElementById("delete");
+            bottone.addEventListener("click", PermanentlyDelete);
+
+        });
+
         function PermanentlyDelete(id) {
+            e.preventDefault();
+
+            console.log(id);
+
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", 'APIDelete.php', true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.open("POST", '/www/APIDelete.php?id=', id);
+            //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            /*
             xhr.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                     console.log(this.responseText);
@@ -66,15 +79,29 @@
                     console.log(this.responseText);
                 }
             }
-            xhr.send("id=" + id);
+            */
+            xhr.onload = function() {
+                if (xhr.status != 200) { // analyze HTTP status of the response
+                    alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+                } else { // show the result
+                    console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
+                    //var res = JSON.parse(xhr.response);
+                    res = xhr.response;
+                    console.log(res);
+                    var t = document.getElementById("tabella");
+                    t.innerHTML = res;
+                    
+                }
+            };
+            xhr.send();
         }
 
-        document.querySelectorAll('.delete-button').forEach(function(button) {
+        /*document.querySelectorAll('.delete-button').forEach(function(button) {
             button.addEventListener('click', function() {
                 var id = this.getAttribute('data-id');
                 PermanentlyDelete(id);
             });
-        });
+        });*/
 
 
     </script>
