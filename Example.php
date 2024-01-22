@@ -78,7 +78,32 @@
         */
 
 
+
+        $('.delete-button').click(function() {
+            var id = $(this).data('id');
+            $.ajax({
+                url: 'Example.php',
+                type: 'POST',
+                data: { id: id },
+                success: function(response) {
+                    // Handle the response from the server
+                }
+            });
+        });
+
+
     </script>
+
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $id = $_POST['id'];
+        PermanentlyDelete($id);
+    }
+
+    function PermanentlyDelete($id) {
+        echo $id . "ciao";
+    }
+    ?>
 
 </body>
 
