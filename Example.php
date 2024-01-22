@@ -78,30 +78,8 @@
         */
 
 
-
-        const btns = document.querySelectorAll('.delete-button');
-        btns.forEach(btn => btn.onClick(function() {
-            var id = this.dataset.id;
-            fetch({
-                url: 'Example.php',
-                type: 'POST',
-                data: { id: id }
-            });
-        }));
-
-
     </script>
 
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $id = $_POST['id'];
-        PermanentlyDelete($id);
-    }
-
-    function PermanentlyDelete($id) {
-        echo $id . "ciao";
-    }
-    ?>
 
 </body>
 
