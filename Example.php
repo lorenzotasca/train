@@ -34,7 +34,7 @@
             let xhr = new XMLHttpRequest();
             xhr.open('GET', '/www/API.php?t=' + contenuto);
             xhr.send();
-
+            
             xhr.onload = function() {
                 if (xhr.status != 200) { // analyze HTTP status of the response
                     alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
@@ -76,6 +76,25 @@
 
         }
         */
+
+        function PermanentlyDelete(id) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", 'APIDelete.php', true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    console.log(this.responseText);
+                }
+            }
+            xhr.send("id=" + id);
+        }
+
+        document.querySelectorAll('.delete-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var id = this.getAttribute('data-id');
+                PermanentlyDelete(id);
+            });
+        });
 
 
     </script>
