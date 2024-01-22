@@ -79,17 +79,15 @@
 
 
 
-        $('.delete-button').click(function() {
-            var id = $(this).data('id');
-            $.ajax({
+        const btns = document.querySelectorAll('.delete-button');
+        btns.forEach(btn => btn.onClick(function() {
+            var id = this.dataset.id;
+            fetch({
                 url: 'Example.php',
                 type: 'POST',
-                data: { id: id },
-                success: function(response) {
-                    // Handle the response from the server
-                }
+                data: { id: id }
             });
-        });
+        }));
 
 
     </script>
