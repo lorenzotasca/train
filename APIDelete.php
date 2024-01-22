@@ -23,4 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "No ID provided";
     }
 }
+else{
+    echo "No POST request";
+}
 ?>
