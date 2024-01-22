@@ -53,29 +53,6 @@
             return false;
         }
 
-        /*
-        //rivedi da qui a riga 77
-        document.addEventListener("DOMContentLoaded", function(event) {
-            console.log("DOM fully loaded and parsed");
-            var delete = document.getElementById("delete");
-            bottone.addEventListener("click", PermanentlyDelete);
-
-        });
-
-        function PermanentlyDelete(e){
-            e.preventDefault();
-
-            let xhr = new XMLHttpRequest();
-
-            xhr.open('POST', 'Example.php', true);
-
-
-
-            xhr.send();
-
-
-        }
-        */
 
         function PermanentlyDelete(id) {
             var xhr = new XMLHttpRequest();
@@ -83,6 +60,9 @@
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
+                    console.log(this.responseText);
+                }
+                else{
                     console.log(this.responseText);
                 }
             }
