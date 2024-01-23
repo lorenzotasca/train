@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f2f2f2;
+            background: linear-gradient(45deg, #a6c0fe, #f68084);
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,18 +19,21 @@
         .login-container {
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
             width: 300px;
             text-align: center;
         }
 
         .login-container h2 {
             color: #333333;
+            margin: 0;
+            padding: 20px 0;
+            background: linear-gradient(45deg, #f68084, #a6c0fe);
         }
 
         .login-form {
-            margin-top: 20px;
+            padding: 20px;
         }
 
         .form-group {
@@ -48,19 +51,26 @@
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
+            border: none;
+            border-bottom: 2px solid #f68084;
+            outline: none;
             font-size: 14px;
+            transition: border-bottom 0.3s;
+        }
+
+        .form-group input:focus {
+            border-bottom: 2px solid #a6c0fe;
         }
 
         .form-group input[type="submit"] {
-            background-color: #4CAF50;
+            background: linear-gradient(45deg, #f68084, #a6c0fe);
             color: white;
             cursor: pointer;
+            transition: background 0.3s;
         }
 
         .form-group input[type="submit"]:hover {
-            background-color: #45a049;
+            background: linear-gradient(45deg, #a6c0fe, #f68084);
         }
 
         .form-group input[type="text"],
@@ -72,6 +82,8 @@
             color: #3498db;
             text-decoration: none;
             font-size: 12px;
+            display: block;
+            margin-top: 10px;
         }
 
         .form-group a:hover {
