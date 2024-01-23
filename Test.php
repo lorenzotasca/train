@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +9,8 @@
     <title>Register</title>
     <style>
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f8f8f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f8f8;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,38 +19,39 @@
             height: 100vh;
         }
 
-        .signup-container {
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .register-container {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 400px;
             text-align: center;
-            color: #333333;
         }
 
-        .signup-container h2 {
-            color: #007bff;
+        .register-container h2 {
+            color: #333333;
             margin: 0;
             padding: 30px 0;
+            background: linear-gradient(to right, #11998e, #38ef7d);
             font-size: 28px;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #ffffff;
         }
 
-        .signup-form {
+        .register-form {
             padding: 30px;
         }
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group label {
             display: block;
             font-size: 16px;
             color: #555555;
-            margin-bottom: 8px;
-            text-align: left;
+            margin-bottom: 10px;
         }
 
         .form-group input {
@@ -55,29 +59,28 @@
             padding: 12px;
             box-sizing: border-box;
             border: 1px solid #cccccc;
-            border-radius: 4px;
-            font-size: 14px;
-            color: #333333;
+            border-radius: 8px;
+            font-size: 16px;
             transition: border-color 0.3s;
         }
 
         .form-group input:focus {
-            border-color: #007bff;
+            border-color: #38ef7d;
         }
 
         .form-group input[type="submit"] {
-            background-color: #007bff;
-            color: #ffffff;
+            background: linear-gradient(to right, #38ef7d, #11998e);
+            color: white;
             cursor: pointer;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             padding: 12px 20px;
-            font-size: 16px;
+            font-size: 18px;
             transition: background 0.3s;
         }
 
         .form-group input[type="submit"]:hover {
-            background-color: #0056b3;
+            background: linear-gradient(to right, #11998e, #38ef7d);
         }
 
         .form-group input[type="text"],
@@ -87,11 +90,13 @@
         }
 
         .form-group a {
-            color: #007bff;
+            color: #38ef7d;
             text-decoration: none;
             font-size: 14px;
-            display: block;
-            margin-top: 15px;
+            position: absolute;
+            bottom: -30px;
+            right: 0;
+            margin-top: 20px;
         }
 
         .form-group a:hover {
@@ -101,10 +106,10 @@
 </head>
 <body>
 
-<div class="signup-container">
+<div class="register-container">
     <h2>Register</h2>
     
-    <form class="signup-form" action="#" method="post">
+    <form class="register-form" action="#" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -131,7 +136,7 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Register" name="signup">
+            <input type="submit" value="Register" name="register" id="register" onClick="submitClick(event);">
         </div>
 
         <div class="form-group">
