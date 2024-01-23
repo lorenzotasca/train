@@ -23,7 +23,7 @@
             overflow: hidden;
             width: 400px;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 120px;
             
         }
 
