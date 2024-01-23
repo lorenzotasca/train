@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #ec008c, #fc6767);
+            background: #f5f5f5;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,19 +17,21 @@
         }
 
         .login-container {
-            background: linear-gradient(45deg, #3498db, #8e44ad);
+            background: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            width: 300px;
+            width: 400px;
             text-align: center;
-            color: white;
         }
 
         .login-container h2 {
+            color: #333333;
             margin: 0;
             padding: 20px 0;
+            background: linear-gradient(to right, #3498db, #6c5b7b, #b33939);
             font-size: 24px;
+            letter-spacing: 2px;
         }
 
         .login-form {
@@ -43,6 +45,7 @@
         .form-group label {
             display: block;
             font-size: 14px;
+            color: #666666;
             margin-bottom: 5px;
         }
 
@@ -50,28 +53,25 @@
             width: 100%;
             padding: 10px;
             box-sizing: border-box;
-            border: none;
-            border-bottom: 2px solid #ec008c;
-            outline: none;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
             font-size: 14px;
-            color: white;
-            background-color: transparent;
-            transition: border-bottom 0.3s;
+            transition: border-color 0.3s;
         }
 
         .form-group input:focus {
-            border-bottom: 2px solid #fc6767;
+            border-color: #3498db;
         }
 
         .form-group input[type="submit"] {
-            background: linear-gradient(45deg, #fc6767, #ec008c);
+            background: linear-gradient(to right, #3498db, #6c5b7b, #b33939);
             color: white;
             cursor: pointer;
             transition: background 0.3s;
         }
 
         .form-group input[type="submit"]:hover {
-            background: linear-gradient(45deg, #ec008c, #fc6767);
+            background: linear-gradient(to right, #b33939, #6c5b7b, #3498db);
         }
 
         .form-group input[type="text"],
@@ -83,8 +83,6 @@
             color: #3498db;
             text-decoration: none;
             font-size: 12px;
-            display: block;
-            margin-top: 10px;
         }
 
         .form-group a:hover {
