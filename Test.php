@@ -3,40 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrazione Celestiale</title>
+    <title>Register</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f8f8;
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            color: #ffffff;
         }
 
-        .registration-container {
-            background: rgba(255, 255, 255, 0.9);
+        .register-container {
+            background: #ffffff;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 400px;
             text-align: center;
+            margin-top: 50px; /* Aggiunto margine superiore */
         }
 
-        .registration-container h2 {
-            color: #2a5298;
+        .register-container h2 {
+            color: #333333;
             margin: 0;
             padding: 30px 0;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
+            background: linear-gradient(to right, #11998e, #38ef7d);
             font-size: 28px;
             letter-spacing: 2px;
             border-bottom: 2px solid #ffffff;
         }
 
-        .registration-form {
+        .register-form {
             padding: 30px;
         }
 
@@ -63,11 +63,11 @@
         }
 
         .form-group input:focus {
-            border-color: #2a5298;
+            border-color: #38ef7d;
         }
 
         .form-group input[type="submit"] {
-            background: linear-gradient(to right, #2a5298, #1e3c72);
+            background: linear-gradient(to right, #38ef7d, #11998e);
             color: white;
             cursor: pointer;
             border: none;
@@ -78,7 +78,7 @@
         }
 
         .form-group input[type="submit"]:hover {
-            background: linear-gradient(to right, #1e3c72, #2a5298);
+            background: linear-gradient(to right, #11998e, #38ef7d);
         }
 
         .form-group input[type="text"],
@@ -88,11 +88,13 @@
         }
 
         .form-group a {
-            color: #2a5298;
+            color: #38ef7d;
             text-decoration: none;
             font-size: 14px;
+            position: absolute;
+            bottom: -30px;
+            right: 0;
             margin-top: 20px;
-            display: block;
         }
 
         .form-group a:hover {
@@ -102,41 +104,41 @@
 </head>
 <body>
 
-<div class="registration-container">
-    <h2>Registrazione Celestiale</h2>
+<div class="register-container">
+    <h2>Register</h2>
     
-    <form class="registration-form" action="#" method="post">
+    <form class="register-form" action="#" method="post">
         <div class="form-group">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
         </div>
 
         <div class="form-group">
-            <label for="cognome">Cognome</label>
-            <input type="text" id="cognome" name="cognome" placeholder="Il tuo cognome" required>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname" placeholder="Your surname" required>
         </div>
 
         <div class="form-group">
-            <label for="dataNascita">Data di Nascita</label>
-            <input type="date" id="dataNascita" name="dataNascita" required>
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" name="birthdate" required>
         </div>
 
         <div class="form-group">
-            <label for="username">Nome Utente</label>
-            <input type="text" id="username" name="username" placeholder="Scegli un nome utente" required>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Choose a username" required>
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Scegli una password" required>
+            <input type="password" id="password" name="password" placeholder="Choose a password" required>
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Registrati" name="register" id="register" onClick="submitClick(event);">
+            <input type="submit" value="Register" name="register" id="register" onClick="submitClick(event);">
         </div>
 
         <div class="form-group">
-            <a href="#">Già registrato? Accedi qui</a>
+            <a href="#">Already have an account? Log in</a>
         </div>
     </form>
 </div>
