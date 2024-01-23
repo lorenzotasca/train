@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fancy Login</title>
+    <title>Luxurious Login</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #2b2b2b;
+            font-family: 'Helvetica Neue', sans-serif;
+            background: #f5f5f5;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,22 +17,22 @@
         }
 
         .login-container {
-            background: linear-gradient(135deg, #004e92, #000428);
+            background: #ffffff;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 400px;
             text-align: center;
-            color: #fff;
+            color: #333333;
         }
 
         .login-container h2 {
-            color: #ffac41;
+            color: #007bff;
             margin: 0;
             padding: 30px 0;
             font-size: 32px;
             letter-spacing: 2px;
-            border-bottom: 2px solid #ffac41;
+            border-bottom: 2px solid #007bff;
         }
 
         .login-form {
@@ -46,40 +46,40 @@
         .form-group label {
             display: block;
             font-size: 18px;
-            color: #ffac41;
+            color: #555555;
             margin-bottom: 10px;
         }
 
         .form-group input {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             box-sizing: border-box;
-            border: 2px solid #ffac41;
+            border: 2px solid #cccccc;
             border-radius: 8px;
             font-size: 16px;
-            color: #2b2b2b;
-            background-color: #fff;
+            color: #333333;
+            background-color: #f9f9f9;
             transition: border-color 0.3s, background-color 0.3s;
         }
 
         .form-group input:focus {
-            border-color: #0077cc;
-            background-color: #edf5ff;
+            border-color: #007bff;
+            background-color: #ffffff;
         }
 
         .form-group input[type="submit"] {
-            background: linear-gradient(135deg, #0077cc, #0057a5);
+            background: #007bff;
             color: white;
             cursor: pointer;
             border: none;
             border-radius: 8px;
-            padding: 12px 20px;
+            padding: 15px 20px;
             font-size: 18px;
             transition: background 0.3s;
         }
 
         .form-group input[type="submit"]:hover {
-            background: linear-gradient(135deg, #0057a5, #0077cc);
+            background: #0056b3;
         }
 
         .form-group input[type="text"],
@@ -88,7 +88,7 @@
         }
 
         .form-group a {
-            color: #ffac41;
+            color: #007bff;
             text-decoration: none;
             font-size: 14px;
             display: block;
@@ -103,7 +103,7 @@
 <body>
 
 <div class="login-container">
-    <h2>Extravagant Login</h2>
+    <h2>Welcome Back</h2>
     
     <form class="login-form" action="#" method="post">
         <div class="form-group">
