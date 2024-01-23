@@ -91,7 +91,10 @@
             text-decoration: none;
             font-size: 14px;
             display: block;
-            margin-top: 50px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin-top: 15px;
         }
 
         .form-group a:hover {
