@@ -91,7 +91,7 @@
             text-decoration: none;
             font-size: 14px;
             display: block;
-            margin-top: 30px;
+            margin-top: 50px;
         }
 
         .form-group a:hover {
