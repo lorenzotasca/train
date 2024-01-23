@@ -87,11 +87,11 @@
         }
 
         .form-group a {
-            color: red;
+            color: #38ef7d;
             text-decoration: none;
             font-size: 14px;
             display: block;
-            margin-top: 15px;
+            margin-top: 30px;
         }
 
         .form-group a:hover {
