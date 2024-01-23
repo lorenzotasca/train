@@ -92,7 +92,7 @@
             text-decoration: none;
             font-size: 14px;
             position: absolute;
-            bottom: 10px;
+            bottom: -10px;
             right: 0;
             margin-top: 15px;
         }
