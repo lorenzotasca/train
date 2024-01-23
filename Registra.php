@@ -23,8 +23,8 @@
             overflow: hidden;
             width: 400px;
             text-align: center;
-            margin-top: 120px;
-            margin-bottom: 80px;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
 
         .register-container h2 {
