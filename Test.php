@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrazione Stellare</title>
+    <title>Registrazione Celestiale</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             height: 100vh;
+            color: #ffffff;
         }
 
         .registration-container {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             width: 400px;
             text-align: center;
         }
 
         .registration-container h2 {
-            color: #333333;
+            color: #2a5298;
             margin: 0;
             padding: 30px 0;
-            background: linear-gradient(to right, #11998e, #38ef7d);
+            background: linear-gradient(to right, #1e3c72, #2a5298);
             font-size: 28px;
             letter-spacing: 2px;
             border-bottom: 2px solid #ffffff;
@@ -62,11 +63,11 @@
         }
 
         .form-group input:focus {
-            border-color: #38ef7d;
+            border-color: #2a5298;
         }
 
         .form-group input[type="submit"] {
-            background: linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(to right, #2a5298, #1e3c72);
             color: white;
             cursor: pointer;
             border: none;
@@ -77,7 +78,7 @@
         }
 
         .form-group input[type="submit"]:hover {
-            background: linear-gradient(to right, #11998e, #38ef7d);
+            background: linear-gradient(to right, #1e3c72, #2a5298);
         }
 
         .form-group input[type="text"],
@@ -87,7 +88,7 @@
         }
 
         .form-group a {
-            color: #38ef7d;
+            color: #2a5298;
             text-decoration: none;
             font-size: 14px;
             margin-top: 20px;
@@ -102,7 +103,7 @@
 <body>
 
 <div class="registration-container">
-    <h2>Registrazione Stellare</h2>
+    <h2>Registrazione Celestiale</h2>
     
     <form class="registration-form" action="#" method="post">
         <div class="form-group">
