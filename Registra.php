@@ -13,7 +13,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
 
         .register-container {
@@ -23,8 +23,7 @@
             overflow: hidden;
             width: 400px;
             text-align: center;
-            margin-top: 120px;
-            margin-bottom: 120px;
+            margin: 120px auto;
         }
 
         .register-container h2 {
