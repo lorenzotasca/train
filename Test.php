@@ -107,7 +107,7 @@
 <div class="register-container">
     <h2>Register</h2>
     
-    <form class="register-form" action="#" method="post">
+    <form class="register-form" action="Registracontroller.php" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -141,6 +141,13 @@
             <a href="#">Already have an account? Log in</a>
         </div>
     </form>
+
+    <?php
+        if(isset($_GET['err'])){
+            echo $_GET['err'];
+        }
+    ?>
+
 </div>
 
 </body>
