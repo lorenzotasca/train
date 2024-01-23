@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Join Us</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', sans-serif;
-            background: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
+            background: #f8f8f8;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,22 +17,22 @@
         }
 
         .signup-container {
-            background: #ffffff;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             overflow: hidden;
             width: 400px;
             text-align: center;
-            color: #333333;
+            color: #fff;
         }
 
         .signup-container h2 {
-            color: #007bff;
+            color: #fff;
             margin: 0;
             padding: 30px 0;
             font-size: 32px;
             letter-spacing: 2px;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid #fff;
         }
 
         .signup-form {
@@ -46,7 +46,7 @@
         .form-group label {
             display: block;
             font-size: 18px;
-            color: #555555;
+            color: #fff;
             margin-bottom: 10px;
         }
 
@@ -54,22 +54,21 @@
             width: 100%;
             padding: 15px;
             box-sizing: border-box;
-            border: 2px solid #cccccc;
-            border-radius: 8px;
+            border: none;
+            border-bottom: 2px solid #fff;
+            background-color: transparent;
             font-size: 16px;
-            color: #333333;
-            background-color: #f9f9f9;
-            transition: border-color 0.3s, background-color 0.3s;
+            color: #fff;
+            transition: border-color 0.3s;
         }
 
         .form-group input:focus {
-            border-color: #007bff;
-            background-color: #ffffff;
+            border-color: #feb47b;
         }
 
         .form-group input[type="submit"] {
-            background: #007bff;
-            color: white;
+            background: #feb47b;
+            color: #fff;
             cursor: pointer;
             border: none;
             border-radius: 8px;
@@ -79,7 +78,7 @@
         }
 
         .form-group input[type="submit"]:hover {
-            background: #0056b3;
+            background: #ff7e5f;
         }
 
         .form-group input[type="text"],
@@ -89,7 +88,7 @@
         }
 
         .form-group a {
-            color: #007bff;
+            color: #fff;
             text-decoration: none;
             font-size: 14px;
             display: block;
@@ -104,7 +103,7 @@
 <body>
 
 <div class="signup-container">
-    <h2>Sign Up</h2>
+    <h2>Join Us</h2>
     
     <form class="signup-form" action="#" method="post">
         <div class="form-group">
@@ -133,7 +132,7 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Sign Up" name="signup">
+            <input type="submit" value="Join Now" name="signup">
         </div>
 
         <div class="form-group">
