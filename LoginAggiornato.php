@@ -43,6 +43,7 @@
 
         .form-group {
             margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group label {
@@ -90,7 +91,6 @@
             color: #38ef7d;
             text-decoration: none;
             font-size: 14px;
-            display: block;
             position: absolute;
             bottom: 0;
             right: 0;
