@@ -94,7 +94,7 @@
             position: absolute;
             bottom: -30px;
             right: 0;
-            margin-top: 15px;
+            margin-top: 20px;
         }
 
         .form-group a:hover {
