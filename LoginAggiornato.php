@@ -1,15 +1,13 @@
-<?php
-    session_start();
-?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Fancy Login</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f8f8;
+            background: #2b2b2b;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,22 +17,22 @@
         }
 
         .login-container {
-            background: #ffffff;
+            background: linear-gradient(135deg, #004e92, #000428);
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             overflow: hidden;
             width: 400px;
             text-align: center;
+            color: #fff;
         }
 
         .login-container h2 {
-            color: #333333;
+            color: #ffac41;
             margin: 0;
             padding: 30px 0;
-            background: linear-gradient(to right, #11998e, #38ef7d);
-            font-size: 28px;
+            font-size: 32px;
             letter-spacing: 2px;
-            border-bottom: 2px solid #ffffff;
+            border-bottom: 2px solid #ffac41;
         }
 
         .login-form {
@@ -43,13 +41,12 @@
 
         .form-group {
             margin-bottom: 20px;
-            position: relative;
         }
 
         .form-group label {
             display: block;
-            font-size: 16px;
-            color: #555555;
+            font-size: 18px;
+            color: #ffac41;
             margin-bottom: 10px;
         }
 
@@ -57,18 +54,21 @@
             width: 100%;
             padding: 12px;
             box-sizing: border-box;
-            border: 1px solid #cccccc;
+            border: 2px solid #ffac41;
             border-radius: 8px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            color: #2b2b2b;
+            background-color: #fff;
+            transition: border-color 0.3s, background-color 0.3s;
         }
 
         .form-group input:focus {
-            border-color: #38ef7d;
+            border-color: #0077cc;
+            background-color: #edf5ff;
         }
 
         .form-group input[type="submit"] {
-            background: linear-gradient(to right, #38ef7d, #11998e);
+            background: linear-gradient(135deg, #0077cc, #0057a5);
             color: white;
             cursor: pointer;
             border: none;
@@ -79,7 +79,7 @@
         }
 
         .form-group input[type="submit"]:hover {
-            background: linear-gradient(to right, #11998e, #38ef7d);
+            background: linear-gradient(135deg, #0057a5, #0077cc);
         }
 
         .form-group input[type="text"],
@@ -88,13 +88,11 @@
         }
 
         .form-group a {
-            color: #38ef7d;
+            color: #ffac41;
             text-decoration: none;
             font-size: 14px;
-            position: absolute;
-            bottom: -30px;
-            right: 0;
-            margin-top: 20px;
+            display: block;
+            margin-top: 15px;
         }
 
         .form-group a:hover {
@@ -105,56 +103,28 @@
 <body>
 
 <div class="login-container">
-    <h2>Login</h2>
+    <h2>Extravagant Login</h2>
     
-    <form class="login-form" action="Logincontroller.php" method="post">
+    <form class="login-form" action="#" method="post">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Login" name="login" id="login" onClick="submitClick(event);">
+            <input type="submit" value="Login" name="login">
         </div>
 
         <div class="form-group">
-            <a href="Registra.php">Don't have an account yet?</a>
+            <a href="#">Forgot password?</a>
         </div>
-        <!--
-            <div class="form-group">
-                <a href="#">Forgot password?</a>
-            </div>
-        -->
     </form>
 </div>
-
-<script>
-    <?php
-        if(isset($_POST['login'])){
-            if(isset($_SESSION['error'])) {
-    ?>
-                document.addEventListener("DOMContentLoaded", function(event) {
-                    console.log("DOM fully loaded and parsed");
-                    var button = document.querySelector("input[type=submit]");
-                    document.addEventListener("click", submitClick);
-
-                    function submitClick(e) {
-                        e.preventDefault();
-                        var message = document.createElement("span");
-                        message.textContent = "<?php echo $_SESSION['error']; ?>";
-                        button.parentNode.insertBefore(message, button.nextSibling);
-                    }
-                });
-    <?php
-            }
-        }
-    ?>
-</script>
 
 </body>
 </html>
