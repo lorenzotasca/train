@@ -23,8 +23,8 @@
             overflow: hidden;
             width: 400px;
             text-align: center;
-            margin-top: 80px; /* Aumentato il margine superiore */
-        }
+            margin-top: 120px;
+            margin-bottom: 80px;
 
         .register-container h2 {
             color: #333333;
