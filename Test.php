@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +23,7 @@
             overflow: hidden;
             width: 400px;
             text-align: center;
+            margin-top: 50px; /* Aggiunto margine superiore */
         }
 
         .register-container h2 {
