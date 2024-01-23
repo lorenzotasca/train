@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us</title>
+    <title>Register</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background: #f8f8f8;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
             display: flex;
@@ -17,22 +17,21 @@
         }
 
         .signup-container {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 400px;
             text-align: center;
-            color: #fff;
+            color: #333333;
         }
 
         .signup-container h2 {
-            color: #fff;
+            color: #007bff;
             margin: 0;
             padding: 30px 0;
-            font-size: 32px;
-            letter-spacing: 2px;
-            border-bottom: 2px solid #fff;
+            font-size: 28px;
+            letter-spacing: 1px;
         }
 
         .signup-form {
@@ -45,40 +44,40 @@
 
         .form-group label {
             display: block;
-            font-size: 18px;
-            color: #fff;
-            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555555;
+            margin-bottom: 8px;
+            text-align: left;
         }
 
         .form-group input {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             box-sizing: border-box;
-            border: none;
-            border-bottom: 2px solid #fff;
-            background-color: transparent;
-            font-size: 16px;
-            color: #fff;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #333333;
             transition: border-color 0.3s;
         }
 
         .form-group input:focus {
-            border-color: #feb47b;
+            border-color: #007bff;
         }
 
         .form-group input[type="submit"] {
-            background: #feb47b;
-            color: #fff;
+            background-color: #007bff;
+            color: #ffffff;
             cursor: pointer;
             border: none;
-            border-radius: 8px;
-            padding: 15px 20px;
-            font-size: 18px;
+            border-radius: 4px;
+            padding: 12px 20px;
+            font-size: 16px;
             transition: background 0.3s;
         }
 
         .form-group input[type="submit"]:hover {
-            background: #ff7e5f;
+            background-color: #0056b3;
         }
 
         .form-group input[type="text"],
@@ -88,7 +87,7 @@
         }
 
         .form-group a {
-            color: #fff;
+            color: #007bff;
             text-decoration: none;
             font-size: 14px;
             display: block;
@@ -103,17 +102,17 @@
 <body>
 
 <div class="signup-container">
-    <h2>Join Us</h2>
+    <h2>Register</h2>
     
     <form class="signup-form" action="#" method="post">
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
         </div>
 
         <div class="form-group">
             <label for="surname">Surname</label>
-            <input type="text" id="surname" name="surname" placeholder="Enter your surname" required>
+            <input type="text" id="surname" name="surname" placeholder="Your surname" required>
         </div>
 
         <div class="form-group">
@@ -132,7 +131,7 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Join Now" name="signup">
+            <input type="submit" value="Register" name="signup">
         </div>
 
         <div class="form-group">
