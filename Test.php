@@ -6,8 +6,8 @@
     <title>Register</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f8f8;
             margin: 0;
             padding: 0;
             display: flex;
