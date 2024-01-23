@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Welcome to the Cosmic Realm of Authentication!</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f8f8;
+            font-family: 'Galactic Sans', 'Helvetica', sans-serif;
+            background: #000000;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,27 +16,30 @@
             height: 100vh;
         }
 
-        .register-container {
-            background: #ffffff;
+        .cosmic-container {
+            background: url('https://i.imgur.com/9DZ2M6Z.jpg') no-repeat center center fixed;
+            background-size: cover;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
             overflow: hidden;
-            width: 400px;
+            width: 600px;
             text-align: center;
-            margin-top: 50px; /* Aggiunto margine superiore */
+            color: #ffffff;
+            padding: 50px;
+            border: 2px solid #ffffff;
+            position: relative;
         }
 
-        .register-container h2 {
-            color: #333333;
+        .cosmic-container h2 {
+            color: #ff9900;
             margin: 0;
             padding: 30px 0;
-            background: linear-gradient(to right, #11998e, #38ef7d);
-            font-size: 28px;
+            font-size: 42px;
             letter-spacing: 2px;
-            border-bottom: 2px solid #ffffff;
+            border-bottom: 2px solid #ff9900;
         }
 
-        .register-form {
+        .cosmic-form {
             padding: 30px;
         }
 
@@ -47,50 +50,52 @@
 
         .form-group label {
             display: block;
-            font-size: 16px;
-            color: #555555;
+            font-size: 20px;
+            color: #ffffff;
             margin-bottom: 10px;
         }
 
         .form-group input {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             box-sizing: border-box;
-            border: 1px solid #cccccc;
+            border: 2px solid #ff9900;
             border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            transition: border-color 0.3s, background 0.3s;
         }
 
         .form-group input:focus {
-            border-color: #38ef7d;
+            border-color: #ffcc00;
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .form-group input[type="submit"] {
-            background: linear-gradient(to right, #38ef7d, #11998e);
-            color: white;
+            background: #ff9900;
+            color: #000000;
             cursor: pointer;
             border: none;
             border-radius: 8px;
-            padding: 12px 20px;
-            font-size: 18px;
+            padding: 15px 20px;
+            font-size: 24px;
             transition: background 0.3s;
         }
 
         .form-group input[type="submit"]:hover {
-            background: linear-gradient(to right, #11998e, #38ef7d);
+            background: #ffcc00;
         }
 
         .form-group input[type="text"],
-        .form-group input[type="password"],
-        .form-group input[type="date"] {
+        .form-group input[type="password"] {
             margin-top: 10px;
         }
 
         .form-group a {
-            color: #38ef7d;
+            color: #ff9900;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 20px;
             position: absolute;
             bottom: -30px;
             right: 0;
@@ -104,41 +109,26 @@
 </head>
 <body>
 
-<div class="register-container">
-    <h2>Register</h2>
+<div class="cosmic-container">
+    <h2>Welcome to the Cosmic Realm of Authentication!</h2>
     
-    <form class="register-form" action="#" method="post">
+    <form class="cosmic-form" action="#" method="post">
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <label for="star-username">Starship Username</label>
+            <input type="text" id="star-username" name="star-username" placeholder="Enter your stellar username" required>
         </div>
 
         <div class="form-group">
-            <label for="surname">Surname</label>
-            <input type="text" id="surname" name="surname" placeholder="Your surname" required>
+            <label for="star-password">Interstellar Passcode</label>
+            <input type="password" id="star-password" name="star-password" placeholder="Enter your celestial passcode" required>
         </div>
 
         <div class="form-group">
-            <label for="birthdate">Birthdate</label>
-            <input type="date" id="birthdate" name="birthdate" required>
+            <input type="submit" value="Embark on the Cosmic Journey" name="cosmic-login" id="cosmic-login" onClick="submitClick(event);">
         </div>
 
         <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" placeholder="Choose a username" required>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Choose a password" required>
-        </div>
-
-        <div class="form-group">
-            <input type="submit" value="Register" name="register" id="register" onClick="submitClick(event);">
-        </div>
-
-        <div class="form-group">
-            <a href="#">Already have an account? Log in</a>
+            <a href="#">Not part of the Galactic Alliance yet? Join now!</a>
         </div>
     </form>
 </div>
