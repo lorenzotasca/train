@@ -138,7 +138,7 @@
         </div>
 
         <div class="form-group">
-            <a href="#">Already have an account? Log in</a>
+            <a href="Login.php">Already have an account? Log in</a>
         </div>
     </form>
 
