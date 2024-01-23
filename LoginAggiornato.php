@@ -120,8 +120,13 @@
         </div>
 
         <div class="form-group">
-            <a href="#">Forgot password?</a>
+            <a href="Registra.php">Don't have an account yet?</a>
         </div>
+        <!--
+            <div class="form-group">
+                <a href="#">Forgot password?</a>
+            </div>
+        -->
     </form>
 </div>
 
@@ -148,6 +153,5 @@
     ?>
 </script>
 
-<a href="Registra.php">Don't have an account yet?</a>
 </body>
 </html>
