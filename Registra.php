@@ -24,7 +24,7 @@
             width: 400px;
             text-align: center;
             margin-top: 120px;
-            margin-bottom: 100px;
+            margin-bottom: -100px;
         }
 
         .register-container h2 {
