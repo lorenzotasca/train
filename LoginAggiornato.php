@@ -87,7 +87,7 @@
         }
 
         .form-group a {
-            color: #38ef7d;
+            color: red;
             text-decoration: none;
             font-size: 14px;
             display: block;
