@@ -63,6 +63,7 @@
 
             // Ottieni l'ID dell'utente associato al pulsante di eliminazione
             var userId = e.target.dataset.id;
+            console.log("User ID to delete:", userId);
 
             let deleteXhr = new XMLHttpRequest();
             deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);

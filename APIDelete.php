@@ -17,6 +17,7 @@ if ($conn->connect_error) {
 
 // Ottenere l'ID dell'utente da eliminare dalla richiesta POST
 $userId = $_POST['id'];
+var_dump($_POST); // Debug: stampa i dati POST per verificare la ricezione dell'ID
 //$userId = $_GET['id'];
 
 // Creare una query SQL per eliminare l'utente dalla tabella 'esempio' con l'ID specificato
@@ -31,10 +32,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error deleting user: " . $conn->error;
 }
 
-// Esegui di nuovo la query di selezione e restituisci il risultato come HTML per aggiornare la tabella
-$sql_select = "SELECT * FROM Giocatore WHERE nome LIKE '%$param%'";
-$result_select = $conn->query($sql_select);
-$res_select = $result_select->fetch_all();
 
 // Chiudere la connessione al database
 $conn->close();
