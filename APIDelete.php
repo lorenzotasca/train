@@ -15,8 +15,9 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Ottenere l'ID dell'utente da eliminare 
-$userId = $_GET['id'];
+// Ottenere l'ID dell'utente da eliminare dalla richiesta POST
+$userId = $_POST['id'];
+//$userId = $_GET['id'];
 
 // Creare una query SQL per eliminare l'utente dalla tabella 'esempio' con l'ID specificato
 $sql = "DELETE FROM Giocatore WHERE ID_giocatore = $userId";
