@@ -20,8 +20,8 @@ $result = $conn->query($sql);
 
 $res = $result->fetch_all();
 foreach ($res as $r) {
-    echo '<input type="submit" class="delete-button" data-id="' . $r[2] . " " . $r[1] . '" value="Delete" id="delete" />' . " ";
-    echo $r[2] . " " . $r[1] . "<br>"; // position 2 in the db is the name
+    echo '<input type="submit" class="delete-button" data-id="' . $r[0] . '" value="Delete" id="delete" />' . " ";
+    echo $r[2] . " " . $r[1] . "<br>";
 }
 
 

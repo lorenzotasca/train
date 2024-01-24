@@ -9,7 +9,7 @@
 
     <form>
         <p>Ricerca <input type="text" id="valore" name="name" /></p>
-        <p><input type="submit" id="bottone"/></p>
+        <p><input type="submit" id="botton"/></p>
     </form>
 
     <div id="tabella">
@@ -20,13 +20,13 @@
         //on document ready
         document.addEventListener("DOMContentLoaded", function(event) {
             console.log("DOM fully loaded and parsed");
-            var bottone = document.getElementById("bottone");
-            bottone.addEventListener("click", sulClick);
+            var botton = document.getElementById("botton");
+            botton.addEventListener("click", onSearchClick);
 
         });
 
-        function sulClick(e) {
-            e.preventDefault();
+        function onSearchClick(e) {
+            e.preventDefault(); // per non far ricaricare la pagina
             var contenuto = document.getElementById("valore").value;
             
             console.log(e);
@@ -46,62 +46,39 @@
                     var t = document.getElementById("tabella");
                     t.innerHTML = res;
                     
+                    // Aggiungi listener di click ai pulsanti di eliminazione
+                    var deleteButtons = document.querySelectorAll('.delete-button');
+                    deleteButtons.forEach(function (button) {
+                        button.addEventListener('click', onDeleteClick);
+                    });
                 }
             };
 
 
-            return false;
+            return false; // Evita ulteriori azioni di default del form
         }
 
-
-         //on document ready
-         document.addEventListener("DOMContentLoaded", function(event) {
-            console.log("DOM fully loaded and parsed");
-            var delete = document.getElementById("delete");
-            delete.addEventListener("click", PermanentlyDelete);
-
-        });
-
-        function PermanentlyDelete(id) {
+        function onDeleteClick(e) {
             e.preventDefault();
 
-            console.log(id);
+            // Ottieni l'ID dell'utente associato al pulsante di eliminazione
+            var userId = e.target.dataset.id;
 
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", '/www/APIDelete.php?id=', id);
-            //xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            /*
-            xhr.onreadystatechange = function() {
-                if (this.readyState === 4 && this.status === 200) {
-                    console.log(this.responseText);
-                }
-                else{
-                    console.log(this.responseText);
-                }
-            }
-            */
-            xhr.onload = function() {
-                if (xhr.status != 200) { // analyze HTTP status of the response
-                    alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
-                } else { // show the result
-                    console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
-                    //var res = JSON.parse(xhr.response);
-                    res = xhr.response;
-                    console.log(res);
-                    var t = document.getElementById("tabella");
-                    t.innerHTML = res;
-                    
+            let deleteXhr = new XMLHttpRequest();
+            deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);
+            deleteXhr.send();
+
+            // Gestisci la risposta del server
+            deleteXhr.onload = function () {
+                if (deleteXhr.status != 200) {
+                    alert(`Error ${deleteXhr.status}: ${deleteXhr.statusText}`);
+                } else {
+                    // Rimuovi la divisione dell'utente dal DOM
+                    e.target.parentNode.remove();
                 }
             };
-            xhr.send();
         }
-
-        /*document.querySelectorAll('.delete-button').forEach(function(button) {
-            button.addEventListener('click', function() {
-                var id = this.getAttribute('data-id');
-                PermanentlyDelete(id);
-            });
-        });*/
+         
 
 
     </script>
