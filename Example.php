@@ -58,7 +58,7 @@
          document.addEventListener("DOMContentLoaded", function(event) {
             console.log("DOM fully loaded and parsed");
             var bottone = document.getElementById("delete");
-            bottone.addEventListener("click", PermanentlyDelete);
+            bottone.addEventListener("click", PermanentlyDelete(id));
 
         });
 
