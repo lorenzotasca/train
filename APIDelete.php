@@ -3,13 +3,13 @@
 
 echo "Ciao";
 
-// Dettagli di connessione al database
+//connect to db
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "progetto";
 
-// Creare una nuova connessione al database utilizzando la classe mysqli
+// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificare se la connessione al database è avvenuta con successo
