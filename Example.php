@@ -40,7 +40,7 @@
                     alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
                 } else { // show the result
                     console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
-                    var res = JSON.parse(xhr.response);
+                    //var res = JSON.parse(xhr.response);
                     res = xhr.response;
                     console.log(res);
                     var t = document.getElementById("tabella");
