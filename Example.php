@@ -68,7 +68,7 @@
             let deleteXhr = new XMLHttpRequest();
             //deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);
             deleteXhr.open('POST', '/www/APIDelete.php');
-            deleteXhr.send();
+            //deleteXhr.send();
 
             //deleteXhr.open('POST', 'APIDelete.php');
             //deleteXhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
