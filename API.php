@@ -1,5 +1,6 @@
 <?php
 
+echo "Ciaojan";
 //read post param
 $param = $_GET["t"];
 
