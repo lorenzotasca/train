@@ -46,17 +46,19 @@
                     var t = document.getElementById("tabella");
                     t.innerHTML = res;
                     
-                    // Aggiungi listener di click ai pulsanti di eliminazione
-                    var deleteButtons = document.querySelectorAll('.delete-button');
-                    deleteButtons.forEach(function (button) {
-                        button.addEventListener('click', onDeleteClick);
-                    });
+                    
                 }
             };
 
 
             return false; // Evita ulteriori azioni di default del form
         }
+
+        // Aggiungi listener di click ai pulsanti di eliminazione
+        var deleteButtons = document.querySelectorAll('.delete-button');
+        deleteButtons.forEach(function (button) {
+            button.addEventListener('click', onDeleteClick);
+        });
 
         function onDeleteClick(e) {
             e.preventDefault();
