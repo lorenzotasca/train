@@ -44,7 +44,7 @@
                     //res = xhr.response;
                     //console.log(res);
                     var t = document.getElementById("tabella");
-                    t.innerHTML = res;
+                    t.innerHTML = xhr;
                     
                     // Aggiungi listener di click ai pulsanti di eliminazione
                     var deleteButtons = document.querySelectorAll('.delete-button');
