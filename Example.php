@@ -9,7 +9,7 @@
 
     <form>
         <p>Ricerca <input type="text" id="valore" name="name" /></p>
-        <p><input type="submit" id="botton"/></p>
+        <p><input type="submit" id="button"/></p>
     </form>
 
     <div id="tabella">
@@ -20,8 +20,8 @@
         //on document ready
         document.addEventListener("DOMContentLoaded", function(event) {
             console.log("DOM fully loaded and parsed");
-            var botton = document.getElementById("botton");
-            botton.addEventListener("click", onSearchClick);
+            var button = document.getElementById("button");
+            button.addEventListener("click", onSearchClick);
 
         });
 
@@ -41,8 +41,8 @@
                 } else { // show the result
                     console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
                     //var res = JSON.parse(xhr.response);
-                    res = xhr.response;
-                    console.log(res);
+                    //res = xhr.response;
+                    //console.log(res);
                     var t = document.getElementById("tabella");
                     t.innerHTML = res;
                     
