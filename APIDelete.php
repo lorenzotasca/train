@@ -1,5 +1,8 @@
 <?php
 
+
+var_dump("ciao");
+
 // Dettagli di connessione al database
 $servername = "localhost";
 $username = "root";
