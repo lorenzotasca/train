@@ -27,7 +27,7 @@ var_dump($_POST); // Debug: stampa i dati POST per verificare la ricezione dell'
 // Creare una query SQL per eliminare l'utente dalla tabella 'esempio' con l'ID specificato
 $sql = "DELETE FROM Giocatore WHERE ID_giocatore = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("s", $userId);
+$stmt->bind_param("i", $userId);
 $stmt->execute();
 
 // Eseguire la query e verificare se l'eliminazione è avvenuta con successo
