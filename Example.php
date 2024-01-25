@@ -71,7 +71,8 @@
 
             deleteXhr.open('POST', 'APIDelete.php');
             deleteXhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            deleteXhr.send('id=' + userId);
+            deleteXhr.send('id=' + encodeURIComponent(userId));
+            //deleteXhr.send('id=' + userId);
 
 
             // Gestisci la risposta del server
