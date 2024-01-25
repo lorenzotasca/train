@@ -20,8 +20,8 @@ if ($conn->connect_error) {
 
 // Ottenere l'ID dell'utente da eliminare dalla richiesta POST
 $userId = urldecode($_POST["id"]);
-var_dump($_POST["id"]);
-var_dump($_POST); // Debug: stampa i dati POST per verificare la ricezione dell'ID
+//var_dump($_POST["id"]);
+//var_dump($_POST); // Debug: stampa i dati POST per verificare la ricezione dell'ID
 //$userId = $_GET['id'];
 
 // Create a prepared SQL query to delete the user from the 'Giocatore' table with the specified ID
