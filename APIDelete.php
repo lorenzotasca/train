@@ -24,19 +24,19 @@ var_dump($_POST["id"]);
 var_dump($_POST); // Debug: stampa i dati POST per verificare la ricezione dell'ID
 //$userId = $_GET['id'];
 
-// Creare una query SQL per eliminare l'utente dalla tabella 'esempio' con l'ID specificato
+// Create a prepared SQL query to delete the user from the 'Giocatore' table with the specified ID
 $sql = "DELETE FROM Giocatore WHERE ID_giocatore = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $userId);
+$stmt->bind_param("s", $userId);
 $stmt->execute();
 
-// Eseguire la query e verificare se l'eliminazione è avvenuta con successo
-if ($conn->query($sql) === TRUE) {
-    // Se l'eliminazione ha avuto successo, stampare un messaggio di conferma
+// Check if the deletion was successful
+if ($stmt->affected_rows > 0) {
+    // If the deletion was successful, print a confirmation message
     echo "User deleted successfully";
 } else {
-    // Se c'è stato un errore durante l'eliminazione, stampare un messaggio di errore
-    echo "Error deleting user: " . $conn->error;
+    // If there was an error during deletion, print an error message
+    echo "Error deleting user: " . $stmt->error;
 }
 
 $stmt->close();
