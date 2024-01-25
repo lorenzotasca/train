@@ -69,7 +69,7 @@
             //deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);
             //deleteXhr.send();
 
-            deleteXhr.open('GET', 'APIDelete.php');
+            deleteXhr.open('POST', 'APIDelete.php');
             deleteXhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             //deleteXhr.send('id=' + encodeURIComponent(userId));
             deleteXhr.send('id=' + userId);
