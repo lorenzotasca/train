@@ -19,7 +19,7 @@ if ($conn->connect_error) {
 }
 
 // Ottenere l'ID dell'utente da eliminare dalla richiesta POST
-$userId = $_POST["id"];
+$userId = urldecode($_POST["id"]);
 var_dump($_POST["id"]);
 var_dump($_POST); // Debug: stampa i dati POST per verificare la ricezione dell'ID
 //$userId = $_GET['id'];
