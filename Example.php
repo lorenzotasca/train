@@ -66,13 +66,13 @@
             console.log("User ID to delete:", userId);
 
             let deleteXhr = new XMLHttpRequest();
-            //deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);
-            //deleteXhr.send();
+            deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);
+            deleteXhr.send();
 
-            deleteXhr.open('POST', 'APIDelete.php');
-            deleteXhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //deleteXhr.open('POST', 'APIDelete.php');
+            //deleteXhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             //deleteXhr.send('id=' + encodeURIComponent(userId));
-            deleteXhr.send('id=' + userId);
+            //deleteXhr.send('id=' + userId);
 
 
             // Gestisci la risposta del server
