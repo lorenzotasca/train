@@ -1,7 +1,7 @@
 <?php
 
 
-var_dump("ciao");
+echo "Ciao";
 
 // Dettagli di connessione al database
 $servername = "localhost";
