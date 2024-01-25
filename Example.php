@@ -74,6 +74,7 @@
             //deleteXhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             //deleteXhr.send('id=' + encodeURIComponent(userId));
             deleteXhr.send('id=' + userId);
+            console.log("Request payload senza encodeURIComponent:", 'id=' + (userId));
             console.log("Request payload:", 'id=' + encodeURIComponent(userId));
 
 
