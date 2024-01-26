@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basket LTcombine - Pagina Elegante</title>
+    <title>Basket LTcombine</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f7f7f7;
             color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
         header {
             background-color: #333;
             color: #fff;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
             margin: 0;
         }
         .top-right {
             position: absolute;
-            top: 50%;
+            top: 20px;
             right: 20px;
-            transform: translateY(-50%);
             display: flex;
             gap: 10px;
         }
@@ -50,7 +45,6 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            flex: 1;
         }
         ul {
             list-style-type: none;
@@ -61,10 +55,9 @@
         }
         footer {
             text-align: center;
-            padding: 10px;
+            padding: 20px;
             background-color: #333;
             color: #fff;
-            margin-top: auto;
         }
     </style>
 </head>
