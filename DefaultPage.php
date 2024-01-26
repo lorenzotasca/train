@@ -27,8 +27,8 @@
             font-size: 2em;
         }
         .logo {
-            width: 40px; /* Imposta la larghezza desiderata */
-            height: 40px; /* Imposta l'altezza desiderata */
+            width: default; 
+            height: default;
             margin-right: 10px;
         }
         .top-right {
@@ -80,8 +80,8 @@
 <body>
 
     <header>
-        <img src="path_al_tuo_logo" alt="Logo Basket LTcombine" class="logo">
-        <h1>Basket LTcombine</h1>
+        <img src="logo.png" alt="Logo Basket LTcombine" class="logo">
+        <h1>LTcombine</h1>
         <div class="top-right">
             <a href="#" class="button">Login</a>
             <a href="#" class="button">Register</a>
