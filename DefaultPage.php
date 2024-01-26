@@ -27,8 +27,8 @@
             font-size: 2em;
         }
         .logo {
-            width: 60px; /* Imposta la larghezza desiderata */
-            height: 80px; /* Imposta l'altezza desiderata */
+            width: default; 
+            height: default; 
             margin-right: 10px;
         }
         .top-right {
