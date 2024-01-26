@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTcombine</title>
+    <title>Basket LTcombine</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f7f7f7;
-            color: #333;
+            color: #121212; /* Cambiato da nero a #121212 */
             line-height: 1.6;
         }
         header {
-            background-color: #333;
+            background-color: #121212; /* Cambiato da nero a #121212 */
             color: #fff;
             padding: 20px;
             text-align: center;
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
         h1 {
             margin: 0;
             font-size: 2em;
         }
         .logo {
-            width: 60px; 
-            height: 100px;
+            width: 60px; /* Imposta la larghezza desiderata */
+            height: 80px; /* Imposta l'altezza desiderata */
             margin-right: 10px;
         }
         .top-right {
@@ -71,7 +72,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
+            background-color: #121212; /* Cambiato da nero a #121212 */
             color: #fff;
             margin-top: 20px;
         }
@@ -80,8 +81,8 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo Basket LTcombine" class="logo">
-        <h1>LTcombine</h1>
+        <img src="path_al_tuo_logo" alt="Logo Basket LTcombine" class="logo">
+        <h1>Basket LTcombine</h1>
         <div class="top-right">
             <a href="#" class="button">Login</a>
             <a href="#" class="button">Register</a>
