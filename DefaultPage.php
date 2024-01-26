@@ -99,13 +99,13 @@
         <img src="Cattura4.png" alt="Logo Basket LTcombine" class="logo">
         <div class="navigation">
             <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Chi Siamo</a>
-            <a href="#" class="nav-link">Contatti</a>
-            <a href="#" class="nav-link">Servizi</a>
+            <a href="#" class="nav-link">Who we are</a>
+            <a href="#" class="nav-link">Contacts</a>
+            <a href="#" class="nav-link">Services</a>
         </div>
         <div class="top-right">
-            <a href="#" class="button">Login</a>
-            <a href="#" class="button">Register</a>
+            <a href="Login.php" class="button">Login</a>
+            <a href="Registra.php" class="button">Register</a>
         </div>
     </header>
 
