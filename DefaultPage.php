@@ -57,6 +57,7 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            margin-right: 10px;
         }
         .button:hover {
             background-color: #45a049;
