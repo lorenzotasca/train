@@ -27,8 +27,8 @@
             font-size: 2em;
         }
         .logo {
-            width: auto; 
-            height: 80px; 
+            width: default; 
+            height: default; 
             margin-right: 10px;
         }
         .top-right {
@@ -96,7 +96,6 @@
 
     <header>
         <img src="Cattura4.png" alt="Logo Basket LTcombine" class="logo">
-        <h1>Basket LTcombine</h1>
         <div class="navigation">
             <a href="#" class="nav-link">Home</a>
             <a href="#" class="nav-link">Chi Siamo</a>
