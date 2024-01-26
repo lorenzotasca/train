@@ -84,7 +84,9 @@
                     alert(`Error ${deleteXhr.status}: ${deleteXhr.statusText}`);
                 } else {
                     // Rimuovi la divisione dell'utente dal DOM
-                    e.target.parentNode.remove();
+                    e.target.parentNode.parentNode.remove();
+
+                    //e.target.parentNode.remove();
                 }
             };
         }
