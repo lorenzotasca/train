@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f7f7f7;
             color: #333;
+            line-height: 1.6;
         }
         header {
             background-color: #333;
@@ -20,6 +21,7 @@
         }
         h1 {
             margin: 0;
+            font-size: 2em;
         }
         .top-right {
             position: absolute;
@@ -53,11 +55,20 @@
         li {
             margin-bottom: 10px;
         }
+        .news-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
         footer {
             text-align: center;
             padding: 20px;
             background-color: #333;
             color: #fff;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -85,11 +96,9 @@
                 "Una giovane stella domina la lega",
             ];
 
-            echo "<ul>";
             foreach ($ultimeNotizie as $notizia) {
-                echo "<li>$notizia</li>";
+                echo "<div class='news-item'>$notizia</div>";
             }
-            echo "</ul>";
         ?>
     </section>
 
