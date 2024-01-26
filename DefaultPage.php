@@ -57,7 +57,7 @@
             font-weight: bold;
             font-size: 16px;
             transition: color 0.3s ease;
-            margin-left: 60px;
+            margin-left: 80px;
         }
         .nav-link:hover {
             color: #45a049;
