@@ -19,19 +19,19 @@
             padding: 20px;
             text-align: center;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
         }
         h1 {
-            margin: 0;
+            margin: 10px 0;
             font-size: 2em;
         }
         .logo {
-            width: 20px; 
-            height: 40px;
-            margin-right: 10px;
+            width: 60px; /* Imposta la larghezza desiderata */
+            height: 80px; /* Imposta l'altezza desiderata */
         }
         .top-right {
+            margin-top: 10px;
             display: flex;
             gap: 10px;
         }
@@ -80,8 +80,8 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo Basket LTcombine" class="logo">
-        <h1>LTcombine</h1>
+        <img src="path_al_tuo_logo" alt="Logo Basket LTcombine" class="logo">
+        <h1>Basket LTcombine</h1>
         <div class="top-right">
             <a href="#" class="button">Login</a>
             <a href="#" class="button">Register</a>
