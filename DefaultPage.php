@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basket LTcombine - Pagina Super Mega Figa</title>
+    <title>Basket LTcombine - Pagina Elegante</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
+            color: #333;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -19,15 +20,29 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
             margin: 0;
         }
         .top-right {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
             color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
         }
         section {
             margin: 20px;
@@ -49,20 +64,7 @@
             padding: 10px;
             background-color: #333;
             color: #fff;
-            position: relative;
             margin-top: auto;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        .button:hover {
-            background-color: #45a049;
         }
     </style>
 </head>
@@ -78,7 +80,7 @@
 
     <section>
         <h2>Benvenuti nel Basket LTcombine</h2>
-        <p>Questa è la pagina super mega figa per il Basket LTcombine. Esplorate le ultime notizie, i giocatori e gli eventi nel mondo del basket.</p>
+        <p>Esplorate le ultime notizie, i giocatori e gli eventi nel mondo del basket.</p>
     </section>
 
     <section>
