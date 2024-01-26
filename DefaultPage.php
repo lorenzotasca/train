@@ -20,7 +20,6 @@
             color: #fff;
             padding: 20px;
             text-align: center;
-            position: relative;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
@@ -40,6 +39,7 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
         .button:hover {
             background-color: #45a049;
