@@ -14,7 +14,7 @@
             line-height: 1.6;
         }
         header {
-            background-color: #121111; 
+            background-color: #333; 
             color: #fff;
             padding: 20px;
             text-align: center;
