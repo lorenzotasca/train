@@ -10,13 +10,15 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background-color: #333;
             color: #fff;
             padding: 20px;
             text-align: center;
-            position: relative;
         }
         h1 {
             margin: 0;
@@ -33,6 +35,7 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
         }
         ul {
             list-style-type: none;
@@ -46,9 +49,8 @@
             padding: 10px;
             background-color: #333;
             color: #fff;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+            position: relative;
+            margin-top: auto;
         }
         .button {
             display: inline-block;
