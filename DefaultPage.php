@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #f7f7f7;
-            color: #121111; 
+            color: #333; 
             line-height: 1.6;
         }
         header {
@@ -72,7 +72,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #121111;
+            background-color: #333;
             color: #fff;
             margin-top: 20px;
         }
@@ -81,8 +81,7 @@
 <body>
 
     <header>
-        <img src="Cattura3.png" alt="Logo Basket LTcombine" class="logo">
-        <h1>Basket LTcombine</h1>
+        <img src="Cattura4.png" alt="Logo Basket LTcombine" class="logo">
         <div class="top-right">
             <a href="#" class="button">Login</a>
             <a href="#" class="button">Register</a>
