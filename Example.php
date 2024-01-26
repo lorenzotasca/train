@@ -20,7 +20,6 @@
             text-align: center;
             display: flex;
             align-items: center;
-            justify-content: space-between;
         }
         h1 {
             margin: 0;
@@ -32,6 +31,7 @@
             margin-right: 10px;
         }
         .top-right {
+            margin-left: auto;
             display: flex;
             gap: 10px;
         }
@@ -80,7 +80,7 @@
 <body>
 
     <header>
-        <img src="logo.png" alt="Logo Basket LTcombine" class="logo">
+        <img src="path_al_tuo_logo" alt="Logo Basket LTcombine" class="logo">
         <h1>Basket LTcombine</h1>
         <div class="top-right">
             <a href="#" class="button">Login</a>
