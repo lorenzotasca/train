@@ -27,8 +27,8 @@
             font-size: 2em;
         }
         .logo {
-            width: default; 
-            height: default; 
+            width: auto; 
+            height: 80px; 
             margin-right: 10px;
         }
         .top-right {
@@ -46,6 +46,20 @@
         }
         .button:hover {
             background-color: #45a049;
+        }
+        .navigation {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #45a049;
         }
         section {
             margin: 20px;
@@ -82,6 +96,13 @@
 
     <header>
         <img src="Cattura4.png" alt="Logo Basket LTcombine" class="logo">
+        <h1>Basket LTcombine</h1>
+        <div class="navigation">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Chi Siamo</a>
+            <a href="#" class="nav-link">Contatti</a>
+            <a href="#" class="nav-link">Servizi</a>
+        </div>
         <div class="top-right">
             <a href="#" class="button">Login</a>
             <a href="#" class="button">Register</a>
