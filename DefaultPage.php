@@ -81,7 +81,7 @@
 <body>
 
     <header>
-        <img src="newlogo.png" alt="Logo Basket LTcombine" class="logo">
+        <img src="Cattura3.png" alt="Logo Basket LTcombine" class="logo">
         <h1>Basket LTcombine</h1>
         <div class="top-right">
             <a href="#" class="button">Login</a>
