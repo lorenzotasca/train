@@ -49,8 +49,7 @@
         }
         .navigation {
             display: flex;
-
-            gap: 50px;
+            gap: 40px;
         }
         .nav-link {
             text-decoration: none;
@@ -58,7 +57,7 @@
             font-weight: bold;
             font-size: 16px;
             transition: color 0.3s ease;
-            margin-left: 50px;
+            margin-left: 60px;
         }
         .nav-link:hover {
             color: #45a049;
