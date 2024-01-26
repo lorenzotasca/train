@@ -10,11 +10,11 @@
             margin: 0;
             padding: 0;
             background-color: #f7f7f7;
-            color: #121212; /* Cambiato da nero a #121212 */
+            color: #121111; 
             line-height: 1.6;
         }
         header {
-            background-color: #121212; /* Cambiato da nero a #121212 */
+            background-color: #121111; 
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -72,7 +72,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #121212; /* Cambiato da nero a #121212 */
+            background-color: #121111;
             color: #fff;
             margin-top: 20px;
         }
