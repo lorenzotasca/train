@@ -46,7 +46,7 @@
             padding: 10px;
             background-color: #333;
             color: #fff;
-            position: fixed;
+            position: absolute;
             bottom: 0;
             width: 100%;
         }
