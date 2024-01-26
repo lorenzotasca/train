@@ -83,11 +83,8 @@
                 if (deleteXhr.status != 200) {
                     alert(`Error ${deleteXhr.status}: ${deleteXhr.statusText}`);
                 } else {
-                    // Rimuovi la divisione dell'utente dal DOM
-                    //e.target.parentNode.userId.remove();
-                    e.target.userId.remove();
-
-                    //e.target.parentNode.remove();
+                    // Rimuovi la divisione dell'utente dal DOM                   
+                    e.target.parentNode.remove();
                 }
             };
         }
