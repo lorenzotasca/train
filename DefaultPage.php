@@ -49,7 +49,7 @@
         }
         .navigation {
             display: flex;
-            gap: 20px;
+            gap: 50px;
         }
         .nav-link {
             text-decoration: none;
