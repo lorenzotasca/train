@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basket LTcombine</title>
+    <title>LTcombine</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -81,7 +81,7 @@
 
     <header>
         <img src="logo.png" alt="Logo Basket LTcombine" class="logo">
-        <h1>Basket LTcombine</h1>
+        <h1>LTcombine</h1>
         <div class="top-right">
             <a href="#" class="button">Login</a>
             <a href="#" class="button">Register</a>
