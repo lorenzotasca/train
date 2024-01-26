@@ -1,133 +1,99 @@
-<!DOCTYPE html>
-<html lang="it">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basket LTcombine</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .logo {
-            width: 60px; /* Imposta la larghezza desiderata */
-            height: 80px; /* Imposta l'altezza desiderata */
-            margin-right: 10px;
-        }
-        .top-right {
-            margin-left: auto;
-            display: flex;
-            gap: 10px;
-        }
-        .button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .news-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
+    <title>PHP Test</title>
 </head>
+
 <body>
+    <?php echo '<p>Hello World</p>'; ?>
 
-    <header>
-        <img src="path_al_tuo_logo" alt="Logo Basket LTcombine" class="logo">
-        <h1>Basket LTcombine</h1>
-        <div class="top-right">
-            <a href="#" class="button">Login</a>
-            <a href="#" class="button">Register</a>
-        </div>
-    </header>
+    <form>
+        <p>Ricerca <input type="text" id="valore" name="name" /></p>
+        <p><input type="submit" id="button"/></p>
+    </form>
 
-    <section>
-        <h2>Benvenuti nel Basket LTcombine</h2>
-        <p>Esplorate le ultime notizie, i giocatori e gli eventi nel mondo del basket.</p>
-    </section>
+    <div id="tabella">
+    </div>
 
-    <section>
-        <h2>Ultime Notizie</h2>
-        <?php
-            $ultimeNotizie = [
-                "LeBron James firma un nuovo contratto con i Lakers",
-                "Riepilogo delle Finali NBA: Una Game 7 emozionante termina con un canestro allo scadere",
-                "Una giovane stella domina la lega",
-            ];
+    <script>
+        
+        //on document ready
+        document.addEventListener("DOMContentLoaded", function(event) {
+            console.log("DOM fully loaded and parsed");
+            var button = document.getElementById("button");
+            button.addEventListener("click", onSearchClick);
 
-            foreach ($ultimeNotizie as $notizia) {
-                echo "<div class='news-item'>$notizia</div>";
-            }
-        ?>
-    </section>
+        });
 
-    <section>
-        <h2>Prossimi Eventi</h2>
-        <?php
-            $prossimiEventi = [
-                "Weekend delle Stelle - Data: TBD",
-                "Draft NBA - Data: 25 giugno 2024",
-                "Campo Basket per Bambini - Data: 10-15 luglio 2024",
-            ];
+        function onSearchClick(e) {
+            e.preventDefault(); // per non far ricaricare la pagina
+            var contenuto = document.getElementById("valore").value;
+            
+            console.log(e);
 
-            echo "<ul>";
-            foreach ($prossimiEventi as $evento) {
-                echo "<li>$evento</li>";
-            }
-            echo "</ul>";
-        ?>
-    </section>
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', '/www/API.php?t=' + contenuto);
+            xhr.send();
+            
+            xhr.onload = function() {
+                if (xhr.status != 200) { // analyze HTTP status of the response
+                    alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+                } else { // show the result
+                    console.log(`Done, got ${xhr.response.length} bytes`); // response is the server
+                    //var res = JSON.parse(xhr.response);
+                    //res = xhr.response;
+                    //console.log(res);
+                    var t = document.getElementById("tabella");
+                    t.innerHTML = xhr.response;
+                    
+                    // Aggiungi listener di click ai pulsanti di eliminazione
+                    var deleteButtons = document.querySelectorAll('.delete-button');
+                    deleteButtons.forEach(function (button) {
+                        button.addEventListener('click', onDeleteClick);
+                    });
+                }
+            };
 
-    <footer>
-        <p>&copy; <?php echo date("Y"); ?> Basket LTcombine. Tutti i diritti riservati.</p>
-    </footer>
+
+            return false; // Evita ulteriori azioni di default del form
+        }
+
+        function onDeleteClick(e) {
+            e.preventDefault();
+
+            // Ottieni l'ID dell'utente associato al pulsante di eliminazione
+            var userId = e.target.dataset.id;
+            console.log("User ID to delete:", userId);
+
+            let deleteXhr = new XMLHttpRequest();
+            //deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);
+            deleteXhr.open('POST', '/www/APIDelete.php');
+            //deleteXhr.send();
+
+            //deleteXhr.open('POST', 'APIDelete.php');
+            //deleteXhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //deleteXhr.send('id=' + encodeURIComponent(userId));
+            deleteXhr.send('id=' + userId);
+            console.log("Request payload senza encodeURIComponent:", 'id=' + (userId));
+            console.log("Request payload:", 'id=' + encodeURIComponent(userId));
+
+
+            // Gestisci la risposta del server
+            deleteXhr.onload = function () {
+                if (deleteXhr.status != 200) {
+                    alert(`Error ${deleteXhr.status}: ${deleteXhr.statusText}`);
+                } else {
+                    // Rimuovi la divisione dell'utente dal DOM                   
+                    e.target.parentNode.remove(userId);
+                }
+            };
+        }
+         
+
+
+    </script>
+
 
 </body>
+
 </html>

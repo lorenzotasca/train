@@ -19,19 +19,19 @@
             padding: 20px;
             text-align: center;
             display: flex;
-            flex-direction: column;
             align-items: center;
         }
         h1 {
-            margin: 10px 0;
+            margin: 0;
             font-size: 2em;
         }
         .logo {
             width: 60px; /* Imposta la larghezza desiderata */
             height: 80px; /* Imposta l'altezza desiderata */
+            margin-right: 10px;
         }
         .top-right {
-            margin-top: 10px;
+            margin-left: auto;
             display: flex;
             gap: 10px;
         }
