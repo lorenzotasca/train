@@ -18,15 +18,20 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         h1 {
             margin: 0;
             font-size: 2em;
         }
+        .logo {
+            width: 40px; /* Imposta la larghezza desiderata */
+            height: 40px; /* Imposta l'altezza desiderata */
+            margin-right: 10px;
+        }
         .top-right {
-            position: absolute;
-            top: 20px;
-            right: 20px;
             display: flex;
             gap: 10px;
         }
@@ -75,6 +80,7 @@
 <body>
 
     <header>
+        <img src="path_al_tuo_logo" alt="Logo Basket LTcombine" class="logo">
         <h1>Basket LTcombine</h1>
         <div class="top-right">
             <a href="#" class="button">Login</a>
