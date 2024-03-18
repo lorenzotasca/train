@@ -5,36 +5,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Kobe Bryant Login</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to an external CSS file for better organization -->
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('mamba.png');
             margin: 0;
             padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f1f1;
+            background-image: url('mamba.png');
+            background-size: cover;
+            background-position: center;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
         }
 
         .login-container {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             width: 400px;
             text-align: center;
         }
 
         .login-container h2 {
-            color: #333333;
+            color: #fff;
             margin: 0;
             padding: 30px 0;
             background: linear-gradient(to right, #11998e, #38ef7d);
             font-size: 28px;
             letter-spacing: 2px;
             border-bottom: 2px solid #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .login-form {
@@ -49,7 +54,7 @@
         .form-group label {
             display: block;
             font-size: 16px;
-            color: #555555;
+            color: #333;
             margin-bottom: 10px;
         }
 

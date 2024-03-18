@@ -7,9 +7,11 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f8f8;
+            background-image: url('mamba.png');
             margin: 0;
             padding: 0;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -17,9 +19,9 @@
         }
 
         .register-container {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             width: 400px;
             text-align: center;
@@ -27,13 +29,14 @@
         }
 
         .register-container h2 {
-            color: #333333;
+            color: #fff;
             margin: 0;
             padding: 30px 0;
             background: linear-gradient(to right, #11998e, #38ef7d);
             font-size: 28px;
             letter-spacing: 2px;
             border-bottom: 2px solid #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .register-form {
@@ -48,7 +51,7 @@
         .form-group label {
             display: block;
             font-size: 16px;
-            color: #555555;
+            color: #333;
             margin-bottom: 10px;
         }
 
