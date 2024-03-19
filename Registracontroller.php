@@ -1,7 +1,9 @@
 <?php
 
+    session_start();
+
     include "connection.php";
-    
+
     // Get the form data
     $surname = $_POST['surname'];
     $name = $_POST['name'];
@@ -10,6 +12,9 @@
     $password = md5($_POST['password']); // Hash the password
     
     $id_giocatore = $surname . $name . $birthdate;
+    // Memorizza $id_giocatore nella sessione
+    $_SESSION['id_giocatore'] = $id_giocatore;
+    echo $_SESSION['id_giocatore'];
 
     // Prepare the SQL statement
     $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?)");
@@ -19,6 +24,7 @@
 
     // Try to execute the statement and handle any errors
     try {
+        
         $stmt->execute();
         header("Location: Login.php");
     } catch (Exception $e) {
