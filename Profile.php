@@ -74,7 +74,7 @@
         <h1>Welcome <?php echo $name; ?></h1>
         <h2>Almost done</h2>
         
-        <form id="profileForm">
+        <form class="profile-form" action="ProfileController.php" method="post">
             <label for="role">Role:</label>
             <select id="role" name="role">
                 <option value="PG">PG</option>
@@ -101,7 +101,7 @@
     
     <script>
         function developProfile() {
-            var standingReachCm = parseFloat(document.getElementById('standing_reach_cm').value);
+            /*var standingReachCm = parseFloat(document.getElementById('standing_reach_cm').value);
             var heightWoShoesCm = parseFloat(document.getElementById('height_wo_shoes_cm').value);
             var wingspanCm = parseFloat(document.getElementById('wingspan_cm').value);
 
@@ -111,7 +111,7 @@
 
             alert('Standing Reach (ft): ' + standingReachFt + '\n' +
                 'Height without Shoes (ft): ' + heightWoShoesFt + '\n' +
-                'Wingspan (ft): ' + wingspanFt);
+                'Wingspan (ft): ' + wingspanFt);*/
         }
     </script>
 </body>
