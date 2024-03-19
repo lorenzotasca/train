@@ -1,4 +1,7 @@
 <?php
+
+    include "connection.php";
+    
     // Get the form data
     $surname = $_POST['surname'];
     $name = $_POST['name'];
@@ -7,21 +10,6 @@
     $password = md5($_POST['password']); // Hash the password
     
     $id_giocatore = $surname . $name . $birthdate;
-    
-    
-    // Database connection parameters
-    $servername = 'localhost';
-    $dbusername = 'root';
-    $dbpassword = '';
-    $dbname = 'progetto';
-
-    // Create a new mysqli object
-    $connessione = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-
-    // Check the connection
-    if ($connessione->connect_error) {
-        die('Connessione fallita: ' . $connessione->connect_error);
-    }
 
     // Prepare the SQL statement
     $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?)");

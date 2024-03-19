@@ -3,20 +3,7 @@
 
 echo "Ciao";
 
-//connect to db
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "progetto";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificare se la connessione al database è avvenuta con successo
-if ($conn->connect_error) {
-    // Se la connessione fallisce, terminare il programma e visualizzare un messaggio di errore
-    die("Connection failed: " . $conn->connect_error);
-}
+include "connection.php";
 
 // Ottenere l'ID dell'utente da eliminare dalla richiesta POST
 $userId = $_POST["id"];

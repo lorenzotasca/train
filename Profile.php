@@ -84,14 +84,14 @@
                 <option value="C">C</option>
             </select>
             
-            <label for="standing_reach">Standing Reach:</label>
-            <input type="text" id="standing_reach" name="standing_reach">
+            <label for="standing_reach">Standing Reach (cm):</label>
+            <input type="text" id="standing_reach_cm" name="standing_reach_cm">
             
-            <label for="height_wo_shoes">Height without Shoes:</label>
-            <input type="text" id="height_wo_shoes" name="height_wo_shoes">
+            <label for="height_wo_shoes">Height without Shoes (cm):</label>
+            <input type="text" id="height_wo_shoes_cm" name="height_wo_shoes_cm">
             
-            <label for="wingspan">Wingspan:</label>
-            <input type="text" id="wingspan" name="wingspan">
+            <label for="wingspan">Wingspan (cm):</label>
+            <input type="text" id="wingspan_cm" name="wingspan_cm">
             
             <button type="button" onclick="developProfile()">Develop</button>
         </form>
@@ -101,9 +101,17 @@
     
     <script>
         function developProfile() {
-            // You can add logic here to handle form submission
-            alert('Profile development initiated!');
-            // For now, this function just displays an alert
+            var standingReachCm = parseFloat(document.getElementById('standing_reach_cm').value);
+            var heightWoShoesCm = parseFloat(document.getElementById('height_wo_shoes_cm').value);
+            var wingspanCm = parseFloat(document.getElementById('wingspan_cm').value);
+
+            var standingReachFt = (standingReachCm / 30.48).toFixed(2);
+            var heightWoShoesFt = (heightWoShoesCm / 30.48).toFixed(2);
+            var wingspanFt = (wingspanCm / 30.48).toFixed(2);
+
+            alert('Standing Reach (ft): ' + standingReachFt + '\n' +
+                'Height without Shoes (ft): ' + heightWoShoesFt + '\n' +
+                'Wingspan (ft): ' + wingspanFt);
         }
     </script>
 </body>

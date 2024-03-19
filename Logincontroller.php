@@ -2,19 +2,7 @@
 
     session_start();
  
-    // Database configuration
-    $db_host = 'localhost';
-    $db_user = 'root';
-    $db_pass = '';
-    $db_name = 'progetto';
-
-    // Create a new MySQLi connection
-    $connessione = new mysqli($db_host, $db_user, $db_pass, $db_name);
-
-    // Check the connection
-    if ($connessione->connect_error) {
-        die("Connection failed: " . $connessione->connect_error);
-    }
+    include "connection.php";
 
     // Check if form is submitted
     if(isset($_POST['login'])){ // questo login è il name del bottone ed è nel Login.php
