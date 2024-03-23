@@ -99,9 +99,9 @@
         <img src="Cattura4.png" alt="Logo Basket LTcombine" class="logo">
         <div class="navigation">
             <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Who we are</a>
-            <a href="#" class="nav-link">Contacts</a>
+            <a href="Contacts.php" class="nav-link">Contacts</a>
             <a href="#" class="nav-link">Services</a>
+            <a href="#" class="nav-link">About us</a>
         </div>
         <div class="top-right">
             <a href="Login.php" class="button">Login</a>
