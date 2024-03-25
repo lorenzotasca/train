@@ -1,5 +1,7 @@
 <?php
 
+    session_start();
+
     include "connection.php";
     echo "stupid";
     echo $_SESSION['id_giocatore'];
