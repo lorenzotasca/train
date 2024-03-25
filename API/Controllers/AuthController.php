@@ -24,7 +24,7 @@ class AuthController
 
     public function login(Request $request, Response $response)
     {
-        $data = $request->getParsedBody();
+        $data = $request->getParsedBody(); // recuperare i dati inviati tramite una richiesta HTTP POST o PUT
         $username = $data['username'];
         $password = $data['password'];
 
