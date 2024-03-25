@@ -4,7 +4,7 @@
 
     include "connection.php";
     echo "stupid";
-    echo $_SESSION['id_giocatore'];
+    echo $_POST['id_giocatore'];
     // convert cm into ft
     function cm_to_ft($cm) {
         // 1 feet = 30.48 cm
@@ -17,8 +17,8 @@
 
 
     // Controlla se $id_giocatore è memorizzato nella sessione
-    if(isset($_SESSION['id_giocatore']) && !empty($_SESSION['id_giocatore'])) {
-        $id_giocatore = $_SESSION['id_giocatore'];
+    if(isset($_POST['id_giocatore']) && !empty($_POST['id_giocatore'])) {
+        $id_giocatore = $_POST['id_giocatore'];
 
 
         //------------------------------------------------------------
