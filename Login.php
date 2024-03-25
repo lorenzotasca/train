@@ -13,7 +13,7 @@
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f1f1f1;
-            background-image: url('mamba.png');
+            background-image: url('img/mamba.png');
             background-size: cover;
             background-position: center;
             display: flex;

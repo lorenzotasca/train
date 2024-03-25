@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('mamba.png');
+            background-image: url('img/mamba.png');
             margin: 0;
             padding: 0;
             background-size: cover;
