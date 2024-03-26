@@ -1,14 +1,14 @@
 CREATE TABLE Giocatore(
     ID_giocatore char(50), 
-    cognome char(20) NOT NULL,
-    nome char(20) NOT NULL,
-    data_nascita char (10) NOT NULL,
+    cognome char(20),
+    nome char(20),
+    data_nascita char (10),
     ruolo char(20),
     standing_reach integer,
     altezza_senza_scarpe integer,
     apertura_alare integer,
-    username char(20) NOT NULL,
-    passwordCode char(255) NOT NULL,
+    username char(20),
+    passwordCode char(255),
     PRIMARY KEY (ID_giocatore)
 );
 

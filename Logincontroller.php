@@ -22,8 +22,10 @@
             //if(password_verify($password, $row['passwordCode'])){
             if(md5($password) == $row['passwordCode']){
                 // Password matches, so create the session
-                $_SESSION['id'] = $row['ID_giocatore'];
-                $_SESSION['name'] = $row['nome']; // to get the name for Profile.php
+                $_SESSION['id'] = $row['ID_giocatore']; // mi serve in ProfileContrller.php
+                $_SESSION['name'] = $row['nome']; // mi serve in ProfileContrller.php
+                //$_SESSION['surname'] = $row['cognome']; // mi serve in ProfileContrller.php
+                //$_SESSION['birthdate'] = $row['data_nascita']; // mi serve in ProfileContrller.php
                 $_SESSION['username'] = $row['username'];
                 // Redirect to profile page
                 header("Location: Profile.php");

@@ -12,9 +12,6 @@
     $password = md5($_POST['password']); // Hash the password
     
     $id_giocatore = $surname . $name . $birthdate;
-    // Memorizza $id_giocatore nella sessione
-    $_SESSION['id_giocatore'] = $id_giocatore;
-    echo $_SESSION['id_giocatore'];
 
     // Prepare the SQL statement
     $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?)");
