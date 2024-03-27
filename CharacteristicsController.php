@@ -5,11 +5,19 @@
     include "connection.php";
 
     function cm_to_ft($cm) {
+        // Controlla se il valore è già un float
+        if (!is_float($cm)) {
+            // Se non è un float, convertilo
+            $cm = (float) $cm;
+        }
+        
         // 1 piede = 30.48 cm
         $feet = $cm / 30.48;
-        // Arrotonda il risultato alla seconda cifra decimale
-        $feet_rounded = round($feet, 2);
-        return $feet_rounded;
+
+        // Utilizza number_format per formattare il risultato con due decimali
+        $feet_formatted = number_format($feet, 2);
+        
+        return $feet_formatted;
     }
     //echo $feet_rounded;
     

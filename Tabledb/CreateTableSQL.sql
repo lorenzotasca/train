@@ -4,9 +4,9 @@ CREATE TABLE Giocatore(
     nome char(20),
     data_nascita char (10),
     ruolo char(20),
-    standing_reach integer,
-    altezza_senza_scarpe integer,
-    apertura_alare integer,
+    standing_reach float,
+    altezza_senza_scarpe float,
+    apertura_alare float,
     username char(20),
     passwordCode char(255),
     PRIMARY KEY (ID_giocatore)
