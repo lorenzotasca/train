@@ -24,12 +24,26 @@
                 // Password matches, so create the session
                 $_SESSION['id'] = $row['ID_giocatore']; // mi serve in ProfileContrller.php
                 $_SESSION['name'] = $row['nome']; // mi serve in ProfileContrller.php
-
+                
                 $_SESSION['username'] = $row['username'];
                 
-                
-                
-                header("Location: Profile.php");
+
+                // vai diretto in profile se ruolo è già inserito in db
+                $query = $connessione->prepare("SELECT ruolo FROM Giocatore WHERE ID_giocatore = ?");
+                $query->bind_param("s", $_SESSION['id']);
+                $query->execute();
+                $res = $query->get_result();
+
+                $row = $res->fetch_assoc(); // Ottiene la riga risultante come array associativo
+
+                if ($row['ruolo'] !== NULL) {
+                    header("Location: Profile.php");
+                }
+                else{
+                    header("Location: Characteristics.php");
+                }
+                $query->close();
+
 
                 exit(); // Interrompere l'esecuzione dopo il redirect
             }else {
