@@ -27,8 +27,11 @@
                 //$_SESSION['surname'] = $row['cognome']; // mi serve in ProfileContrller.php
                 //$_SESSION['birthdate'] = $row['data_nascita']; // mi serve in ProfileContrller.php
                 $_SESSION['username'] = $row['username'];
-                // Redirect to profile page
-                header("Location: Profile.php");
+                
+                
+                
+                header("Location: Characteristics.php");
+
                 exit(); // Interrompere l'esecuzione dopo il redirect
             }else {
                 $_SESSION['error'] = "Incorrect username or password.";

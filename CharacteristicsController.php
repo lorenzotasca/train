@@ -18,6 +18,7 @@
         $feet_rounded = round($feet, 2);
         return $feet_rounded;
     }
+    echo $feet_rounded;
     
     $standing_reach_ft = cm_to_ft($_POST['standing_reach_cm']);
     $height_wo_shoes_ft = cm_to_ft($_POST['height_wo_shoes_cm']);
@@ -53,7 +54,7 @@
             header("Location: DefaultPage.php");
         } catch (Exception $e) {
             $err = $e->getMessage();
-            header("Location: Profile.php?err=$err");
+            header("Location: Characteristics.php?err=$err");
         } finally {
             // Always close the statement and connection, even if an error occurred
             $stmt->close();

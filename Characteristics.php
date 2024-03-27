@@ -74,7 +74,7 @@
         <h1>Welcome <?php echo $name; ?></h1>
         <h2>Almost done</h2>
         
-        <form class="profile-form" action="ProfileController.php" method="post">
+        <form class="profile-form" action="CharacteristicsController.php" method="post">
             <label for="role">Role:</label>
             <select id="role" name="role">
                 <option value="PG">PG</option>
