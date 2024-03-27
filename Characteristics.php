@@ -57,16 +57,6 @@
         button:hover {
             background-color: #45a049;
         }
-        a {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
@@ -95,8 +85,6 @@
             
             <input type="submit" value="Develop" name="develop" id="develop" onClick="developProfile(event);">
         </form>
-        
-        <a href="Logout.php">Logout</a>
     </div>
     
     <?php
