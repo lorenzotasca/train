@@ -24,12 +24,12 @@
                 // Password matches, so create the session
                 $_SESSION['id'] = $row['ID_giocatore']; // mi serve in ProfileContrller.php
                 $_SESSION['name'] = $row['nome']; // mi serve in ProfileContrller.php
-                
+
                 $_SESSION['username'] = $row['username'];
                 
                 
                 
-                header("Location: Characteristics.php");
+                header("Location: Profile.php");
 
                 exit(); // Interrompere l'esecuzione dopo il redirect
             }else {

@@ -37,7 +37,7 @@
 
         try {
             $stmt->execute();
-            header("Location: DefaultPage.php");
+            header("Location: Profile.php"); // vai in DefaultPage.php per poi avere in alto a destra un "menu a tendina" che ti dici molte cose tra cui: "my activities"
         } catch (Exception $e) {
             $err = $e->getMessage();
             header("Location: Characteristics.php?err=$err");
