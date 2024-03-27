@@ -24,8 +24,7 @@
                 // Password matches, so create the session
                 $_SESSION['id'] = $row['ID_giocatore']; // mi serve in ProfileContrller.php
                 $_SESSION['name'] = $row['nome']; // mi serve in ProfileContrller.php
-                //$_SESSION['surname'] = $row['cognome']; // mi serve in ProfileContrller.php
-                //$_SESSION['birthdate'] = $row['data_nascita']; // mi serve in ProfileContrller.php
+                
                 $_SESSION['username'] = $row['username'];
                 
                 
