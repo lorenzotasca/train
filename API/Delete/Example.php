@@ -32,7 +32,7 @@
             console.log(e);
 
             let xhr = new XMLHttpRequest();
-            xhr.open('GET', '/www/API.php?t=' + contenuto);
+            xhr.open('GET', '/www/API/Delete/API.php?t=' + contenuto);
             xhr.send();
             
             xhr.onload = function() {
@@ -67,7 +67,7 @@
 
             let deleteXhr = new XMLHttpRequest();
             //deleteXhr.open('POST', '/www/APIDelete.php?id=' + userId);
-            deleteXhr.open('POST', '/www/APIDelete.php');
+            deleteXhr.open('POST', '/www/API/Delete/APIDelete.php');
             //deleteXhr.send();
 
             //deleteXhr.open('POST', 'APIDelete.php');
