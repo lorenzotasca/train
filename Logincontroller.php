@@ -36,7 +36,8 @@
 
                 $row = $res->fetch_assoc(); // Ottiene la riga risultante come array associativo
 
-                if ($row['ruolo'] !== NULL) {
+                if ($row['ruolo'] != NULL) {
+                    $_SESSION['role'] = $row['role'];
                     header("Location: Profile.php");
                 }
                 else{

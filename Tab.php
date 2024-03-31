@@ -37,19 +37,19 @@
             }
 
             .Basket {
-                background-color: #ff9999; /* Rosso */
+                background-color: #ff9999;
             }
 
             .Gym {
-                background-color: #99ccff; /* Blu */
+                background-color: #99ccff;
             }
 
             .Personal_growth {
-                background-color: #99ff99; /* Verde */
+                background-color: #99ff99;
             }
 
-            .Rest {
-                background-color: #ffff99; /* Giallo */
+            .Sleep {
+                background-color: #ffff99;
             }
 
         </style>
@@ -63,16 +63,15 @@
             <span class="Basket"></span> Basket<br><br>
             <span class="Gym"></span> Gym<br><br>
             <span class="Personal_growth"></span> Personal<br>growth<br><br>
-            <span class="Rest"></span> Rest
+            <span class="Sleep"></span> Sleep
         </div>
 
         <?php
 
             // PER OGNI GIORNO DELLA SETTIMANA, FARE UNA NUOVA PAGINA DOVE SI VEDA CHIARAMENTE LA DESCRIZIONE DEGLI ALLENAMENTI E 
-            // LE STESSE INFORMAZIONI DIVERSE SEMPRE PER COLORE DI OGNI ATTIVITA' AD OGNI ORARIO
+            // LE STESSE INFORMAZIONI DIViSE SEMPRE PER COLORE DI OGNI ATTIVITA' AD OGNI ORARIO
             // (SE STESSA COSA RIPETUTA SU PIU' ORARI CONSECUTIVI, RAGGRUPPARE IN UNA CELLA SOLA (CON COLSPAN = NUMERO DI ORARI CONSECUTIVI IDENTICI))
 
-            // Array associativo con giorni della settimana e relativi orari
             $orari_settimanali = array(
                 "Monday" => array("0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"),
                 "Tuesday" => array("0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"),
@@ -83,9 +82,17 @@
                 "Sunday" => array("0:00", "1:00", "2:00", "3:00", "4:00", "5:00", "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00")
             );
 
-            // Stampare la tabella
             echo "<table>";
-            echo "<tr><th></th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></tr>";
+            echo "<tr>
+                    <th></th>
+                    <th><a href='Train.php'>Monday</a></th>
+                    <th><a href='Train.php'>Tuesday</a></th>
+                    <th><a href='Train.php'>Wednesday</a></th>
+                    <th><a href='Train.php'>Thursday</a></th>
+                    <th><a href='Train.php'>Friday</a></th>
+                    <th><a href='Train.php'>Saturday</a></th>
+                    <th><a href='Train.php'>Sunday</a></th>
+                 </tr>";
 
             for ($ora = 0; $ora <= 23; $ora++) {
                 $ora_display = sprintf("%02d:00", $ora);

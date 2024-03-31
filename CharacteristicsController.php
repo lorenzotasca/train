@@ -35,6 +35,7 @@
 
         $stmt->bind_param("sssss", $_POST['role'], $standing_reach_ft, $height_wo_shoes_ft, $wingspan_ft, $id_giocatore);
 
+
         try {
             $stmt->execute();
             header("Location: Profile.php"); // vai in DefaultPage.php per poi avere in alto a destra un "menu a tendina" che ti dici molte cose tra cui: "my activities"

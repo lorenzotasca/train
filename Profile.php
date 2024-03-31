@@ -1,11 +1,10 @@
 <?php
 
     session_start();
-    if(!isset($_SESSION['id'])){
-        header("Location: Login.php");
+    if(!isset($_SESSION['role'])){
+        header("Location: Train.php"); // VA SEMPRE QUA. RIVEDI IN LOGINCONTROLLER E CHARACTERISTICSCONTROLLER
         exit();
     }
-    $id = $_SESSION['id'];
     $name = $_SESSION['name'];
 
 ?>
