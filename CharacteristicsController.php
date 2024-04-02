@@ -36,19 +36,31 @@
         $stmt->bind_param("sssss", $_POST['role'], $standing_reach_ft, $height_wo_shoes_ft, $wingspan_ft, $id_giocatore);
 
 
-        try {
-            $stmt->execute();
-            header("Location: Profile.php"); // vai in DefaultPage.php per poi avere in alto a destra un "menu a tendina" che ti dici molte cose tra cui: "my activities"
-        } catch (Exception $e) {
-            $err = $e->getMessage();
-            header("Location: Characteristics.php?err=$err");
-        } finally {
-            $stmt->close();
-            $connessione->close();
-        }
-
     }else {
         echo "error bitch!";
+    }
+
+    // to insert in scheda the number of dedication
+
+    //echo $_POST['dedication']; // solo il numero
+    
+    $query = "INSERT INTO Scheda (dedizione) VALUES (?)";
+    $stmt2 = $connessione2->prepare($query);
+    $stmt2->bind_param("s", $_POST['dedication']);
+    
+
+    try {
+        $stmt->execute();
+        $stmt2->execute();
+        header("Location: Profile.php"); // vai in DefaultPage.php per poi avere in alto a destra un "menu a tendina" che ti dici molte cose tra cui: "my activities"
+    } catch (Exception $e) {
+        $err = $e->getMessage();
+        header("Location: Characteristics.php?err=$err");
+    } finally {
+        $stmt->close();
+        $stmt2->close();
+        $connessione->close();
+        $connessione2->close();
     }
 
     

@@ -13,7 +13,7 @@ CREATE TABLE Giocatore(
 );
 
 CREATE TABLE Scheda(
-    ID_scheda char(10),
+    ID_scheda INT AUTO_INCREMENT,
     giorni_della_settimana char(9),
     orario integer,
     dedizione integer,
