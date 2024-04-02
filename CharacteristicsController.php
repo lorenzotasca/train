@@ -47,6 +47,8 @@
     $query = "INSERT INTO Scheda (dedizione) VALUES (?)";
     $stmt2 = $connessione->prepare($query);
     $stmt2->bind_param("s", $_POST['dedication']);
+
+    $_SESSION['dedication'] = $row['dedizione'];
     
 
     try {

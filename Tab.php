@@ -69,6 +69,8 @@
 
     <?php
 
+        session_start();
+
         // PER OGNI GIORNO DELLA SETTIMANA, FARE UNA NUOVA PAGINA DOVE SI VEDA CHIARAMENTE LA DESCRIZIONE DEGLI ALLENAMENTI E 
         // LE STESSE INFORMAZIONI DIViSE SEMPRE PER COLORE DI OGNI ATTIVITA' AD OGNI ORARIO
         // (SE STESSA COSA RIPETUTA SU PIU' ORARI CONSECUTIVI, RAGGRUPPARE IN UNA CELLA SOLA (CON COLSPAN = NUMERO DI ORARI CONSECUTIVI IDENTICI))
@@ -101,7 +103,25 @@
             echo "<tr><td>$ora_display</td>";
             foreach ($orari_settimanali as $giorno) {
                 echo "<td class='";
-                if (($ora >= 0 && $ora <= 6) || $ora == 23) {
+
+                // SE SI PUò FAI UNA PAGINA A PARTE PER LA LOGICA DELLA SUDDIVISIONE IN COLORI, MA NON CON TANTI IF:
+                // DEVE CONTENERE LE PERCENTUALI, LA SUDDIVISIONE DELLA GIORNATA IN MATTINA, POMERIGGIO, SERA E NOTTE (SOLO LATO CODICE), E MOLTO ALTRO;
+                // IN QUESTO MODO, PASSANDO COME PARAMETRO IL LIVELLO DI DEDIZIONE ($dedication), IN AUTOMATICO CREA LUI LA TABELLA CON I COLORI 
+                // (IN TABCONTROLLER C'è UN PARTE/ESEMPIO DI COME POTREBBE ESSERE)
+                if ($_SESSION['dedication'] == 1) {
+                    $dedication = 1;
+                } elseif ($_SESSION['dedication'] == 2) {
+                    $dedication = 2;
+                } elseif ($_SESSION['dedication'] == 3) {
+                    $dedication = 3;
+                } elseif ($_SESSION['dedication'] == 4) {
+                    $dedication = 4;
+                } elseif ($_SESSION['dedication'] == 5) {
+                    $dedication = 5;
+                }
+
+
+                /*if (($ora >= 0 && $ora <= 6) || $ora == 23) {
                     echo "Sleep";
                 } elseif ($ora == 7) {
                     echo "Other";
@@ -109,7 +129,7 @@
                     echo "Basket";
                 } elseif ($ora >= 19 && $ora <= 22) {
                     echo "Personal_growth";
-                }
+                }*/
                 echo "'></td>";
             }
             echo "</tr>";
