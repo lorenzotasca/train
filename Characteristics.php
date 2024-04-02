@@ -82,6 +82,9 @@
             
             <label for="wingspan_cm">Wingspan (cm):</label>
             <input type="text" id="wingspan_cm" name="wingspan_cm">
+
+            <label for="dedication">Dedication Level:</label>
+            <input type="range" id="dedication" name="dedication" min="1" max="5">
             
             <input type="submit" value="Develop" name="develop" id="develop" onClick="developProfile(event);">
         </form>
