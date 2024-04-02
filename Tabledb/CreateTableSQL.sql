@@ -14,8 +14,9 @@ CREATE TABLE Giocatore(
 
 CREATE TABLE Scheda(
     ID_scheda char(10),
-    giorni_della_settimana char(7),
+    giorni_della_settimana char(9),
     orario integer,
+    dedizione integer,
     PRIMARY KEY (ID_scheda)
 );
 
