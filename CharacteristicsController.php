@@ -45,7 +45,7 @@
     //echo $_POST['dedication']; // solo il numero
     
     $query = "INSERT INTO Scheda (dedizione) VALUES (?)";
-    $stmt2 = $connessione2->prepare($query);
+    $stmt2 = $connessione->prepare($query);
     $stmt2->bind_param("s", $_POST['dedication']);
     
 
@@ -60,7 +60,6 @@
         $stmt->close();
         $stmt2->close();
         $connessione->close();
-        $connessione2->close();
     }
 
     
