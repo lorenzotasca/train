@@ -18,22 +18,3 @@
         return $colors;
     }
 ?>
-
-
-
-<?php
-    // QUESTA PARTE SAREBBE DA AGGIUNGERE IN Tab.php 
-
-    session_start();
-
-    include 'TabController.php'; // Includi il file TabController.php
-
-    // Ottenere il livello di dedizione dalla sessione
-    $dedication = isset($_SESSION['dedication']) ? $_SESSION['dedication'] : 1;
-
-    // Ottenere i colori e le percentuali dalla funzione getTabColors
-    $colors = getTabColors($dedication);
-
-    // Continua il codice per la creazione della tabella utilizzando i dati restituiti
-    // ...
-?>

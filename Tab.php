@@ -71,13 +71,30 @@
 
         session_start();
 
+        include 'TabController.php';
+
+        // Ottenere il livello di dedizione dalla sessione
+        //$dedication = isset($_SESSION['dedication']) ? $_SESSION['dedication'] : "dedication level not set";
+        // QUANDO COLLEGHI IL TUTTO BENE
+        /*if (isset($_SESSION['dedication'])) {
+            $dedication = $_SESSION['dedication']; 
+        }
+        else{
+            echo "dedication level not set";
+        }*/
+        $dedication = 3; // PER PROVARE
+        
+        // Ottenere i colori e le percentuali dalla funzione getTabColors
+        $colors = getTabColors($dedication);
+
+
         // RIVEDI CIò CHE C'è SCRITTO QUA SOTTO
         // PER OGNI GIORNO DELLA SETTIMANA, FARE UNA NUOVA PAGINA DOVE SI VEDA CHIARAMENTE LA DESCRIZIONE DEGLI ALLENAMENTI E 
         // LE STESSE INFORMAZIONI DIViSE SEMPRE PER COLORE DI OGNI ATTIVITA' AD OGNI ORARIO
         // (SE STESSA COSA RIPETUTA SU PIU' ORARI CONSECUTIVI, RAGGRUPPARE IN UNA CELLA SOLA (CON COLSPAN = NUMERO DI ORARI CONSECUTIVI IDENTICI))
 
 
-        
+
         $orari_settimanali = array(
             "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
         );
@@ -108,8 +125,19 @@
 
                 // SE SI PUò FAI UNA PAGINA A PARTE PER LA LOGICA DELLA SUDDIVISIONE IN COLORI, MA NON CON TANTI IF:
                 // DEVE CONTENERE LE PERCENTUALI, LA SUDDIVISIONE DELLA GIORNATA IN MATTINA, POMERIGGIO, SERA E NOTTE (SOLO LATO CODICE), E MOLTO ALTRO;
-                // IN QUESTO MODO, PASSANDO COME PARAMETRO IL LIVELLO DI DEDIZIONE ($dedication), IN AUTOMATICO CREA LUI LA TABELLA CON I COLORI 
+                // IN QUESTO MODO, PASSANDO COME PARAMETRO IL LIVELLO DI DEDIZIONE ($dedication), IN AUTOMATICO CREA LUI LA SUDDIVISIONE CON I COLORI 
                 // (IN TABCONTROLLER C'è UN PARTE/ESEMPIO DI COME POTREBBE ESSERE)
+
+                //echo $colors;
+                //echo "<div class='activity'>" . $colors["color"] . "</div>";
+                /*
+                // Stampa i colori e le percentuali
+                foreach ($colors as $activity => $data) {
+                    echo "<div class='activity' style='background-color: " . $data['color'] . "; width: " . $data['percentage'] . "%;'>" . $activity . "</div>";
+                }
+                */
+
+                /*
                 if ($_SESSION['dedication'] == 1) {
                     $dedication = 1;
                 } elseif ($_SESSION['dedication'] == 2) {
@@ -121,9 +149,10 @@
                 } elseif ($_SESSION['dedication'] == 5) {
                     $dedication = 5;
                 }
+                */
 
-
-                /*if (($ora >= 0 && $ora <= 6) || $ora == 23) {
+                /*
+                if (($ora >= 0 && $ora <= 6) || $ora == 23) {
                     echo "Sleep";
                 } elseif ($ora == 7) {
                     echo "Other";
