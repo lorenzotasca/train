@@ -1,6 +1,6 @@
 <?php
 
-    include "connection.php";
+    include "connection/connection.php";
 
     //read post param
     $param = $_GET["t"];

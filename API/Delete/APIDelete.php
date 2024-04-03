@@ -3,7 +3,7 @@
 
 echo "Ciao";
 
-include "connection.php";
+include "connection/connection.php";
 
 // Ottenere l'ID dell'utente da eliminare dalla richiesta POST
 $userId = $_POST["id"];

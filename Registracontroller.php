@@ -2,7 +2,7 @@
 
     session_start();
 
-    include "connection.php";
+    include "connection/connection.php";
 
     // Get the form data
     $surname = $_POST['surname'];

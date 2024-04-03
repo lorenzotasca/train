@@ -2,7 +2,7 @@
 
     session_start();
  
-    include "connection.php";
+    include "connection/connection.php";
 
     // Check if form is submitted
     if(isset($_POST['login'])){ // questo login è il name del bottone ed è nel Login.php
