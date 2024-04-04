@@ -21,24 +21,27 @@ CREATE TABLE Scheda(
 );
 
 CREATE TABLE Allenamento(
-    ID_allenamento char(10),
+    ID_allenamento INT AUTO_INCREMENT,
     orario integer,
     descrizione varchar(1000),
     PRIMARY KEY (ID_allenamento)
 );
 
 CREATE TABLE Statistica(
-    ID_statistica char(20) PRIMARY KEY
+    ID_statistica INT AUTO_INCREMENT PRIMARY KEY
 );
 
 CREATE TABLE comprende(
-    ID_allenamento char(10),
-    ID_scheda char(10),
-    PRIMARY KEY (ID_allenamento, ID_scheda)
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID_allenamento INT,
+    ID_scheda INT,
+    FOREIGN KEY (ID_allenamento) REFERENCES Allenamento(ID_allenamento),
+    FOREIGN KEY (ID_scheda) REFERENCES Scheda(ID_scheda)
 );
 
 CREATE TABLE riceve(
-    ID_giocatore char(10),
-    ID_scheda char(10),
-    PRIMARY KEY (ID_giocatore, ID_scheda)
+    ID AUTO_INCREMENT PRIMARY KEY,
+    ID_giocatore char(50),
+    ID_scheda INT AUTO_INCREMENT,
+    Foreign KEY (ID_giocatore, ID_scheda)
 );
