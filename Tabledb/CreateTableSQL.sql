@@ -40,8 +40,17 @@ CREATE TABLE comprende(
 );
 
 CREATE TABLE riceve(
-    ID AUTO_INCREMENT PRIMARY KEY,
+    ID INT AUTO_INCREMENT PRIMARY KEY,
     ID_giocatore char(50),
-    ID_scheda INT AUTO_INCREMENT,
-    Foreign KEY (ID_giocatore, ID_scheda)
+    ID_scheda INT,
+    FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
+    FOREIGN KEY (ID_scheda) REFERENCES Scheda(ID_scheda)
+);
+
+CREATE TABLE registra(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    ID_giocatore char(50),
+    ID_statistica INT,
+    FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
+    FOREIGN KEY (ID_statistica) REFERENCES Statistica(ID_statistica)
 );
