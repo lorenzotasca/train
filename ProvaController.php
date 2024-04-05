@@ -1,8 +1,7 @@
 <?php
-class ProvaController {
-    public static function getColors($dedication) {
-        // Definizione dei colori base per le attività
-        $baseColors = array(
+    function getTabColors($dedication) {
+        // Array associativo per mappare le attività ai colori
+        $colors = array(
             "Basket" => "#ff9999",
             "Gym" => "#99ccff",
             "Personal_growth" => "#99ff99",
@@ -10,34 +9,57 @@ class ProvaController {
             "Other" => "#ffcc99"
         );
 
-        // Calcolo delle percentuali in base al livello di dedizione
-        $colors = array();
-        foreach ($baseColors as $activity => $color) {
-            $percentage = self::calculatePercentage($dedication);
-            $colors[$activity] = array("color" => $color, "percentage" => $percentage);
-        }
-
-        return $colors;
-    }
-
-    // Metodo per calcolare le percentuali in base al livello di dedizione
-    private static function calculatePercentage($dedication) {
-        // Definisci qui la logica per calcolare le percentuali
-        // Ad esempio:
+        // Calcolare le percentuali in base al livello di dedizione
+        // Modifica la distribuzione delle percentuali in base alle tue esigenze
         switch ($dedication) {
             case 1:
-                return array("Basket" => 20, "Gym" => 10, "Personal_growth" => 5, "Sleep" => 30, "Other" => 35);
+                $percentages = array(
+                    "Basket" => 20,
+                    "Gym" => 20,
+                    "Personal_growth" => 20,
+                    "Sleep" => 20,
+                    "Other" => 20
+                );
+                break;
             case 2:
-                return array("Basket" => 25, "Gym" => 15, "Personal_growth" => 10, "Sleep" => 25, "Other" => 25);
+                $percentages = array(
+                    "Basket" => 25,
+                    "Gym" => 20,
+                    "Personal_growth" => 20,
+                    "Sleep" => 20,
+                    "Other" => 15
+                );
+                break;
             case 3:
-                return array("Basket" => 30, "Gym" => 20, "Personal_growth" => 15, "Sleep" => 20, "Other" => 15);
-            case 4:
-                return array("Basket" => 35, "Gym" => 25, "Personal_growth" => 20, "Sleep" => 15, "Other" => 5);
-            case 5:
-                return array("Basket" => 40, "Gym" => 30, "Personal_growth" => 20, "Sleep" => 10, "Other" => 0);
+                $percentages = array(
+                    "Basket" => 30,
+                    "Gym" => 25,
+                    "Personal_growth" => 20,
+                    "Sleep" => 15,
+                    "Other" => 10
+                );
+                break;
+            // Aggiungi altri casi per gestire altri livelli di dedizione, se necessario
             default:
-                return array("Basket" => 20, "Gym" => 20, "Personal_growth" => 20, "Sleep" => 20, "Other" => 20);
+                $percentages = array(
+                    "Basket" => 20,
+                    "Gym" => 20,
+                    "Personal_growth" => 20,
+                    "Sleep" => 20,
+                    "Other" => 20
+                );
+                break;
         }
+
+        // Assemblare l'array associativo finale contenente i colori e le percentuali
+        $finalData = array();
+        foreach ($colors as $activity => $color) {
+            $finalData[$activity] = array(
+                "color" => $color,
+                "percentage" => $percentages[$activity]
+            );
+        }
+
+        return $finalData;
     }
-}
 ?>

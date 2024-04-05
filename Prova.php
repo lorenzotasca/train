@@ -75,36 +75,34 @@
     // Ottenere il livello di dedizione dalla sessione o da un'altra fonte
     $dedication = 3; // livello di dedizione (può essere un valore dinamico)
 
-    // Ottenere i colori e le percentuali delle attività tramite il ProvaController
-    $colors = ProvaController::getColors($dedication);
+    $colors = getTabColors($dedication);
+    //$activities = getDailyActivities($dedication);
+    //$dayDivisions = divideDay($dedication);
 
-    // Array dei giorni della settimana
-    $orari_settimanali = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+    $weekDays = array(
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+    );
+    $hours = range(0, 23);
 
-    // Array degli orari
-    $orari = range(0, 23);
-
-    // Stampa la tabella
     echo "<table>";
     echo "<tr><th></th>";
-    foreach ($orari_settimanali as $giorno) {
-        echo "<th><a href='Train.php'>$giorno</a></th>";
+    foreach ($weekDays as $day) {
+        echo "<th><a href='Train.php'>$day</a></th>";
     }
     echo "</tr>";
 
-    // Itera sugli orari e giorni per riempire la tabella
-    foreach ($orari as $ora) {
-        $ora_display = sprintf("%02d:00", $ora);
-        echo "<tr><td>$ora_display</td>";
-        foreach ($orari_settimanali as $giorno) {
-            $activity = ucfirst($giorno); // Assumendo che l'attività sia associata al giorno
-            //$color_class = str_replace('_', ' ', array_search($colors[$activity]['color'], $colors));
-            $color_class = str_replace('_', ' ', $activity);
-            echo "<td class='$color_class'></td>";
+    foreach ($hours as $hour) {
+        $hour_display = sprintf("%02d:00", $hour);
+        echo "<tr><td>$hour_display</td>";
+        foreach ($weekDays as $day) {
+            echo "<td class='";
+            // Aggiungere la logica per determinare la classe da assegnare in base alle attività
+            echo "'></td>";
         }
         echo "</tr>";
     }
     echo "</table>";
+
 ?>
 </body>
 </html>
