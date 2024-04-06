@@ -148,6 +148,19 @@
 
     <footer>
         <p>&copy; <?php echo date("Y"); ?> Basket LTcombine. Tutti i diritti riservati.</p>
+        <!--
+            <footer>
+                <div class="container">
+                <p>&copy; 2024 Ritmo nel Campo. Tutti i diritti riservati.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                </div>
+            </footer>
+        -->
     </footer>
 
 </body>
