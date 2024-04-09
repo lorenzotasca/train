@@ -10,7 +10,7 @@
 <body>
 
     <header>
-        <img src="img/Cattura4.png" alt="Logo Basket LTcombine" class="logo">
+        <img src="img/logo.png" alt="Logo Basket LTcombine" class="logo">
         <nav>
             <a href="DefaultPage.php" class="nav-link">Home</a>
             <a href="menu/Contacts.php" class="nav-link">Contacts</a>
