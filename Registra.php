@@ -136,6 +136,21 @@
             <input type="password" id="password" name="password" placeholder="Choose a password" required>
         </div>
 
+        <!-- x deselezionare-->
+        <script>
+            function toggleSelection() {
+                var adminButton = document.getElementById('admin');
+                adminButton.checked = !adminButton.checked;
+            }
+        </script>
+
+        <div class="form-group">
+            <div>
+                <input type="radio" id="admin" name="role" value="admin" onclick="toggleSelection()" required>
+                <label for="admin">Admin</label>
+            </div>
+        </div>
+
         <div class="form-group">
             <input type="submit" value="Register" name="register" id="register" onClick="submitClick(event);">
         </div>
