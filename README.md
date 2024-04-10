@@ -6,6 +6,16 @@
 docker run --name myXampp -p 41061:22 -p 41062:80 -d -v /workspaces/codespaces-train/www tomsik68/xampp:8
 
 
+-----------------------------------------------------------------------------------------------------------
+
+
+#Nome db#
+
+progetto
+
+
+-----------------------------------------------------------------------------------------------------------
+
 
 #Funzionalita#
 
@@ -28,12 +38,15 @@ stabilire la preparazione di un giocatore:
 -si possono ricercare i propri dati accedendo con le credenziali
 
 
+-----------------------------------------------------------------------------------------------------------
+
 
 #ER#
 
 ![image](https://github.com/lorenzotasca/train/assets/101709418/43a93422-7f4c-456d-9589-3b3989d16123)
 
 
+-----------------------------------------------------------------------------------------------------------
 
 
 #Relazionale#
@@ -49,6 +62,9 @@ Statistica([ID_statistica])
 comprende([ID_allenamento], [ID_scheda])
 
 riceve([ID_giocatore], [ID_scheda])
+
+
+-----------------------------------------------------------------------------------------------------------
 
 
 
