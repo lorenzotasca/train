@@ -1,3 +1,6 @@
+DROP DATABASE IF EXIST progetto;
+CREATE DATABASE progetto;
+USE progetto;
 CREATE TABLE Giocatore(
     ID_giocatore char(50), 
     cognome char(20),
