@@ -85,7 +85,7 @@
 <body>
 
     <header>
-        <img src="../img/Cattura4.png" alt="Logo Basket LTcombine" class="logo">
+        <img src="../img/logo.png" alt="Logo Basket LTcombine" class="logo">
         <div class="navigation">
             <a href="../DefaultPage.php" class="nav-link">Home</a>
             <a href="Contacts.php" class="nav-link">Contacts</a>
