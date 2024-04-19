@@ -68,42 +68,48 @@
     </div>
 
     <?php
-    session_start();
 
-    include 'ProvaController.php';
+        session_start();
 
-    // Ottenere il livello di dedizione dalla sessione o da un'altra fonte
-    $dedication = 3; // livello di dedizione (può essere un valore dinamico)
+        include 'ProvaController.php';
 
-    $colors = getTabColors($dedication);
-    //$activities = getDailyActivities($dedication);
-    //$dayDivisions = divideDay($dedication);
+        // Ottenere il livello di dedizione dalla sessione o da un'altra fonte
+        $dedication = 3;
 
-    $weekDays = array(
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-    );
-    $hours = range(0, 23);
+        $colors = getTabColors($dedication);
+        //$activities = getDailyActivities($dedication);
+        //$dayDivisions = divideDay($dedication);
 
-    echo "<table>";
-    echo "<tr><th></th>";
-    foreach ($weekDays as $day) {
-        echo "<th><a href='Train.php'>$day</a></th>";
-    }
-    echo "</tr>";
+        $weekDays = array(
+            "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        );
+        $hours = range(0, 23);
 
-    foreach ($hours as $hour) {
-        $hour_display = sprintf("%02d:00", $hour);
-        echo "<tr><td>$hour_display</td>";
+        echo "<table>";
+        echo "<tr><th></th>";
         foreach ($weekDays as $day) {
-            echo "<td class='";
-            echo "Basket";
-            // Aggiungere la logica per determinare la classe da assegnare in base alle attività
-            echo "'></td>";
+            echo "<th><a href='Train.php'>$day</a></th>";
         }
         echo "</tr>";
-    }
-    echo "</table>";
 
-?>
+        foreach ($hours as $hour) {
+            $hour_display = sprintf("%02d:00", $hour);
+            echo "<tr><td>$hour_display</td>";
+            foreach ($weekDays as $day) {
+                echo "<td class='";
+
+                //PROVA CON DEDICATION = 1
+
+                $class = prova($dedication, $day, $hour);
+                echo $class;
+
+                // Aggiungere la logica per determinare la classe da assegnare in base alle attività
+                echo "'></td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+
+    ?>
 </body>
 </html>

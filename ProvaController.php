@@ -62,4 +62,49 @@
 
         return $finalData;
     }
+
+    // DEDICATION = 1 (PER PROVARE)
+    function prova($dedication, $day, $hour){
+
+        $class = '';
+    
+        switch ($dedication) {
+            case 1:
+                switch ($day) {
+                    case 'Monday':
+                        echo "Monday, ";
+                        if (($hour >= 0 && $hour <= 6) || $hour == 23) {
+                            echo "Sleep, ";
+                            $class = 'Sleep';
+                        } elseif (($hour >= 7 && $hour <= 15) || ($hour >= 18 && $hour <= 22)) {
+                            echo "Other, ";
+                            $class = 'Other';
+                        } elseif ($hour == 16) {
+                            echo "Basket, ";
+                            $class = 'Basket';
+                        } elseif ($hour == 17) {
+                            echo "Gym, ";
+                            $class = 'Gym';
+                        }
+                        break;
+                    case 'Tuesday':
+                        echo "Tuesday, ";
+                        // Gestisci il martedì
+                        break;
+                    // Aggiungi i casi per gli altri giorni
+                    default:
+                        echo "Other day, ";
+                        $class = 'Other';
+                        break;
+                }
+                break;
+            // Aggiungi altri casi per gestire altri livelli di dedizione, se necessario
+            
+        }
+    
+        return $class;
+    }
+    
+    
+
 ?>
