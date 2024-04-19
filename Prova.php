@@ -96,6 +96,7 @@
         echo "<tr><td>$hour_display</td>";
         foreach ($weekDays as $day) {
             echo "<td class='";
+            echo "Basket";
             // Aggiungere la logica per determinare la classe da assegnare in base alle attività
             echo "'></td>";
         }
