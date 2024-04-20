@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programming</title>
     <style>
+
         table {
             width: 94%;
             border-collapse: collapse;
@@ -43,16 +44,12 @@
             background-color: #99ccff;
         }
 
-        .Personal_growth {
+        .Sleep {
             background-color: #99ff99;
         }
 
-        .Sleep {
-            background-color: #ffff99;
-        }
-
         .Other {
-            background-color: #ffcc99;
+            background-color: #ffff99;
         }
 
     </style>
@@ -62,7 +59,7 @@
         <strong>Legend</strong><br><br><br>
         <span class="Basket"></span> Basket<br><br>
         <span class="Gym"></span> Gym<br><br>
-        <span class="Personal_growth"></span> Personal<br>growth<br><br>
+        <!--<span class="Personal_growth"></span> Personal<br>growth<br><br>-->
         <span class="Sleep"></span> Sleep<br><br>
         <span class="Other"></span> Other
     </div>
@@ -97,13 +94,43 @@
             echo "<tr><td>$hour_display</td>";
             foreach ($weekDays as $day) {
                 echo "<td class='";
-
+        
                 //PROVA CON DEDICATION = 1
-
-                $class = prova($dedication, $day, $hour);
-                echo $class;
-
-                // Aggiungere la logica per determinare la classe da assegnare in base alle attività
+                switch ($day){
+                    case "Monday":
+                        if (($hour >= 0 && $hour <= 6) || $hour == 23) {
+                            echo "Sleep";
+                        } elseif (($hour >= 7 && $hour <= 15) || ($hour >= 18 && $hour <= 22)) {
+                            echo "Other";
+                        } elseif ($hour == 16) {
+                            echo "Gym";
+                        } elseif ($hour == 17) {
+                            echo "Basket";
+                        }
+                        break;
+                    case "Tuesday":
+                    case "Thursday":
+                    case "Saturday":
+                    case "Sunday":
+                        if (($hour >= 0 && $hour <= 6) || $hour == 23) {
+                            echo "Sleep";
+                        } elseif ($hour >= 7 && $hour <= 22){
+                            echo "Other";
+                        }
+                        break; // Aggiungi questa riga
+                    case "Wednesday":
+                    case "Friday":
+                        if (($hour >= 0 && $hour <= 6) || $hour == 23) {
+                            echo "Sleep";
+                        } elseif (($hour >= 7 && $hour <= 15) || ($hour >= 18 && $hour <= 22)) {
+                            echo "Other";
+                        } elseif ($hour >= 16 && $hour <= 17) {
+                            echo "Basket";
+                        }
+                        break;
+                }
+                
+        
                 echo "'></td>";
             }
             echo "</tr>";

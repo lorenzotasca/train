@@ -152,7 +152,7 @@
                 }
                 */
 
-                /*
+                
                 if (($ora >= 0 && $ora <= 6) || $ora == 23) {
                     echo "Sleep";
                 } elseif ($ora == 7) {
@@ -161,7 +161,7 @@
                     echo "Basket";
                 } elseif ($ora >= 19 && $ora <= 22) {
                     echo "Personal_growth";
-                }*/
+                }
                 echo "'></td>";
             }
             echo "</tr>";
