@@ -1,102 +1,74 @@
 <?php
-    function getTabColors($dedication) {
-        // Array associativo per mappare le attività ai colori
-        $colors = array(
-            "Basket" => "#ff9999",
-            "Gym" => "#99ccff",
-            "Personal_growth" => "#99ff99",
-            "Sleep" => "#ffff99",
-            "Other" => "#ffcc99"
-        );
 
-        // Calcolare le percentuali in base al livello di dedizione
-        // Modifica la distribuzione delle percentuali in base alle tue esigenze
-        switch ($dedication) {
-            case 1:
-                $percentages = array(
-                    "Basket" => 20,
-                    "Gym" => 20,
-                    "Personal_growth" => 20,
-                    "Sleep" => 20,
-                    "Other" => 20
-                );
-                break;
-            case 2:
-                $percentages = array(
-                    "Basket" => 25,
-                    "Gym" => 20,
-                    "Personal_growth" => 20,
-                    "Sleep" => 20,
-                    "Other" => 15
-                );
-                break;
-            case 3:
-                $percentages = array(
-                    "Basket" => 30,
-                    "Gym" => 25,
-                    "Personal_growth" => 20,
-                    "Sleep" => 15,
-                    "Other" => 10
-                );
-                break;
-            // Aggiungi altri casi per gestire altri livelli di dedizione, se necessario
-            default:
-                $percentages = array(
-                    "Basket" => 20,
-                    "Gym" => 20,
-                    "Personal_growth" => 20,
-                    "Sleep" => 20,
-                    "Other" => 20
-                );
-                break;
-        }
+function getTabColors($dedication) {
+    $tabColors = array(
+        "Night" => array(),
+        "Morning" => array(),
+        "Afternoon" => array(),
+        "Evening" => array()
+    );
 
-        // Assemblare l'array associativo finale contenente i colori e le percentuali
-        $finalData = array();
-        foreach ($colors as $activity => $color) {
-            $finalData[$activity] = array(
-                "color" => $color,
-                "percentage" => $percentages[$activity]
-            );
-        }
+    //-----------------------------------------------------------------------
+    //                          (RIVEDI)
+    //-----------------------------------------------------------------------
+    // Calcola le percentuali settimanali per ciascuna attività
+    $weeklyPercentages = array(
+        "Sleep" => 1 / 24, // Una ora di sonno al giorno   
+        "Gym" => 0.25,     // 3 ore di allenamento a settimana su 12 ore giornaliere (4 fasi)
+        "Basket" => 0.5,   // 6 ore di basket a settimana su 12 ore giornaliere (4 fasi)
+        "Other" => 0.25    // Il resto del tempo
+    );
 
-        return $finalData;
+    // Suddivide la giornata in 4 fasi: notte, mattina, pomeriggio e sera
+    $dayDivisions = array(
+        "Night" => range(0, 6),
+        "Morning" => range(7, 11),
+        "Afternoon" => range(12, 17),
+        "Evening" => range(18, 22)
+    );
+
+    // Calcola il numero di ore giornaliere per ciascuna attività
+    $dailyHours = array();
+    foreach ($weeklyPercentages as $activity => $percentage) {
+        $dailyHours[$activity] = $percentage * 12; // 12 ore giornaliere per $dedication=1
     }
 
-    // DEDICATION = 1 (PER PROVARE)
-    function prova($dedication, $day, $hour){
-        $class = '';
-    
-        switch ($dedication) {
-            case 1:
-                switch ($day) {
-                    case 'Monday':
-                        if (($hour >= 0 && $hour <= 6) || $hour == 23) {
-                            $class = 'Sleep';
-                        } elseif (($hour >= 7 && $hour <= 15) || ($hour >= 18 && $hour <= 22)) {
-                            $class = 'Other';
-                        } elseif ($hour == 16) {
-                            $class = 'Gym';
-                        } elseif ($hour == 17) {
-                            $class = 'Basket';
-                        }
-                        break;
-                    case 'Tuesday':
-                        // Gestisci il martedì
-                        break;
-                    // Aggiungi i casi per gli altri giorni
-                    default:
-                        $class = 'Other';
-                        break;
+    // Assegna un'attività a ciascuna fase della giornata
+    foreach ($dayDivisions as $phase => $hours) {
+        foreach ($hours as $hour) {
+            // Assegna "Sleep" per l'ora della notte e per l'ora della sera
+            if ($phase === "Night" || $phase === "Evening") {
+                $tabColors[$phase][$hour] = "Sleep";
+            } else {
+                // Altrimenti, assegna le altre attività in base alle percentuali settimanali
+                $remainingActivities = array_keys($weeklyPercentages);
+                $remainingActivities = array_diff($remainingActivities, ["Sleep"]); // Rimuovi "Sleep" dalla lista delle attività rimanenti
+
+                // Calcola il totale delle percentuali settimanali delle attività rimanenti
+                $totalPercentage = array_sum(array_map(function($activity) use ($weeklyPercentages) {
+                    return $weeklyPercentages[$activity];
+                }, $remainingActivities));
+
+                // Genera un numero casuale per selezionare un'attività in base alle percentuali settimanali
+                $randomNumber = 0;
+                if ($totalPercentage > 0) {
+                    $randomNumber = mt_rand(0, 9999) / 10000 * $totalPercentage;
                 }
-                break;
-            // Aggiungi altri casi per gestire altri livelli di dedizione, se necessario
+
+                // Seleziona l'attività in base al numero casuale generato
+                $currentPercentage = 0;
+                foreach ($remainingActivities as $activity) {
+                    $currentPercentage += $weeklyPercentages[$activity];
+                    if ($randomNumber <= $currentPercentage) {
+                        $tabColors[$phase][$hour] = $activity;
+                        break;
+                    }
+                }
+            }
         }
-    
-        return $class;
     }
-    
-    
-    
+
+    return $tabColors;
+}
 
 ?>

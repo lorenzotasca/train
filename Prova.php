@@ -93,9 +93,12 @@
             $hour_display = sprintf("%02d:00", $hour);
             echo "<tr><td>$hour_display</td>";
             foreach ($weekDays as $day) {
-                echo "<td class='";
+                //echo "<td class='";
+
+                echo "<td class='" . $colors[$day][$hour] . "'></td>";
         
                 //PROVA CON DEDICATION = 1
+                /*
                 switch ($day){
                     case "Monday":
                         if (($hour >= 0 && $hour <= 6) || $hour == 23) {
@@ -129,9 +132,9 @@
                         }
                         break;
                 }
-                
+                */
         
-                echo "'></td>";
+                //echo "'></td>";
             }
             echo "</tr>";
         }
