@@ -1,5 +1,6 @@
 <?php
 
+/*
 function getTabColors($dedication) {
     $tabColors = array(
         "Night" => array(),
@@ -70,5 +71,66 @@ function getTabColors($dedication) {
 
     return $tabColors;
 }
+*/
+
+
+function generateHourDivision($dedication) {
+    $hourDivision = array();
+
+    // Calcoliamo il numero totale di ore di allenamento per la settimana
+    $totalTrainingHours = $dedication * 3 * 2; // 3 giorni di allenamento, 2 ore al giorno
+
+    // Calcoliamo le percentuali settimanali per ciascuna attività, escludendo "Sleep"
+    $basketPercentage = (5 / $totalTrainingHours) * 100;
+    $gymPercentage = (3 / $totalTrainingHours) * 100;
+
+    // Suddivisione della giornata in quattro fasi: notte, mattina, pomeriggio, sera
+    $hourDivision["Notte"] = range(0, 6); // Ore 0-6 (notte)
+    $hourDivision["Mattina"] = range(7, 11); // Ore 7-11 (mattina)
+    $hourDivision["Pomeriggio"] = range(12, 17); // Ore 12-17 (pomeriggio)
+    $hourDivision["Sera"] = range(18, 22); // Ore 18-22 (sera)
+
+    // Assegniamo le attività durante le fasi della giornata
+    foreach ($hourDivision as $phase => $hours) {
+        foreach ($hours as $hour) {
+            switch ($phase) {
+                case "Mattina":
+                    // Distribuiamo le ore di "Basket" e "Gym" in base alle percentuali settimanali
+                    $randomNumber = rand(1, 100);
+                    if ($randomNumber <= $basketPercentage) {
+                        $activity = "Basket";
+                    } elseif ($randomNumber <= ($basketPercentage + $gymPercentage)) {
+                        $activity = "Gym";
+                    } else {
+                        $activity = "Other";
+                    }
+                    break;
+                case "Pomeriggio":
+                    // Distribuiamo le ore di "Gym" e "Basket" in base alle percentuali settimanali
+                    $randomNumber = rand(1, 100);
+                    if ($randomNumber <= $gymPercentage) {
+                        $activity = "Gym";
+                    } elseif ($randomNumber <= ($basketPercentage + $gymPercentage)) {
+                        $activity = "Basket";
+                    } else {
+                        $activity = "Other";
+                    }
+                    break;
+                case "Sera":
+                    // Distribuiamo le ore rimanenti in modo equo tra "Basket" e "Gym"
+                    $activity = (rand(1, 2) == 1) ? "Basket" : "Gym";
+                    break;
+                default:
+                    // Durante la notte, l'attività è "Sleep"
+                    $activity = "Sleep";
+                    break;
+            }
+            $hourDivision[$phase][$hour] = $activity;
+        }
+    }
+
+    return $hourDivision;
+}
+
 
 ?>

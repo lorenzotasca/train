@@ -71,9 +71,9 @@
         include 'ProvaController.php';
 
         // Ottenere il livello di dedizione dalla sessione o da un'altra fonte
-        $dedication = 3;
+        $dedication = 1;
 
-        $colors = getTabColors($dedication);
+        $hourDivision = generateHourDivision($dedication);
         //$activities = getDailyActivities($dedication);
         //$dayDivisions = divideDay($dedication);
 
@@ -82,12 +82,16 @@
         );
         $hours = range(0, 23);
 
+        $hourDivision = array();
         echo "<table>";
         echo "<tr><th></th>";
         foreach ($weekDays as $day) {
             echo "<th><a href='Train.php'>$day</a></th>";
+            $hourDivision[$day] = array_fill(0, 23, "Other");
         }
         echo "</tr>";
+
+        
 
         foreach ($hours as $hour) {
             $hour_display = sprintf("%02d:00", $hour);
@@ -95,8 +99,10 @@
             foreach ($weekDays as $day) {
                 //echo "<td class='";
 
-                echo "<td class='" . $colors[$day][$hour] . "'></td>";
-        
+                $activity = $hourDivision[$day][$hour];
+                echo "<td>$activity</td>";
+                
+
                 //PROVA CON DEDICATION = 1
                 /*
                 switch ($day){
