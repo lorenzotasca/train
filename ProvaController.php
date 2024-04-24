@@ -86,6 +86,7 @@ function generateHourDivision($dedication) {
 
     // Suddivisione della giornata in quattro fasi: notte, mattina, pomeriggio, sera
     $hourDivision["Notte"] = range(0, 6); // Ore 0-6 (notte)
+    $hourDivision["Notte"][] = 23; // Aggiungi l'ora 23 alla fase "Notte"
     $hourDivision["Mattina"] = range(7, 11); // Ore 7-11 (mattina)
     $hourDivision["Pomeriggio"] = range(12, 17); // Ore 12-17 (pomeriggio)
     $hourDivision["Sera"] = range(18, 22); // Ore 18-22 (sera)

@@ -82,12 +82,11 @@
         );
         $hours = range(0, 23);
 
-        $hourDivision = array();
+        //$hourDivision = array();
         echo "<table>";
         echo "<tr><th></th>";
         foreach ($weekDays as $day) {
             echo "<th><a href='Train.php'>$day</a></th>";
-            $hourDivision[$day] = array_fill(0, 23, "Other");
         }
         echo "</tr>";
 
@@ -99,8 +98,20 @@
             foreach ($weekDays as $day) {
                 //echo "<td class='";
 
-                $activity = $hourDivision[$day][$hour];
-                echo "<td>$activity</td>";
+
+                // CI SONO PROBLEMI:                        
+                // IN PROVACONTROLLER.PHP ->    $hourDivision[$phase][$hour]
+                //           IN PROVA.PHP ->    $hourDivision[$day][$hour]
+
+                
+
+                if (isset($hourDivision[$day][$hour])) {
+                    $activity = $hourDivision[$day][$hour];
+                } else {
+                    // Se l'indice non esiste, assegna un valore di default
+                    $activity = "Other";
+                }
+                echo "<td class='$activity'>entra</td>";
                 
 
                 //PROVA CON DEDICATION = 1
