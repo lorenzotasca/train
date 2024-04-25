@@ -96,7 +96,7 @@
             $hour_display = sprintf("%02d:00", $hour);
             echo "<tr><td>$hour_display</td>";
             foreach ($weekDays as $day) {
-                //echo "<td class='";
+                echo "<td class='";
 
 
                 // CI SONO PROBLEMI:                        
@@ -105,17 +105,17 @@
 
                 
 
-                if (isset($hourDivision[$day][$hour])) {
+                /*if (isset($hourDivision[$day][$hour])) {
                     $activity = $hourDivision[$day][$hour];
                 } else {
                     // Se l'indice non esiste, assegna un valore di default
                     $activity = "Other";
                 }
-                echo "<td class='$activity'>entra</td>";
+                echo "<td class='$activity'>entra</td>";*/
                 
 
                 //PROVA CON DEDICATION = 1
-                /*
+                
                 switch ($day){
                     case "Monday":
                         if (($hour >= 0 && $hour <= 6) || $hour == 23) {
@@ -149,9 +149,9 @@
                         }
                         break;
                 }
-                */
+                
         
-                //echo "'></td>";
+                echo "'></td>";
             }
             echo "</tr>";
         }

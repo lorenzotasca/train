@@ -78,7 +78,8 @@ function generateHourDivision($dedication) {
     $hourDivision = array();
 
     // Calcoliamo il numero totale di ore di allenamento per la settimana
-    $totalTrainingHours = $dedication * 3 * 2; // 3 giorni di allenamento, 2 ore al giorno
+    // SCRITTO COSì è IN GENERALE
+    $totalTrainingHours = ($dedication - 1) + (3 * 2); // 3 giorni di allenamento, 2 ore al giorno 
 
     // Calcoliamo le percentuali settimanali per ciascuna attività, escludendo "Sleep"
     $basketPercentage = (5 / $totalTrainingHours) * 100;
