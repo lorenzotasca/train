@@ -60,11 +60,13 @@ Scheda([ID_scheda], dedizione)
 
 Allenamento([ID_allenamento], descrizione)
 
-Statistica([ID_statistica])
+Statistica([ID_statistica], libero, pt_2, pt_3, scatto, salto_vert_da_fermo, salto_vert_max)
 
 comprende([ID_allenamento], [ID_scheda])
 
 riceve([ID_giocatore], [ID_scheda], data_crezione)
+
+registra([ID_giocatore], [ID_statistica])
 
 
 -----------------------------------------------------------------------------------------------------------
