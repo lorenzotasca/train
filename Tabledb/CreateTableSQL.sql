@@ -50,6 +50,7 @@ CREATE TABLE riceve(
     ID INT AUTO_INCREMENT PRIMARY KEY,
     ID_giocatore char(50),
     ID_scheda INT,
+    data_crezione char (10),
     FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
     FOREIGN KEY (ID_scheda) REFERENCES Scheda(ID_scheda)
 );
