@@ -139,7 +139,7 @@
         
         <div class="form-group">
             <div>
-                <input type="radio" id="tipo" name="tipo" value="tipo" onclick="toggleSelection(this)" required>
+                <input type="radio" id="tipo" name="tipo" value="tipo" onclick="toggleSelection(this)">
                 <label for="tipo">Admin</label>
             </div>
         </div>
