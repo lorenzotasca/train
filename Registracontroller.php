@@ -10,21 +10,17 @@
     $birthdate = $_POST['birthdate'];
     $username = $_POST['username'];
     $password = md5($_POST['password']); // Hash the password
-    
-    // Controlla se il campo adminSelected è stato inviato
+
     if(isset($_POST['adminSelected'])) {
         // Recupera il valore di adminSelected
         $adminSelected = $_POST['adminSelected'];
-
-        // Fai qualcosa con il valore di adminSelected
-        if ($adminSelected == "true") {
-            echo "L'opzione Admin è stata selezionata.";
-        } else {
-            echo "L'opzione Admin non è stata selezionata.";
-        }
     } else {
-        echo "Il campo adminSelected non è stato inviato.";
+        // Imposta il valore di default se adminSelected non è stato inviato
+        $adminSelected = "false";
     }
+    
+    // Imposta il valore del campo "tipo" in base a adminSelected
+    $tipo = ($adminSelected == "true") ? "admin" : "utente";
 
     
     $id_giocatore = $surname . $name . $birthdate;
@@ -33,7 +29,7 @@
     $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, tipo, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
     // Bind the parameters
-    $stmt->bind_param("ssssss", $id_giocatore, $surname, $name, $birthdate, $username, $password);
+    $stmt->bind_param("ssssss", $id_giocatore, $surname, $name, $birthdate, $tipo, $username, $password);
 
     // Try to execute the statement and handle any errors
     try {
