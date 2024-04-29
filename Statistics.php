@@ -165,7 +165,7 @@
             </thead>
             <tbody>
                 <!-- Statistiche di rapidità -->
-                <tr><td colspan="3">Nessuna statistica disponibile</td></tr>
+                <tr><td colspan="2">Nessuna statistica disponibile</td></tr>
             </tbody>
         </table>
     </div>
