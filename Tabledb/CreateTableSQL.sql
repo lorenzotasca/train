@@ -1,4 +1,4 @@
-DROP DATABASE IF EXIST progetto;
+DROP DATABASE IF EXISTS progetto;
 CREATE DATABASE progetto;
 USE progetto;
 CREATE TABLE Giocatore(
@@ -29,7 +29,13 @@ CREATE TABLE Allenamento(
 );
 
 CREATE TABLE Statistica(
-    ID_statistica INT AUTO_INCREMENT PRIMARY KEY
+    ID_statistica INT AUTO_INCREMENT PRIMARY KEY,
+    libero integer, 
+    pt_2 integer, 
+    pt_3 integer, 
+    scatto float, 
+    salto_vert_da_fermo float, 
+    salto_vert_max float
 );
 
 CREATE TABLE comprende(
