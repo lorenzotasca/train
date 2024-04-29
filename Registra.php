@@ -139,24 +139,28 @@
         
         <div class="form-group">
             <div>
-                <input type="radio" id="admin" name="role" value="admin" onclick="toggleSelection(this)" required>
-                <label for="admin">Admin</label>
+                <input type="radio" id="tipo" name="tipo" value="tipo" onclick="toggleSelection(this)" required>
+                <label for="tipo">Admin</label>
             </div>
         </div>
 
-        <!-- x deselezionare-->
+        <input type="hidden" id="adminSelectedInput" name="adminSelected" value="">
+
         <script>
-            var adminSelected = false; // Variabile per memorizzare lo stato dell'input radio
+            var adminSelected = false; 
 
             function toggleSelection() {
-                var radio = document.getElementById("admin");
+                var radio = document.getElementById("tipo");
+                var adminSelectedInput = document.getElementById("adminSelectedInput");
 
                 if (adminSelected) {
                     radio.checked = false;
                     adminSelected = false;
+                    adminSelectedInput.value = "false"; // Imposta il valore del campo nascosto su "false"
                 } else {
                     radio.checked = true;
                     adminSelected = true;
+                    adminSelectedInput.value = "true"; // Imposta il valore del campo nascosto su "true"
                 }
             }
         </script>
