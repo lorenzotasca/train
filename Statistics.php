@@ -17,7 +17,7 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 20px;
+            padding: 5px;
             text-align: right;
         }
 
@@ -115,55 +115,52 @@
 
 <header>
     <div class="container">
-        <h1>My Statistics</h1>
+        <h2>Manage Statistics</h2>
     </div>
 </header>
 
 <div class="container">
     <div class="table-container">
-        <div class="scrollable-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tipo</th>
-                        <th>Canestri</th>
-                        <th>Data</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Statistiche di tiro -->
-                    <tr>
-                        <td>Tiro Libero</td>
-                        <td>10</td>
-                        <td>2024-04-29</td>
-                    </tr>
-                    <tr>
-                        <td>Tiro da Tre Punti</td>
-                        <td>5</td>
-                        <td>2024-04-28</td>
-                    </tr>
-                    <tr>
-                        <td>Tiro Libero</td>
-                        <td>10</td>
-                        <td>2024-04-29</td>
-                    </tr>
-                    <tr>
-                        <td>Tiro da Tre Punti</td>
-                        <td>5</td>
-                        <td>2024-04-28</td>
-                    </tr>
-                    
-                    
-                </tbody>
-            </table>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Hoops</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Statistiche di tiro -->
+                <tr>
+                    <td>2024-04-29</td>
+                    <td>Free throw</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>2024-04-28</td>
+                    <td>3 points</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>2024-04-29</td>
+                    <td>Free throw</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>2024-04-29</td>
+                    <td>Free throw</td>
+                    <td>10</td>
+                </tr>
+                
+            </tbody>
+        </table>
 
         <table>
             <thead>
                 <tr>
-                    <th>Tipo</th>
-                    <th>Tempo/Altezza</th>
-                    <th>Data</th>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Time/High</th>
                 </tr>
             </thead>
             <tbody>
@@ -177,37 +174,37 @@
         <div class="add-section">
             <h3>Add Shoot Statistic</h3>
             <form>
-                <label for="shoot-type">Tipo:</label>
+                <label for="shoot-type">Type:</label>
                 <select id="shoot-type">
-                    <option value="free-throw">Tiro Libero</option>
-                    <option value="three-pointer">Tiro da Tre Punti</option>
-                    <option value="mid-range">Tiro da Media Distanza</option>
+                    <option value="free-throw">Free throw</option>
+                    <option value="three-pointer">3 points</option>
+                    <option value="mid-range">2 points</option>
                 </select>
-                <label for="shoot-count">Numero Tiri:</label>
+                <label for="shoot-count">Hoops:</label>
                 <input type="number" id="shoot-count">
-                <label for="shoot-date">Data:</label>
+                <label for="shoot-date">Date:</label>
                 <input type="date" id="shoot-date">
-                <input type="submit" value="Aggiungi">
+                <input type="submit" value="Add">
             </form>
         </div>
         <div class="add-section">
             <h3>Add Rapidity Statistic</h3>
             <form>
 
-                <label for="rapidity-type">Tipo:</label>
+                <label for="rapidity-type">Type:</label>
                 <select id="rapidity-type">
                     <option value="sprint">Three quarter sprint</option>
-                    <option value="vertMax">Salto vert max</option>
-                    <option value="vertFermo">Salto vert da fermo</option>
+                    <option value="vertMax">Max vert jump</option>
+                    <option value="vertFermo">Standing vert jump</option>
                 </select>
 
-                <label id="rapidity-label" for="rapidity-time">Tempo Impiegato (secondi):</label>
+                <label id="rapidity-label" for="rapidity-time">Time (seconds)::</label>
                 <input type="number" id="rapidity-time">
 
-                <label for="rapidity-date">Data:</label>
+                <label for="rapidity-date">Date:</label>
                 <input type="date" id="rapidity-date">
 
-                <input type="submit" value="Aggiungi">
+                <input type="submit" value="Add">
             </form>
         </div>
     </div>
