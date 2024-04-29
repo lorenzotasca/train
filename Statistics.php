@@ -40,7 +40,6 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow-y: auto; /* Rendi lo scorrimento verticale visibile solo se necessario */
         }
 
         th, td {
@@ -56,9 +55,10 @@
 
         tbody {
             max-height: 200px; /* Imposta un'altezza massima per il corpo della tabella */
+            overflow-y: auto; /* Rendi lo scorrimento verticale visibile solo se necessario */
         }
 
-        tbody tr:first-child {
+        tbody tr:first-child{
             position: sticky;
             top: 0; /* Fissa la prima riga dell'intestazione */
             background-color: #fff; /* Sfondo bianco per coprire il resto delle righe */
@@ -121,7 +121,7 @@
 
 <div class="container">
     <div class="table-container">
-        <table>
+        <table id="shoot-table">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -151,11 +151,16 @@
                     <td>Free throw</td>
                     <td>10</td>
                 </tr>
+                <tr>
+                    <td>2024-04-29</td>
+                    <td>Free throw</td>
+                    <td>10</td>
+                </tr>
                 
             </tbody>
         </table>
 
-        <table>
+        <table id="rapidity-table">
             <thead>
                 <tr>
                     <th>Date</th>
@@ -165,10 +170,46 @@
             </thead>
             <tbody>
                 <!-- Statistiche di rapidità -->
-                <tr><td colspan="2">Nessuna statistica disponibile</td></tr>
+                <tr><td colspan="3">Nessuna statistica disponibile</td></tr>
             </tbody>
         </table>
     </div>
+
+    <script>
+        // Funzione per contare le righe nelle tabelle e aggiungere lo scorrimento verticale se necessario
+        function checkRowCount(tableId) {
+            var table = document.getElementById(tableId);
+            if (table) {
+                var rowCount = table.getElementsByTagName('tr').length;
+                var tbody = table.getElementsByTagName('tbody')[0];
+                if (rowCount > 4) {
+                    table.style.maxHeight = '200px';
+                    table.style.overflowY = 'auto';
+                } else {
+                    table.style.maxHeight = 'none';
+                    table.style.overflowY = 'initial';
+                }
+            }
+        }
+
+        // Controlla il conteggio delle righe al caricamento della pagina e ogni volta che vengono aggiunte nuove statistiche
+        document.addEventListener('DOMContentLoaded', function() {
+            checkRowCount('shoot-table');
+            checkRowCount('rapidity-table');
+        });
+
+        /*
+        // Funzione per aggiungere nuove statistiche
+        function addStatistic(formId, tableId) {
+            var form = document.getElementById(formId);
+            var table = document.getElementById(tableId);
+            var tbody = table.getElementsByTagName('tbody')[0];
+            // Aggiungi qui la logica per aggiungere nuove righe alla tabella
+            // Dopo aver aggiunto una nuova riga, esegui il controllo del conteggio delle righe
+            checkRowCount(tableId);
+        }
+        */
+    </script>
 
     <div class="add-section-container">
         <div class="add-section">
