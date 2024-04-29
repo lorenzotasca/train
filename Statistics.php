@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
     <style>
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -39,6 +40,7 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* Rendi lo scorrimento verticale visibile solo se necessario */
         }
 
         th, td {
@@ -50,6 +52,16 @@
         th {
             background-color: #333;
             color: #fff;
+        }
+
+        tbody {
+            max-height: 200px; /* Imposta un'altezza massima per il corpo della tabella */
+        }
+
+        tbody tr:first-child {
+            position: sticky;
+            top: 0; /* Fissa la prima riga dell'intestazione */
+            background-color: #fff; /* Sfondo bianco per coprire il resto delle righe */
         }
 
         .add-section-container {
@@ -109,29 +121,54 @@
 
 <div class="container">
     <div class="table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Numero Tiri</th>
-                    <th>Data</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Inserire qui le statistiche di tiro -->
-            </tbody>
-        </table>
+        <div class="scrollable-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Canestri</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Statistiche di tiro -->
+                    <tr>
+                        <td>Tiro Libero</td>
+                        <td>10</td>
+                        <td>2024-04-29</td>
+                    </tr>
+                    <tr>
+                        <td>Tiro da Tre Punti</td>
+                        <td>5</td>
+                        <td>2024-04-28</td>
+                    </tr>
+                    <tr>
+                        <td>Tiro Libero</td>
+                        <td>10</td>
+                        <td>2024-04-29</td>
+                    </tr>
+                    <tr>
+                        <td>Tiro da Tre Punti</td>
+                        <td>5</td>
+                        <td>2024-04-28</td>
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
 
         <table>
             <thead>
                 <tr>
                     <th>Tipo</th>
-                    <th>Tempo Impiegato</th>
+                    <th>Tempo/Altezza</th>
                     <th>Data</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Inserire qui le statistiche di rapidità -->
+                <!-- Statistiche di rapidità -->
+                <tr><td colspan="3">Nessuna statistica disponibile</td></tr>
             </tbody>
         </table>
     </div>
