@@ -6,6 +6,7 @@ CREATE TABLE Giocatore(
     cognome char(20),
     nome char(20),
     data_nascita char (10),
+    tipo char (10),
     ruolo char(20),
     standing_reach float,
     altezza_senza_scarpe float,
@@ -17,15 +18,12 @@ CREATE TABLE Giocatore(
 
 CREATE TABLE Scheda(
     ID_scheda INT AUTO_INCREMENT,
-    giorni_della_settimana char(9),
-    orario integer,
     dedizione integer,
     PRIMARY KEY (ID_scheda)
 );
 
 CREATE TABLE Allenamento(
     ID_allenamento INT AUTO_INCREMENT,
-    orario integer,
     descrizione varchar(1000),
     PRIMARY KEY (ID_allenamento)
 );
