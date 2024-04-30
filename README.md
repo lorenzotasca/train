@@ -64,7 +64,7 @@ comprende([ID_allenamento], [ID_scheda])
 
 riceve([ID_giocatore], [ID_scheda], data_crezione)
 
-registra([ID_giocatore], [ID_statistica])
+registra([ID_giocatore], [ID_statistica], data)
 
 
 -----------------------------------------------------------------------------------------------------------
