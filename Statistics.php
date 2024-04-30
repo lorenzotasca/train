@@ -232,7 +232,7 @@
                     <option value="three-pointer">3 points</option>
                     <option value="mid-range">2 points</option>
                 </select>
-                <label></label> <!-- così la label Hoops va a capo -->
+
                 <label for="shoot-count">Hoops:</label>
                 <input type="number" id="shoot-count">
 
@@ -252,7 +252,7 @@
                     <option value="vertMax">Max vert jump</option>
                     <option value="vertFermo">Standing vert jump</option>
                 </select>
-                <label></label> <!-- così la label Time va a capo -->
+                
                 <label id="rapidity-label" for="rapidity-time">Time (seconds):</label>
                 <input type="number" id="rapidity-time">
 
