@@ -3,43 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistics</title>
+    <title>Tabella con Scorrimento Verticale</title>
     <style>
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 5px;
-            text-align: right;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .table-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-
+        /* Stili CSS per la tabella */
         table {
-            width: 48%; /* Lascia un piccolo margine tra le tabelle */
+            border-collapse: collapse;
+            width: 40%; /* Larghezza della tabella */
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative; /* Imposta la posizione relativa per la tabella */
         }
 
         th, td {
@@ -53,15 +26,32 @@
             color: #fff;
         }
 
-        tbody {
-            max-height: 200px; /* Imposta un'altezza massima per il corpo della tabella */
-            overflow-y: auto; /* Rendi lo scorrimento verticale visibile solo se necessario */
-        }
-
-        tbody tr:first-child{
+        thead {
             position: sticky;
             top: 0; /* Fissa la prima riga dell'intestazione */
             background-color: #fff; /* Sfondo bianco per coprire il resto delle righe */
+        }
+
+        /* Stili CSS per la barra di scorrimento verticale */
+        .scrollable,
+        .table-wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-height: 200px; /* Altezza massima prima dello scorrimento */
+            overflow-y: auto; /* Attiva lo scorrimento verticale */
+        }
+
+        .table-scrollbar {
+            position: absolute; /* Imposta la posizione assoluta per la barra di scorrimento */
+            top: 0;
+            right: 0; /* Posiziona la barra di scorrimento alla destra della tabella */
+            height: 100%; /* Altezza della barra di scorrimento uguale all'altezza della tabella */
+            overflow-y: auto; /* Attiva lo scorrimento verticale */
+        }
+
+        .scrollable table {
+            width: 50%;
         }
 
         .add-section-container {
@@ -86,6 +76,8 @@
         .add-section label {
             flex: 1 0 100%;
             max-width: 300px;
+            display: block; /* Imposta il display su "block" per far sì che ogni label venga visualizzata su una nuova riga */
+            margin-bottom: 5px;
         }
 
         .add-section input[type="text"],
@@ -120,111 +112,118 @@
 </header>
 
 <div class="container">
-    <div class="table-container">
-        <table id="shoot-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Hoops</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Statistiche di tiro -->
-                <tr>
-                    <td>2024-04-29</td>
-                    <td>Free throw</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td>2024-04-28</td>
-                    <td>3 points</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>2024-04-29</td>
-                    <td>Free throw</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td>2024-04-29</td>
-                    <td>Free throw</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td>2024-04-29</td>
-                    <td>Free throw</td>
-                    <td>10</td>
-                </tr>
-                
-            </tbody>
-        </table>
-
-        <table id="rapidity-table">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Type</th>
-                    <th>Time/High</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Statistiche di rapidità -->
-                <tr><td colspan="3">Nessuna statistica disponibile</td></tr>
-            </tbody>
-        </table>
+    <div class="scrollable">
+        <div class="table-wrapper">
+            <table id="shoot-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Hoops</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Statistiche di tiro -->
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Free throw</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Free throw</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Free throw</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Free throw</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Free throw</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Free throw</td>
+                        <td>10</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <div class="table-scrollbar"></div> <!-- Barra di scorrimento verticale -->
+        </div>                      
+        <div class="table-wrapper">
+            <table id="rapidity-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Time/High</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Statistiche di rapidità -->
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Standing vert jump</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Three quarter sprint</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Three quarter sprint</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Standing vert jump</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Three quarter sprint</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>2024-04-29</td>
+                        <td>Standing vert jump</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table-scrollbar"></div> <!-- Barra di scorrimento verticale -->
+        </div>
     </div>
-
-    <script>
-        // Funzione per contare le righe nelle tabelle e aggiungere lo scorrimento verticale se necessario
-        function checkRowCount(tableId) {
-            var table = document.getElementById(tableId);
-            if (table) {
-                var rowCount = table.getElementsByTagName('tr').length;
-                var tbody = table.getElementsByTagName('tbody')[0];
-                if (rowCount > 4) {
-                    table.style.maxHeight = '200px';
-                    table.style.overflowY = 'auto';
-                } else {
-                    table.style.maxHeight = 'none';
-                    table.style.overflowY = 'initial';
-                }
-            }
-        }
-
-        // Controlla il conteggio delle righe al caricamento della pagina e ogni volta che vengono aggiunte nuove statistiche
-        document.addEventListener('DOMContentLoaded', function() {
-            checkRowCount('shoot-table');
-            checkRowCount('rapidity-table');
-        });
-
-        /*
-        // Funzione per aggiungere nuove statistiche
-        function addStatistic(formId, tableId) {
-            var form = document.getElementById(formId);
-            var table = document.getElementById(tableId);
-            var tbody = table.getElementsByTagName('tbody')[0];
-            // Aggiungi qui la logica per aggiungere nuove righe alla tabella
-            // Dopo aver aggiunto una nuova riga, esegui il controllo del conteggio delle righe
-            checkRowCount(tableId);
-        }
-        */
-    </script>
 
     <div class="add-section-container">
         <div class="add-section">
             <h3>Add Shoot Statistic</h3>
             <form>
+                
                 <label for="shoot-type">Type:</label>
                 <select id="shoot-type">
                     <option value="free-throw">Free throw</option>
                     <option value="three-pointer">3 points</option>
                     <option value="mid-range">2 points</option>
                 </select>
+                <label></label> <!-- così la label Hoops va a capo -->
                 <label for="shoot-count">Hoops:</label>
                 <input type="number" id="shoot-count">
+
                 <label for="shoot-date">Date:</label>
                 <input type="date" id="shoot-date">
+
                 <input type="submit" value="Add">
             </form>
         </div>
@@ -238,8 +237,8 @@
                     <option value="vertMax">Max vert jump</option>
                     <option value="vertFermo">Standing vert jump</option>
                 </select>
-
-                <label id="rapidity-label" for="rapidity-time">Time (seconds)::</label>
+                <label></label> <!-- così la label Time va a capo -->
+                <label id="rapidity-label" for="rapidity-time">Time (seconds):</label>
                 <input type="number" id="rapidity-time">
 
                 <label for="rapidity-date">Date:</label>
