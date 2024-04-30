@@ -40,16 +40,6 @@
             overflow-y: auto; /* Attiva lo scorrimento verticale */
         }
 
-        .table-scrollbar {
-            position: absolute; /* Imposta la posizione assoluta per la barra di scorrimento */
-            top: 0;
-            right: 0; /* Posiziona la barra di scorrimento alla destra della tabella */
-            height: 100%; /* Altezza della barra di scorrimento uguale all'altezza della tabella */
-            overflow-y: auto; /* Attiva lo scorrimento verticale */
-        }
-
-
-
         .table-wrapper::-webkit-scrollbar {
             width: 12px;
         }
@@ -62,8 +52,6 @@
             background-color: green;
             border-radius: 10px;
         }
-
-
 
         .scrollable table {
             width: 70%;
@@ -172,7 +160,7 @@
                     
                 </tbody>
             </table>
-            <div class="table-scrollbar"></div> <!-- Barra di scorrimento verticale -->
+            
         </div>                      
         <div class="table-wrapper">
             <table id="rapidity-table">
@@ -217,7 +205,7 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="table-scrollbar"></div> <!-- Barra di scorrimento verticale -->
+            
         </div>
     </div>
 
