@@ -212,7 +212,7 @@
     <div class="add-section-container">
         <div class="add-section">
             <h3>Add Shoot Statistic</h3>
-            <form>
+            <form action="StatisticsController.php" method="post">
                 
                 <label for="shoot-type">Type:</label>
                 <select id="shoot-type">
@@ -232,7 +232,7 @@
         </div>
         <div class="add-section">
             <h3>Add Rapidity Statistic</h3>
-            <form>
+            <form action="StatisticsController.php" method="post">
 
                 <label for="rapidity-type">Type:</label>
                 <select id="rapidity-type">

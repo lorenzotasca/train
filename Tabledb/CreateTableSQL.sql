@@ -59,6 +59,7 @@ CREATE TABLE registra(
     ID INT AUTO_INCREMENT PRIMARY KEY,
     ID_giocatore char(50),
     ID_statistica INT,
+    data char (10),
     FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
     FOREIGN KEY (ID_statistica) REFERENCES Statistica(ID_statistica)
 );
