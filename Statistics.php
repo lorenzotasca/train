@@ -29,10 +29,8 @@
         thead {
             position: sticky;
             top: 0; /* Fissa la prima riga dell'intestazione */
-            background-color: #fff; /* Sfondo bianco per coprire il resto delle righe */
         }
 
-        /* Stili CSS per la barra di scorrimento verticale */
         .scrollable,
         .table-wrapper {
             display: flex;
@@ -50,8 +48,25 @@
             overflow-y: auto; /* Attiva lo scorrimento verticale */
         }
 
+
+
+        .table-wrapper::-webkit-scrollbar {
+            width: 12px;
+        }
+        .table-wrapper::-webkit-scrollbar-track {
+            background-color: #ccc;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        .table-wrapper::-webkit-scrollbar-thumb {
+            background-color: green;
+            border-radius: 10px;
+        }
+
+
+
         .scrollable table {
-            width: 50%;
+            width: 70%;
         }
 
         .add-section-container {
