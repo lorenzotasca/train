@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabella con Scorrimento Verticale</title>
+    <title>Manage my statistics</title>
     <style>
         /* Stili CSS per la tabella */
         table {
@@ -107,7 +107,7 @@
 
 <header>
     <div class="container">
-        <h2>Manage Statistics</h2>
+        <h2>Manage my Statistics</h2></br></br>
     </div>
 </header>
 
