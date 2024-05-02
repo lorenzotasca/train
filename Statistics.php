@@ -223,13 +223,13 @@
                     <option value="three-pointer">3 points</option>
                     <option value="mid-range">2 points</option>
                 </select>
-
+                <label></label>
                 <label for="shoot-count">Hoops:</label>
-                <input type="number" id="shoot-count">
+                <input type="number" id="shoot-count">/50
 
                 <label for="shoot-date">Date:</label>
                 <input type="date" id="shoot-date">
-
+                <label></label>
                 <input type="submit" value="Add">
             </form>
         </div>
@@ -243,13 +243,13 @@
                     <option value="vertMax">Max vert jump</option>
                     <option value="vertFermo">Standing vert jump</option>
                 </select>
-                
+                <label></label>
                 <label id="rapidity-label" for="rapidity-time">Time (seconds):</label>
                 <input type="number" id="rapidity-time">
-
+        
                 <label for="rapidity-date">Date:</label>
                 <input type="date" id="rapidity-date">
-
+                <label></label>
                 <input type="submit" value="Add">
             </form>
         </div>
