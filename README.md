@@ -50,7 +50,7 @@ stabilire la preparazione di un giocatore:
 -----------------------------------------------------------------------------------------------------------
 
 
-#Relazionale#
+#Relazionale#  []: PRIMARY KEY    {}: FOREIGN KEY
 
 Giocatore([ID_giocatore], cognome, nome, data_nascita, tipo, ruolo, standing_reach, altezza_senza_scarpe, apertura_alare, username, password)
 
@@ -60,11 +60,11 @@ Allenamento([ID_allenamento], descrizione)
 
 Statistica([ID_statistica], libero, pt_2, pt_3, scatto, salto_vert_da_fermo, salto_vert_max)
 
-comprende([ID_allenamento], [ID_scheda])
+comprende([ID], {ID_allenamento}, {ID_scheda})
 
-riceve([ID_giocatore], [ID_scheda], data_crezione)
+riceve([ID], {ID_giocatore}, {ID_scheda}, data_crezione)
 
-registra([ID_giocatore], [ID_statistica], data)
+registra([ID], {ID_giocatore}, {ID_statistica}, data)
 
 
 -----------------------------------------------------------------------------------------------------------
