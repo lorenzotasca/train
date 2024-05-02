@@ -43,7 +43,8 @@ stabilire la preparazione di un giocatore:
 
 #ER#
 
-![new](https://github.com/lorenzotasca/train/assets/101709418/ca815d43-10f6-441b-99d4-9a938b8b0385)
+
+![new](https://github.com/lorenzotasca/train/assets/101709418/60e11ba5-79a4-41dd-ba18-134a7e151171)
 
 
 
@@ -52,13 +53,13 @@ stabilire la preparazione di un giocatore:
 
 #Relazionale#  []: PRIMARY KEY    {}: FOREIGN KEY
 
-Giocatore([ID_giocatore], cognome, nome, data_nascita, tipo, ruolo, standing_reach, altezza_senza_scarpe, apertura_alare, username, password)
+Giocatore([ID_giocatore], cod_fisc, cognome, nome, data_nascita, tipo, ruolo, standing_reach, altezza_senza_scarpe, apertura_alare, username, password)
 
 Scheda([ID_scheda], dedizione)
 
 Allenamento([ID_allenamento], descrizione)
 
-Statistica([ID_statistica], libero, pt_2, pt_3, scatto, salto_vert_da_fermo, salto_vert_max)
+Statistica([ID_statistica], code, type, quanto)
 
 comprende([ID], {ID_allenamento}, {ID_scheda})
 
