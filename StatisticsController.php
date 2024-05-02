@@ -4,26 +4,33 @@
     
     include "connection/connection.php";
 
+
     
     if(isset($_SESSION['id']) && !empty($_SESSION['id'])) {
         
-        // IF PER VEDERE SE USARE INSERT INTO O UPDATE
+        if(isset($_POST['submitHoops'])){
+            $code = "Hoops";
+            $quanto = $_POST["shoot-count"];
+            $data = $_POST['submitHoops'];
+        }
+        elseif(isset($_POST['submitRapidity'])){
+            $code = "Rapidity";
+            $quanto = $_POST["rapidity-time"];
+            $data = $_POST['submitRapidity'];
+        }
 
-        $stmt = $connessione->prepare("INSERT INTO Statistica () VALUES ()");
+        $stmt = $connessione->prepare("INSERT INTO Statistica (code, type, quanto) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $code, $_POST["shoot-type"], $quanto);
 
-        $stmt->bind_param("", );
+
+        $query = "INSERT INTO registra (data) VALUES (?)";
+        $stmt2 = $connessione->prepare($query);
+        $stmt2->bind_param("s", $data);
 
 
     }else {
         echo "error bitch!";
     }
-
-    
-    $query = "INSERT INTO Scheda (dedizione) VALUES (?)";
-    $stmt2 = $connessione->prepare($query);
-    $stmt2->bind_param("s", $_POST['dedication']);
-
-    $_SESSION['dedication'] = $row['dedizione'];
     
 
     try {

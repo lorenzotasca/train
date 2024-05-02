@@ -230,7 +230,7 @@
                 <label for="shoot-date">Date:</label>
                 <input type="date" id="shoot-date">
                 <label></label>
-                <input type="submit" value="Add">
+                <input type="submit" value="Add" id="submitHoops">
             </form>
         </div>
         <div class="add-section">
@@ -250,7 +250,7 @@
                 <label for="rapidity-date">Date:</label>
                 <input type="date" id="rapidity-date">
                 <label></label>
-                <input type="submit" value="Add">
+                <input type="submit" value="Add" id="submitRapidity">
             </form>
         </div>
     </div>
