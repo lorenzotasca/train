@@ -35,9 +35,10 @@
         .table-wrapper {
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            width: 90%;
             max-height: 200px; /* Altezza massima prima dello scorrimento */
             overflow-y: auto; /* Attiva lo scorrimento verticale */
+            margin: 0 auto; /* Centrato il container */
         }
 
         .table-wrapper::-webkit-scrollbar {
@@ -60,13 +61,15 @@
         .add-section-container {
             display: flex;
             justify-content: space-between;
-            width: 100%;
+            width: 90%;
+            margin: 0 auto; /* Centrato il container */
         }
 
         .add-section {
             width: 48%;
             display: flex;
             flex-direction: column;
+            margin: 0 auto; /* Centrato il container */
         }
 
         .add-section form {
@@ -86,7 +89,7 @@
         .add-section input[type="text"],
         .add-section input[type="number"],
         .add-section input[type="date"] {
-            width: 100%;
+            width: 80%;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;

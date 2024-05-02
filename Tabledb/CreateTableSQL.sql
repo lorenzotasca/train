@@ -2,7 +2,8 @@ DROP DATABASE IF EXISTS progetto;
 CREATE DATABASE progetto;
 USE progetto;
 CREATE TABLE Giocatore(
-    ID_giocatore char(50), 
+    ID_giocatore INT AUTO_INCREMENT,
+    cod_fisc char(16),
     cognome char(20),
     nome char(20),
     data_nascita char (10),
@@ -30,12 +31,9 @@ CREATE TABLE Allenamento(
 
 CREATE TABLE Statistica(
     ID_statistica INT AUTO_INCREMENT PRIMARY KEY,
-    libero integer, 
-    pt_2 integer, 
-    pt_3 integer, 
-    scatto float, 
-    salto_vert_da_fermo float, 
-    salto_vert_max float
+    code char(8), 
+    type char(20),
+    quanto float
 );
 
 CREATE TABLE comprende(
@@ -48,7 +46,7 @@ CREATE TABLE comprende(
 
 CREATE TABLE riceve(
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    ID_giocatore char(50),
+    ID_giocatore INT,
     ID_scheda INT,
     data_crezione char (10),
     FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
@@ -57,7 +55,7 @@ CREATE TABLE riceve(
 
 CREATE TABLE registra(
     ID INT AUTO_INCREMENT PRIMARY KEY,
-    ID_giocatore char(50),
+    ID_giocatore INT,
     ID_statistica INT,
     data char (10),
     FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
