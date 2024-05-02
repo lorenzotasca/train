@@ -225,7 +225,7 @@
                 </select>
                 <label></label>
                 <label for="shoot-count">Hoops:</label>
-                <input type="number" id="shoot-count">/50
+                <input type="number" id="shoot-count" min="0" max="50">/50
 
                 <label for="shoot-date">Date:</label>
                 <input type="date" id="shoot-date">
@@ -245,7 +245,7 @@
                 </select>
                 <label></label>
                 <label id="rapidity-label" for="rapidity-time">Time (seconds):</label>
-                <input type="number" id="rapidity-time">
+                <input type="number" id="rapidity-time" min="0">
         
                 <label for="rapidity-date">Date:</label>
                 <input type="date" id="rapidity-date">
