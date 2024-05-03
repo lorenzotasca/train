@@ -127,6 +127,11 @@
         </div>
 
         <div class="form-group">
+            <label for="taxcode">Tax code</label>
+            <input type="text" id="taxcode" name="taxcode" placeholder="Your tax code" required>
+        </div>
+
+        <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Choose a username" required>
         </div>

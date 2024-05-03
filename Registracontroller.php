@@ -8,6 +8,7 @@
     $surname = $_POST['surname'];
     $name = $_POST['name'];
     $birthdate = $_POST['birthdate'];
+    $taxcode = $_POST['taxcode'];
     $username = $_POST['username'];
     $password = md5($_POST['password']); // Hash the password
 
@@ -22,14 +23,12 @@
     // Imposta il valore del campo "tipo" in base a adminSelected
     $tipo = ($adminSelected == "true") ? "admin" : "utente";
 
-    
-    $id_giocatore = $surname . $name . $birthdate;
 
     // Prepare the SQL statement
-    $stmt = $connessione->prepare("INSERT INTO Giocatore (ID_giocatore, cognome, nome, data_nascita, tipo, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $connessione->prepare("INSERT INTO Giocatore (cod_fisc, cognome, nome, data_nascita, tipo, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
     // Bind the parameters
-    $stmt->bind_param("sssssss", $id_giocatore, $surname, $name, $birthdate, $tipo, $username, $password);
+    $stmt->bind_param("sssssss", $taxcode, $surname, $name, $birthdate, $tipo, $username, $password);
 
     // Try to execute the statement and handle any errors
     try {
