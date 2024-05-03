@@ -31,9 +31,12 @@ CREATE TABLE Allenamento(
 
 CREATE TABLE Statistica(
     ID_statistica INT AUTO_INCREMENT PRIMARY KEY,
+    ID_giocatore INT,
     code char(8), 
     type char(20),
-    quanto float
+    quanto float,
+    data char (10),
+    FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore)
 );
 
 CREATE TABLE comprende(
@@ -51,13 +54,4 @@ CREATE TABLE riceve(
     data_crezione char (10),
     FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
     FOREIGN KEY (ID_scheda) REFERENCES Scheda(ID_scheda)
-);
-
-CREATE TABLE registra(
-    ID INT AUTO_INCREMENT PRIMARY KEY,
-    ID_giocatore INT,
-    ID_statistica INT,
-    data char (10),
-    FOREIGN KEY (ID_giocatore) REFERENCES Giocatore(ID_giocatore),
-    FOREIGN KEY (ID_statistica) REFERENCES Statistica(ID_statistica)
 );
