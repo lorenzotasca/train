@@ -32,8 +32,11 @@
     $stmt2 = $connessione->prepare($query);
     $stmt2->bind_param("s", LAST_INSERT_ID());
 
+
+
     try {
         $stmt->execute();
+        $stmt2->execute();
         header("Location: Login.php");
     } catch (Exception $e) {
         $err = $e->getMessage();
@@ -41,6 +44,7 @@
     } finally {
         // Always close the statement and connection, even if an error occurred
         $stmt->close();
+        $stmt2->close();
         $connessione->close();
     }
     

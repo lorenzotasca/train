@@ -28,6 +28,16 @@
                 $_SESSION['username'] = $row['username'];
                 
 
+
+                // Ottieni id statistica
+                $query2 = $connessione->prepare("SELECT * FROM Statistica WHERE ID_statistica = ?");
+                $query2->bind_param("s", LAST_INSERT_ID());
+                $query2->execute();
+                $res2 = $query2->get_result();
+                $_SESSION['id_statistica'] = $row['ID_statistica'];
+
+
+
                 // vai diretto in profile se ruolo è già inserito in db
                 $query = $connessione->prepare("SELECT ruolo FROM Giocatore WHERE ID_giocatore = ?");
                 $query->bind_param("s", $_SESSION['id_giocatore']);
@@ -44,6 +54,8 @@
                 else{
                     header("Location: Characteristics.php");
                 }
+
+                $query2->close();
                 $query->close();
 
 

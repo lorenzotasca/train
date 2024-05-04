@@ -6,7 +6,7 @@
 
 
     
-    if(isset($_SESSION['id_giocatore']) && !empty($_SESSION['id_giocatore'])) {
+    if(isset($_SESSION['id_giocatore']) && isset($_SESSION['id_statistica'])) {
         
         if(isset($_POST['submitHoops'])){
             $code = "Hoops";
@@ -20,7 +20,7 @@
         }
 
         $stmt = $connessione->prepare("UPDATE Statistica SET code=?, type=?, quanto=?, data=? WHERE ID_statistica=?");
-        $stmt->bind_param("ssss", $code, $_POST["shoot-type"], $quanto, $data);
+        $stmt->bind_param("ssss", $code, $_POST["shoot-type"], $quanto, $data, $_SESSION['id_statistica']);
 
 
     }else {
