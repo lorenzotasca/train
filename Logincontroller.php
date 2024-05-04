@@ -23,7 +23,7 @@
             if(md5($password) == $row['passwordCode']){
                 // Password matches, so create the session
                 $_SESSION['id_giocatore'] = $row['ID_giocatore']; // mi serve in ProfileContrller.php
-                $_SESSION['name'] = $row['nome']; // mi serve in ProfileContrller.php
+                $_SESSION['name'] = $row['nome']; // mi serve in ProfileController.php
                 
                 $_SESSION['username'] = $row['username'];
                 
@@ -35,6 +35,11 @@
                 $query2->execute();
                 $res2 = $query2->get_result();
                 $_SESSION['id_statistica'] = $row['ID_statistica'];
+
+
+                $query3 = "INSERT INTO Statistica (ID_giocatore) VALUES (?)";
+                $stmt2 = $connessione->prepare($query3);
+                $stmt2->bind_param("s", $_SESSION['id_giocatore']);
 
 
 

@@ -27,17 +27,11 @@
     $stmt = $connessione->prepare("INSERT INTO Giocatore (cod_fisc, cognome, nome, data_nascita, tipo, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssss", $taxcode, $surname, $name, $birthdate, $tipo, $username, $password);
 
-    $last_insert_id = $stmt->insert_id;
-
-    $query = "INSERT INTO Statistica (ID_giocatore) VALUES (?)";
-    $stmt2 = $connessione->prepare($query);
-    $stmt2->bind_param("s", $last_insert_id);
-
 
 
     try {
         $stmt->execute();
-        $stmt2->execute();
+        
         header("Location: Login.php");
     } catch (Exception $e) {
         $err = $e->getMessage();
@@ -45,7 +39,7 @@
     } finally {
         // Always close the statement and connection, even if an error occurred
         $stmt->close();
-        $stmt2->close();
+        
         $connessione->close();
     }
     
