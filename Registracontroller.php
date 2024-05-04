@@ -24,15 +24,15 @@
     $tipo = ($adminSelected == "true") ? "admin" : "utente";
 
 
-    // Prepare the SQL statement
     $stmt = $connessione->prepare("INSERT INTO Giocatore (cod_fisc, cognome, nome, data_nascita, tipo, username, passwordCode) VALUES (?, ?, ?, ?, ?, ?, ?)");
-
-    // Bind the parameters
     $stmt->bind_param("sssssss", $taxcode, $surname, $name, $birthdate, $tipo, $username, $password);
 
-    // Try to execute the statement and handle any errors
+
+    $query = "INSERT INTO Statistia (ID_giocatore) VALUES (?)";
+    $stmt2 = $connessione->prepare($query);
+    $stmt2->bind_param("s", LAST_INSERT_ID());
+
     try {
-        
         $stmt->execute();
         header("Location: Login.php");
     } catch (Exception $e) {

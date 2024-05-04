@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(!isset($_SESSION['id'])){
+if(!isset($_SESSION['id_giocatore'])){
     if(!isset($_SESSION['role'])){
         header("Location: Characteristics.php");
     }

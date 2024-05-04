@@ -1,10 +1,10 @@
 <?php
     session_start();
-    if(!isset($_SESSION['id'])){
+    if(!isset($_SESSION['id_giocatore'])){
         header("Location: Login.php");
         exit();
     }
-    $id = $_SESSION['id'];
+    $id_giocatore = $_SESSION['id_giocatore'];
     $name = $_SESSION['name'];
 ?>
 <!DOCTYPE html>

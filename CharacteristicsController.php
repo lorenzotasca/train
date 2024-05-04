@@ -27,9 +27,9 @@
 
 
     // Controlla se $id_giocatore è memorizzato nella sessione
-    if(isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+    if(isset($_SESSION['id_giocatore']) && !empty($_SESSION['id_giocatore'])) {
         
-        $id_giocatore = $_SESSION['id'];
+        $id_giocatore = $_SESSION['id_giocatore'];
 
         $stmt = $connessione->prepare("UPDATE Giocatore SET ruolo=?, standing_reach=?, altezza_senza_scarpe=?, apertura_alare=? WHERE ID_giocatore=?");
 

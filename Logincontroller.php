@@ -22,7 +22,7 @@
             //if(password_verify($password, $row['passwordCode'])){
             if(md5($password) == $row['passwordCode']){
                 // Password matches, so create the session
-                $_SESSION['id'] = $row['ID_giocatore']; // mi serve in ProfileContrller.php
+                $_SESSION['id_giocatore'] = $row['ID_giocatore']; // mi serve in ProfileContrller.php
                 $_SESSION['name'] = $row['nome']; // mi serve in ProfileContrller.php
                 
                 $_SESSION['username'] = $row['username'];
@@ -30,12 +30,13 @@
 
                 // vai diretto in profile se ruolo è già inserito in db
                 $query = $connessione->prepare("SELECT ruolo FROM Giocatore WHERE ID_giocatore = ?");
-                $query->bind_param("s", $_SESSION['id']);
+                $query->bind_param("s", $_SESSION['id_giocatore']);
                 $query->execute();
                 $res = $query->get_result();
 
                 $row = $res->fetch_assoc(); // Ottiene la riga risultante come array associativo
 
+                // RIVEDI, PERCHè SEMBRA NON FUNZIONARE PIù
                 if ($row['ruolo'] != NULL) {
                     $_SESSION['role'] = $row['role'];
                     header("Location: Profile.php");
