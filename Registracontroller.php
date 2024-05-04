@@ -28,7 +28,7 @@
     $stmt->bind_param("sssssss", $taxcode, $surname, $name, $birthdate, $tipo, $username, $password);
 
 
-    $query = "INSERT INTO Statistia (ID_giocatore) VALUES (?)";
+    $query = "INSERT INTO Statistica (ID_giocatore) VALUES (?)";
     $stmt2 = $connessione->prepare($query);
     $stmt2->bind_param("s", LAST_INSERT_ID());
 
